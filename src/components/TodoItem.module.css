@@ -1,0 +1,18 @@
+.itemContainer{
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.checkbox{
+    cursor: pointer;
+}
+
+.checkbox:checked + label{
+    text-decoration: line-through;
+    color: rgb(100 116 139);
+}
+
+.label{
+    cursor: pointer;
+}
