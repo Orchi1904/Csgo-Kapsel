@@ -2,7 +2,8 @@ import Link from 'next/link';
 import React from 'react'
 import styles from "./home.module.css";
 import { prisma } from '@/db';
-import TodoItem from '@/components/TodoItem';
+import TodoItem from '@/components/TodoItem/TodoItem';
+import NavHead from '@/components/NavHead/NavHead';
 
 const getTodos = () => {
   //Server Component Data fetching
@@ -20,15 +21,7 @@ async function Home() {
 
   return (
     <>
-      <header className={styles.header}>
-        <h1>Todos</h1>
-        <Link href="new" className={styles.link}>New todo</Link>
-      </header>
-      <ul className={styles.todoListContainer}>
-        {todos.map(todo => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
-        ))}
-      </ul>
+      <NavHead></NavHead> 
     </>
   )
 }
