@@ -6,7 +6,7 @@ function InputSection() {
   return (
     <div className={styles.inputSection}>
         <Dropdown name="capsuleSort" width="100%"/>
-        <Search/>
+        <Search name="capsuleSearch"/>
     </div>
   )
 }

@@ -1,8 +1,20 @@
-import React from 'react'
+import styles from "./Search.module.css";
+import SearchIcon from '@mui/icons-material/Search';
 
-function Search() {
+interface Props {
+  name: string,
+}
+
+function Search({ name }: Props) {
   return (
-    <div>Search</div>
+    <div className={styles.searchContainer}>
+      <label htmlFor={name} />
+      <input className={styles.search}
+        name={name}
+        id={name}
+        placeholder="Search Capsule..." />
+      <SearchIcon className={styles.searchIcon}/>
+    </div>
   )
 }
 

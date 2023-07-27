@@ -1,0 +1,24 @@
+.searchContainer{
+    display: flex;
+    border: 2px solid white;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.search{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--black);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 4px 0px;
+    padding-left: 6px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+}
+
+.searchIcon{
+    font-size: 15px;
+    padding-right: 2px;
+}
