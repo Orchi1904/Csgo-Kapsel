@@ -1,9 +1,7 @@
-import Link from 'next/link';
-import React from 'react'
-import styles from "./home.module.css";
 import { prisma } from '@/db';
-import TodoItem from '@/components/TodoItem/TodoItem';
 import NavHead from '@/components/NavHead/NavHead';
+import HeroSection from '@/components/HeroSection/HeroSection';
+import InputSection from '@/components/InputSection/InputSection';
 
 const getTodos = () => {
   //Server Component Data fetching
@@ -21,7 +19,9 @@ async function Home() {
 
   return (
     <>
-      <NavHead></NavHead> 
+      <NavHead/>
+      <HeroSection/>
+      <InputSection/>
     </>
   )
 }

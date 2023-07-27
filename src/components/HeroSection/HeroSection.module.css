@@ -1,0 +1,22 @@
+.heroContainer{
+    position: relative;
+    height: 175px;
+    margin-bottom: 11px;
+}
+
+.heroImage{
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.heroText{
+    position: relative;
+    top: 50%; /*Aligns the text to vertical center*/
+    left: 50%; /*Aligns the text to horizontal center*/
+    transform: translate(-50%, -50%); /*Center the text by moving it by its own height and width*/
+    -webkit-text-stroke: 1px black;
+    color: var(--beige);
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    margin: 0px;
+}

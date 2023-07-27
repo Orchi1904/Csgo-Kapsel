@@ -1,0 +1,14 @@
+.dropdown{
+    background-color: var(--black);
+    color: white;
+    font-family: "Roboto", Helvetica;
+    font-size: 12px;
+    border: 2px solid white;
+    padding: 4px 0;
+    padding-left: 6px;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+

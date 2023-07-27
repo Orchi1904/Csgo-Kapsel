@@ -5,7 +5,7 @@ import Image from 'next/image';
 function NavHead() {
     return (
         <div className={styles.logoContainer}>
-            <Link href="/">
+            <Link className={styles.link} href="/">
                 <Image
                     className={styles.logo}
                     src="/images/logoGroß.svg"

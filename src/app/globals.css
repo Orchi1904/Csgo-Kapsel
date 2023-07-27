@@ -1,5 +1,17 @@
+@font-face {
+  font-family: "Outfit";
+  src: url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+
 :root{
   --black: #272727;
+  --beige: #F0E7D8;
+  --blue: #44CCFF;
 }
 
 .layout{
