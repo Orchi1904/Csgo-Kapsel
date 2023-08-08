@@ -1,6 +1,6 @@
 import styles from "./Dropdown.module.css";
 
-interface Props{
+type Props = {
     name: string,
     width: string,
 }

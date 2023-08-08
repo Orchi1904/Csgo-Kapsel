@@ -1,5 +1,6 @@
 .inputSection{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
+    margin-bottom: 30px;
 }

@@ -2,6 +2,7 @@ import { prisma } from '@/db';
 import NavHead from '@/components/NavHead/NavHead';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import InputSection from '@/components/InputSection/InputSection';
+import CardSection from '@/components/CardSection/CardSection';
 
 const getTodos = () => {
   //Server Component Data fetching
@@ -22,6 +23,7 @@ async function Home() {
       <NavHead/>
       <HeroSection/>
       <InputSection/>
+      <CardSection/>
     </>
   )
 }

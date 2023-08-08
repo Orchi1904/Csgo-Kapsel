@@ -1,7 +1,7 @@
 import styles from "./Search.module.css";
 import SearchIcon from '@mui/icons-material/Search';
 
-interface Props {
+type Props = {
   name: string,
 }
 
