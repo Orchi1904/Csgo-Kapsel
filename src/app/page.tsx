@@ -3,6 +3,7 @@ import NavHead from '@/components/NavHead/NavHead';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import InputSection from '@/components/InputSection/InputSection';
 import CardSection from '@/components/CardSection/CardSection';
+import EndLine from '@/components/EndLine/EndLine';
 
 const getTodos = () => {
   //Server Component Data fetching
@@ -24,6 +25,7 @@ async function Home() {
       <HeroSection/>
       <InputSection/>
       <CardSection/>
+      <EndLine bgImage='/images/backgrounds/endLineBG.svg'/>
     </>
   )
 }
