@@ -61,7 +61,7 @@ function CardSection() {
         <div className={styles.cardSection}>
             {cardArr.map((card, index) => (
                 <Card key={index} title={card.title} icon={card.icon} stickerValue={card.stickerValue}
-                    capsulePrice={card.capsulePrice} detailPage="/detailPage"/>
+                    capsulePrice={card.capsulePrice} hoverAnimation detailPage="/detailPage"/>
             ))}
         </div>
     )

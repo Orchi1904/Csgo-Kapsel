@@ -8,7 +8,7 @@
     cursor: pointer;
 }
 
-.card:hover .icon{
+.card:hover .icon[data-hover-animation="true"]{
     transform: scale(1.1);
 }
 
@@ -29,7 +29,6 @@
 
 .icon{
     width: 100%;
-    border: 1px solid red;
     transition: transform 0.5s; 
 }
 

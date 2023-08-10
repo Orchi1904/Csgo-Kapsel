@@ -9,9 +9,10 @@ type Props = {
     stickerValue?: number,
     capsulePrice?: number,
     detailPage?: string,
+    hoverAnimation?: boolean,
 }
 
-function Card({ title, icon, stickerValue, capsulePrice, detailPage }: Props) {
+function Card({ title, icon, stickerValue, capsulePrice, hoverAnimation, detailPage }: Props) {
     const router = useRouter();
 
     return (
@@ -21,7 +22,7 @@ function Card({ title, icon, stickerValue, capsulePrice, detailPage }: Props) {
             ) : ""}
 
             <div className={styles.iconContainer}>
-                <img className={styles.icon} src={icon} />
+                <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation}/>
             </div>
 
             {stickerValue || capsulePrice ? (
