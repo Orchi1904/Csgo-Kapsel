@@ -5,6 +5,11 @@
     border-radius: 5px;
     padding: 16px 7%;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+.card:hover .icon{
+    transform: scale(1.1);
 }
 
 .title{
@@ -25,6 +30,7 @@
 .icon{
     width: 100%;
     border: 1px solid red;
+    transition: transform 0.5s; 
 }
 
 .informationContainer{
