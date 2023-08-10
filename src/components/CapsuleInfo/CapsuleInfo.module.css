@@ -1,0 +1,26 @@
+.title{
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    color: beige;
+    font-size: 22px;
+    text-align: center;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.capsulePriceInfoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.capsulePriceInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.capsulePriceInfo > p{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
