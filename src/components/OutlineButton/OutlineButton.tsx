@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./OutlineButton.module.css";
 
 type Props = {
@@ -9,10 +10,13 @@ type Props = {
 
 function OutlineButton({width, text, icon, fontSize}: Props) {
   return (
-    <button className={styles.outlineButton} style={{width, fontSize}}>
-        {icon}
+    <Link className={styles.outlineButton} 
+          target="_blank"
+          href="https://steamcommunity.com/market/listings/730/Paris%202023%20Legends%20Sticker%20Capsule" 
+          style={{width, fontSize}}>
+        <div className={styles.icon}>{icon}</div>
         <p>{text}</p>
-    </button>
+    </Link>
   )
 }
 

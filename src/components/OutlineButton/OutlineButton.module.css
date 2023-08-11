@@ -11,6 +11,24 @@
     border: 2px solid var(--blue);
     border-radius: 10px;
     padding: 12px 5px;
+    transition: border 0.4s;
+    text-decoration: none;
+}
+
+.outlineButton:hover{
+    border: 2px solid var(--blueDark60);
+}
+
+.icon{
+    transition: scale 0.4s;
+}
+
+.outlineButton:hover .icon{
+    scale: 1.2;
+}
+
+.outlineButton:hover > p{
+    font-weight: bold;
 }
 
 .outlineButton > p{
