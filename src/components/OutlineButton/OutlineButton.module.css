@@ -13,6 +13,7 @@
     padding: 12px 5px;
     transition: border 0.4s;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .outlineButton:hover{

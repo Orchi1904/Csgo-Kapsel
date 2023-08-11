@@ -1,5 +1,5 @@
-import Card from "../Card/Card";
-import styles from "./CardSection.module.css";
+import Card from "../CapsuleCard/CapsuleCard";
+import styles from "./CapsuleCardSection.module.css";
 
 let cardArr = [{
     title: "Paris 2023 Legends",

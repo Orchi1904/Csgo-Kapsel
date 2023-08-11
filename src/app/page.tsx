@@ -2,7 +2,7 @@ import { prisma } from '@/db';
 import NavHead from '@/components/NavHead/NavHead';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import InputSection from '@/components/InputSection/InputSection';
-import CardSection from '@/components/CardSection/CardSection';
+import CardSection from '@/components/CapsuleCardSection/CapsuleCardSection';
 import EndLine from '@/components/EndLine/EndLine';
 
 const getTodos = () => {

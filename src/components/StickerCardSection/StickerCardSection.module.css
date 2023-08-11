@@ -1,0 +1,12 @@
+.stickerCardSectionHead{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stickerCardSectionHeadTitle{
+    font-family: "Outfit", sans-serif;
+    color: var(--beige);
+    font-size: 20px;
+    margin: 0;
+}

@@ -1,9 +1,10 @@
 import NavHead from "@/components/NavHead/NavHead";
 import styles from "./page.module.css";
-import Card from "@/components/Card/Card";
+import Card from "@/components/CapsuleCard/CapsuleCard";
 import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
 import OutlineButton from "@/components/OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import StickerCardSection from "@/components/StickerCardSection/StickerCardSection";
 
 function Page() {
   return (
@@ -15,6 +16,8 @@ function Page() {
         <OutlineButton width="100%" icon={<ShoppingCartIcon style={{fontSize: "14px"}}/>} 
                        text="BUY ON STEAM" fontSize="12px"/>
       </div>
+      {/*Todo: Dreieck bei Sort klickbar machen, StickerCard Komponente erstellen, mobil Sticker ähnlich anordnen wie bei Steam App*/}
+      <StickerCardSection/>
     </>
   )
 }

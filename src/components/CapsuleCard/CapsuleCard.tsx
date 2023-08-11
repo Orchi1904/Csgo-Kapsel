@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation";
-import styles from "./Card.module.css";
+import styles from "./CapsuleCard.module.css";
 
 type Props = {
     title?: string,
