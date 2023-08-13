@@ -1,0 +1,7 @@
+.stickerCard{
+    background-image: url("/images/backgrounds/stickerBG.svg");
+    background-size: cover;
+    width: 30%;
+    height: 100px;
+    border-radius: 5px;
+}

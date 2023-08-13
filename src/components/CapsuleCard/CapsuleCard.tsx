@@ -12,7 +12,7 @@ type Props = {
     hoverAnimation?: boolean,
 }
 
-function Card({ title, icon, stickerValue, capsulePrice, hoverAnimation, detailPage }: Props) {
+function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, detailPage }: Props) {
     const router = useRouter();
 
     return (
@@ -45,4 +45,4 @@ function Card({ title, icon, stickerValue, capsulePrice, hoverAnimation, detailP
     )
 }
 
-export default Card
+export default CapsuleCard;

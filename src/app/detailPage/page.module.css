@@ -2,5 +2,18 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+}
+
+.stickerSectionHead{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stickerSectionHeadTitle{
+    font-family: "Outfit", sans-serif;
+    color: var(--beige);
+    font-size: 20px;
+    margin: 0;
 }

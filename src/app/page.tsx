@@ -23,7 +23,7 @@ async function Home() {
     <>
       <NavHead/>
       <HeroSection/>
-      <InputSection/>
+      <InputSection search={true} id="capsuleSort"/>
       <CardSection/>
       <EndLine bgImage='/images/backgrounds/endLineBG.svg'/>
     </>

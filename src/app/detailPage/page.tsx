@@ -1,23 +1,29 @@
 import NavHead from "@/components/NavHead/NavHead";
 import styles from "./page.module.css";
-import Card from "@/components/CapsuleCard/CapsuleCard";
+import CapsuleCard from "@/components/CapsuleCard/CapsuleCard";
 import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
 import OutlineButton from "@/components/OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StickerCardSection from "@/components/StickerCardSection/StickerCardSection";
+import StickerCard from "@/components/StickerCard/StickerCard";
+import InputSection from "@/components/InputSection/InputSection";
 
 function Page() {
   return (
     <>
       <NavHead />
-      <Card icon="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsQEl9Jg9SpIW1KgRr7OPJYzRRvozkx7-HkvDxPb_CqWdQ-sJ0xL2QrI-n0QSx-BJpNWH2II6XIFA6Yl-E_1W_kOi8gp_ovsjOyXE3uyc8pSGK6iapj-s/" />
+      <CapsuleCard icon="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsQEl9Jg9SpIW1KgRr7OPJYzRRvozkx7-HkvDxPb_CqWdQ-sJ0xL2QrI-n0QSx-BJpNWH2II6XIFA6Yl-E_1W_kOi8gp_ovsjOyXE3uyc8pSGK6iapj-s/" />
       <div className={styles.infoContainer}>
         <CapsuleInfo title="Paris 2023 Legends" stickerValue={70} capsulePrice={0.25} />
-        <OutlineButton width="100%" icon={<ShoppingCartIcon style={{fontSize: "14px"}}/>} 
-                       text="BUY ON STEAM" fontSize="12px"/>
+        <OutlineButton width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
+          text="BUY ON STEAM" fontSize="12px" />
       </div>
-      {/*Todo: Dreieck bei Sort klickbar machen, StickerCard Komponente erstellen, mobil Sticker ähnlich anordnen wie bei Steam App*/}
-      <StickerCardSection/>
+      {/*Todo: StickerCard Komponente erstellen, mobil Sticker ähnlich anordnen wie bei Steam App*/}
+      <div className={styles.stickerSectionHead}>
+        <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
+        <InputSection id="stickerSort"/>
+      </div>
+      {/*<StickerCardSection />*/}
     </>
   )
 }

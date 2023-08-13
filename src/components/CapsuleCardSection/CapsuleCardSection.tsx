@@ -1,4 +1,4 @@
-import Card from "../CapsuleCard/CapsuleCard";
+import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
 
 let cardArr = [{
@@ -60,7 +60,7 @@ function CardSection() {
     return (
         <div className={styles.cardSection}>
             {cardArr.map((card, index) => (
-                <Card key={index} title={card.title} icon={card.icon} stickerValue={card.stickerValue}
+                <CapsuleCard key={index} title={card.title} icon={card.icon} stickerValue={card.stickerValue}
                     capsulePrice={card.capsulePrice} hoverAnimation detailPage="/detailPage"/>
             ))}
         </div>

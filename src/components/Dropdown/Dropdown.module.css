@@ -2,24 +2,13 @@
     position: relative;
 }
 
-.dropdownContainer::after{
-    content: "▼";
-    font-size: 12px;
-    right: 6px;
-    top: 5px;
-    position: absolute;
-}
-
 .dropdown {
     background-color: var(--black);
     color: white;
     font-size: 12px;
     font-family: "Roboto", sans-serif;
     border: 2px solid white;
-    padding: 4px 0;
-    padding-left: 6px;
+    padding: 4px 2px;
     border-radius: 5px;
     outline: none;
-    -webkit-appearance: none;
-    appearance: none;
 }

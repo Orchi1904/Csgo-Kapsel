@@ -2,11 +2,18 @@ import Dropdown from "../Dropdown/Dropdown";
 import Search from "../Search/Search";
 import styles from "./InputSection.module.css";
 
-function InputSection() {
+type Props = {
+  search?: boolean,
+  id: string,
+}
+
+function InputSection({ search, id }: Props) {
   return (
     <div className={styles.inputSection}>
-        <Dropdown name="capsuleSort" width="100%"/>
-        <Search name="capsuleSearch"/>
+      <Dropdown name={id} width="100%" />
+      {search ?
+        <Search name={id} />
+      : ""}
     </div>
   )
 }
