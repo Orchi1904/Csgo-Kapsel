@@ -18,12 +18,14 @@ function Page() {
         <OutlineButton width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
           text="BUY ON STEAM" fontSize="12px" />
       </div>
-      {/*Todo: StickerCard Komponente erstellen, mobil Sticker ähnlich anordnen wie bei Steam App*/}
-      <div className={styles.stickerSectionHead}>
-        <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
-        <InputSection id="stickerSort"/>
+      {/*Todo: Mobil Sticker ähnlich anordnen wie bei Steam App*/}
+      <div className={styles.stickerSectionContainer}>
+        <div className={styles.stickerSectionHead}>
+          <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
+          <InputSection id="stickerSort" />
+        </div>
+        <StickerCardSection />
       </div>
-      {/*<StickerCardSection />*/}
     </>
   )
 }

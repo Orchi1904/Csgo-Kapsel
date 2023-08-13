@@ -21,11 +21,13 @@ async function Home() {
 
   return (
     <>
-      <NavHead/>
-      <HeroSection/>
-      <InputSection search={true} id="capsuleSort"/>
-      <CardSection/>
-      <EndLine bgImage='/images/backgrounds/endLineBG.svg'/>
+      <NavHead />
+      <HeroSection />
+      <div className="capsuleSectionContainer">
+        <InputSection search={true} id="capsuleSort" />
+        <CardSection />
+      </div>
+      <EndLine bgImage='/images/backgrounds/endLineBG.svg' />
     </>
   )
 }

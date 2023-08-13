@@ -5,6 +5,12 @@
     margin-bottom: 45px;
 }
 
+.stickerSectionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .stickerSectionHead{
     display: flex;
     flex-direction: column;
