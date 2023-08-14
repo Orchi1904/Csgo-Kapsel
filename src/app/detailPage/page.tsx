@@ -19,7 +19,7 @@ function Page() {
         <OutlineButton width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
           text="BUY ON STEAM" fontSize="12px" />
       </div>
-      {/*Todo: Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann*/}
+      {/*Todo: Einzel Sticker laden auf Vercel nicht + Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann*/}
       <div className={styles.stickerSectionContainer}>
         <div className={styles.stickerSectionHead}>
           <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
