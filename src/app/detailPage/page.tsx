@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StickerCardSection from "@/components/StickerCardSection/StickerCardSection";
 import StickerCard from "@/components/StickerCard/StickerCard";
 import InputSection from "@/components/InputSection/InputSection";
+import EndLine from "@/components/EndLine/EndLine";
 
 function Page() {
   return (
@@ -25,6 +26,7 @@ function Page() {
           <InputSection id="stickerSort" />
         </div>
         <StickerCardSection />
+        <EndLine bgImage=""/>  
       </div>
     </>
   )

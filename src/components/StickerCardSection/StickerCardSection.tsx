@@ -45,8 +45,8 @@ let cardArr = [{
 function StickerCardSection() {
   return (
     <div className={styles.stickerCardSection}>
-       {cardArr.map((card) => (
-        <StickerCard title={card.title} icon={card.icon} stickerPrice={card.stickerPrice}/>
+       {cardArr.map((card, index) => (
+        <StickerCard key={index} title={card.title} icon={card.icon} stickerPrice={card.stickerPrice}/>
        ))}
     </div>
   )

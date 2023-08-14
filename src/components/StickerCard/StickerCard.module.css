@@ -1,7 +1,62 @@
-.stickerCard{
+.stickerCardContainer {
+    display: flex;
+}
+
+.stickerCard {
     background-image: url("/images/backgrounds/stickerBG.svg");
     background-size: cover;
     width: 30%;
     height: 100px;
     border-radius: 5px;
+}
+
+.stickerIconContainer {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stickerIcon {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.stickerDetails {
+    padding: 10px 0;
+    margin-left: 5px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stickerTitle {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    font-size: 12px;
+    color: var(--beige);
+    /* Lines with /**//*are the alternative to overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; which adds ... if the text is too long. Problem: It somehow changed the 30/70 size, which is why I used the alternative*/
+    overflow: hidden; /**/
+    -webkit-line-clamp: 1; /**/
+    -webkit-box-orient: vertical; /**/
+    display: -webkit-box; /**/
+    white-space: normal; /**/
+    max-width: 100%;
+    width: 100%;
+}
+
+.stickerPrice {
+    width: 100%;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    text-align: end;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

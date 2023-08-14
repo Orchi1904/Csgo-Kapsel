@@ -27,7 +27,7 @@ async function Home() {
         <InputSection search={true} id="capsuleSort" />
         <CardSection />
       </div>
-      <EndLine bgImage='/images/backgrounds/endLineBG.svg' />
+      <EndLine bgImage='/images/backgrounds/endLineBlueBG.svg' />
     </>
   )
 }

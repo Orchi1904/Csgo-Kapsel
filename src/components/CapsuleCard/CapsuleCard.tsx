@@ -22,7 +22,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
             ) : ""}
 
             <div className={styles.iconContainer}>
-                <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation}/>
+                <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation} alt={title + " image"}/>
             </div>
 
             {stickerValue || capsulePrice ? (
