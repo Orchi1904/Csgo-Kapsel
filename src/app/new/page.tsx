@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from "./page.module.css";
 import Link from 'next/link';
-import { prisma } from '@/db';
 import { redirect } from 'next/navigation';
 
 const createTodo = async (data: FormData) => {
@@ -16,7 +15,7 @@ const createTodo = async (data: FormData) => {
     throw new Error("Invalid title");
   }
 
-  await prisma.todo.create({data: {title, complete: false}});
+  //await prisma.todo.create({data: {title, complete: false}});
   redirect("/");
 }
 

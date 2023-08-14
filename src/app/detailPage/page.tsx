@@ -19,7 +19,7 @@ function Page() {
         <OutlineButton width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
           text="BUY ON STEAM" fontSize="12px" />
       </div>
-      {/*Todo: Mobil Sticker ähnlich anordnen wie bei Steam App*/}
+      {/*Todo: Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann*/}
       <div className={styles.stickerSectionContainer}>
         <div className={styles.stickerSectionHead}>
           <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
