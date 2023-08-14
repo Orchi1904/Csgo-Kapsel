@@ -6,8 +6,9 @@
     background-image: url("/images/backgrounds/stickerBG.svg");
     background-size: cover;
     width: 30%;
-    height: 100px;
+    height: fit-content;
     border-radius: 5px;
+    padding: 15px 0;
 }
 
 .stickerIconContainer {

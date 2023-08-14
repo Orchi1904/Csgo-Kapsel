@@ -26,7 +26,7 @@ function Page() {
           <InputSection id="stickerSort" />
         </div>
         <StickerCardSection />
-        <EndLine bgImage=""/>  
+        <EndLine bgImage="/images/backgrounds/endLineRedBG.svg"/>  
       </div>
     </>
   )
