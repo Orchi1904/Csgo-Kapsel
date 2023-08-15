@@ -1,14 +1,16 @@
+import Link from "next/link";
 import styles from "./StickerCard.module.css";
 
 type Props = {
   title: string,
   icon: string,
+  steamLink: string,
   stickerPrice: number,
 }
 
-function StickerCard({ title, icon, stickerPrice }: Props) {
+function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
   return (
-    <div className={styles.stickerCardContainer}>
+    <Link className={styles.stickerCardContainer} href={steamLink}>
       <div className={styles.stickerCard}>
         <div className={styles.stickerIconContainer}>
           <img className={styles.stickerIcon} src={icon} alt={title + " image"} />
@@ -20,7 +22,7 @@ function StickerCard({ title, icon, stickerPrice }: Props) {
           {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}
         </p>
       </div>
-    </div>
+    </Link>
   )
 }
 
