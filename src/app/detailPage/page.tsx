@@ -5,7 +5,6 @@ import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
 import OutlineButton from "@/components/OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StickerCardSection from "@/components/StickerCardSection/StickerCardSection";
-import StickerCard from "@/components/StickerCard/StickerCard";
 import InputSection from "@/components/InputSection/InputSection";
 import EndLine from "@/components/EndLine/EndLine";
 
@@ -19,7 +18,7 @@ function Page() {
         <OutlineButton width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
           text="BUY ON STEAM" fontSize="12px" />
       </div>
-      {/*Todo: Einzel Sticker laden auf Vercel nicht + Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann*/}
+      {/*Todo: Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann*/}
       <div className={styles.stickerSectionContainer}>
         <div className={styles.stickerSectionHead}>
           <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
