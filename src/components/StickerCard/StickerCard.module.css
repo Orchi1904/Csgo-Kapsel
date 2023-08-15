@@ -3,7 +3,23 @@
     text-decoration: none;
 }
 
-.stickerCardContainer:hover .stickerIcon{
+.stickerCardContainerBorders {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.stickerCardContainerBorders2 {
+    border-image: linear-gradient(90deg, #A63A50 0%, #788aa3 100%) 30;
+    border-width: 2px;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    padding: 4px 0;
+}
+
+.stickerCardContainer:hover .stickerIcon {
     transform: scale(1.1);
 }
 
@@ -46,13 +62,19 @@
     font-family: "Outfit", sans-serif;
     font-size: 12px;
     color: var(--beige);
-    /* Lines with /**//*are the alternative to overflow:hidden; text-overflow:ellipsis;
+    /* Lines with /**/
+    /*are the alternative to overflow:hidden; text-overflow:ellipsis;
     white-space:nowrap; which adds ... if the text is too long. Problem: It somehow changed the 30/70 size, which is why I used the alternative*/
-    overflow: hidden; /**/
-    -webkit-line-clamp: 1; /**/
-    -webkit-box-orient: vertical; /**/
-    display: -webkit-box; /**/
-    white-space: normal; /**/
+    overflow: hidden;
+    /**/
+    -webkit-line-clamp: 1;
+    /**/
+    -webkit-box-orient: vertical;
+    /**/
+    display: -webkit-box;
+    /**/
+    white-space: normal;
+    /**/
     max-width: 100%;
     width: 100%;
 }

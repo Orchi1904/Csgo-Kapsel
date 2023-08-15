@@ -18,7 +18,8 @@ function Page() {
         <OutlineButton width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
           text="BUY ON STEAM" fontSize="12px" />
       </div>
-      {/*Todo: Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann*/}
+      {/*Todo: Mobiles Design abchecken auch auf eigenem Smartphone und schauen, was verbessert werden kann,
+               für Borders oder eben keine Borders bei StickerCards entscheiden*/}
       <div className={styles.stickerSectionContainer}>
         <div className={styles.stickerSectionHead}>
           <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>

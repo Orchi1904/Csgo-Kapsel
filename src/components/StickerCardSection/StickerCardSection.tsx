@@ -55,6 +55,13 @@ let cardArr = [{
 function StickerCardSection() {
   return (
     <div className={styles.stickerCardSection}>
+      <StickerCard title="Sticker | FURIA | Paris 2023" icon="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycVUhmLDtbt6iiLklli6DJd2Qau4y1zNWKlaCmZ-uGlDMHu5Nz072U9NXwi1ax_BFrYG6hOsbLJUyCkcMf/" 
+      steamLink="https://steamcommunity.com/market/listings/730/Sticker%20%7C%20FURIA%20%7C%20Paris%202023" stickerPrice={0.03} borders={true}/>
+      <StickerCard title="Sticker | FURIA | Paris 2023" icon="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycVUhmLDtbt6iiLklli6DJd2Qau4y1zNWKlaCmZ-uGlDMHu5Nz072U9NXwi1ax_BFrYG6hOsbLJUyCkcMf/" 
+      steamLink="https://steamcommunity.com/market/listings/730/Sticker%20%7C%20FURIA%20%7C%20Paris%202023" stickerPrice={0.03} borders2={true}/>
+      <StickerCard title="Sticker | FURIA | Paris 2023" icon="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycVUhmLDtbt6iiLklli6DJd2Qau4y1zNWKlaCmZ-uGlDMHu5Nz072U9NXwi1ax_BFrYG6hOsbLJUyCkcMf/" 
+      steamLink="https://steamcommunity.com/market/listings/730/Sticker%20%7C%20FURIA%20%7C%20Paris%202023" stickerPrice={0.03} borders2={true}/>
+      
       {cardArr.map((card, index) => (
         <StickerCard key={index} title={card.title} icon={card.icon} steamLink={card.steamLink}
           stickerPrice={card.stickerPrice} />

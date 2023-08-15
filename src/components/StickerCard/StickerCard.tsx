@@ -6,11 +6,15 @@ type Props = {
   icon: string,
   steamLink: string,
   stickerPrice: number,
+  borders?: boolean,
+  borders2?: boolean,
 }
 
-function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
+function StickerCard({ title, icon, steamLink, stickerPrice, borders, borders2 }: Props) {
   return (
-    <Link className={styles.stickerCardContainer} href={steamLink}>
+    <Link className={`${styles.stickerCardContainer} 
+          ${borders? styles.stickerCardContainerBorders : borders2? styles.stickerCardContainerBorders2 : ""}`} 
+          href={steamLink}>
       <div className={styles.stickerCard}>
         <div className={styles.stickerIconContainer}>
           <img className={styles.stickerIcon} src={icon} alt={title + " image"} />
