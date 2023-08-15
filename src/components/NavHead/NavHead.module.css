@@ -1,5 +1,9 @@
 .logoContainer{
-    position: relative;
     height: 70px;
-    margin-bottom: 11px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--black);
 }
