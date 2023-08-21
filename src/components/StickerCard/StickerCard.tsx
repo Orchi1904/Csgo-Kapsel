@@ -6,25 +6,23 @@ type Props = {
   icon: string,
   steamLink: string,
   stickerPrice: number,
-  borders?: boolean,
-  borders2?: boolean,
 }
 
-function StickerCard({ title, icon, steamLink, stickerPrice, borders, borders2 }: Props) {
+function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
   return (
-    <Link className={`${styles.stickerCardContainer} 
-          ${borders? styles.stickerCardContainerBorders : borders2? styles.stickerCardContainerBorders2 : ""}`} 
-          href={steamLink}>
-      <div className={styles.stickerCard}>
-        <div className={styles.stickerIconContainer}>
-          <img className={styles.stickerIcon} src={icon} alt={title + " image"} />
+    <Link className={styles.stickerCardContainerBorder} href={steamLink}>
+      <div className={styles.stickerCardContainer}>
+        <div className={styles.stickerCard}>
+          <div className={styles.stickerIconContainer}>
+            <img className={styles.stickerIcon} src={icon} alt={title + " image"} />
+          </div>
         </div>
-      </div>
-      <div className={styles.stickerDetails}>
-        <h3 className={styles.stickerTitle}>{title}</h3>
-        <p className={styles.stickerPrice}>
-          {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}
-        </p>
+        <div className={styles.stickerDetails}>
+          <h3 className={styles.stickerTitle}>{title}</h3>
+          <p className={styles.stickerPrice}>
+            {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}
+          </p>
+        </div>
       </div>
     </Link>
   )
