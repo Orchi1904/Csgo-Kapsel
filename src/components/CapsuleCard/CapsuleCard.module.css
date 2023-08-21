@@ -8,9 +8,9 @@
     cursor: pointer;
 }
 
-.card:hover .icon[data-hover-animation="true"]{
+/*.card:hover .icon[data-hover-animation="true"]{
     transform: scale(1.1);
-}
+}*/
 
 .title{
     margin: 0;

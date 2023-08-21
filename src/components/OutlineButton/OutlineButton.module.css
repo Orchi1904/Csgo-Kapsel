@@ -24,13 +24,13 @@
     transition: scale 0.4s;
 }
 
-.outlineButton:hover .icon{
+/*.outlineButton:hover .icon{
     scale: 1.2;
 }
 
 .outlineButton:hover > p{
     font-weight: bold;
-}
+}*/
 
 .outlineButton > p{
     margin: 0;

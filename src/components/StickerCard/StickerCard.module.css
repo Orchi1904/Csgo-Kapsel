@@ -14,9 +14,9 @@
     padding: 5px;
 }
 
-.stickerCardContainer:hover .stickerIcon {
+/*.stickerCardContainer:hover .stickerIcon {
     transform: scale(1.1);
-}
+}*/
 
 .stickerCard {
     background-image: url("/images/backgrounds/stickerBG.svg");
