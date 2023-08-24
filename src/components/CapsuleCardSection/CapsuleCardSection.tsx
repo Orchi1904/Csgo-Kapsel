@@ -1,5 +1,7 @@
 import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
+import getCapsules from "../../app/libs/getCapsules";
+import CapsuleInfo from "../../capsules.json";
 
 let cardArr = [{
     title: "Paris 2023 Legends",
@@ -56,12 +58,14 @@ let cardArr = [{
     capsulePrice: 0.25,
 }]
 
-function CardSection() {
+async function CardSection() {
+    const capsules = await getCapsules(CapsuleInfo.major_capsules);
+    
     return (
         <div className={styles.cardSection}>
-            {cardArr.map((card, index) => (
-                <CapsuleCard key={index} title={card.title} icon={card.icon} stickerValue={card.stickerValue}
-                    capsulePrice={card.capsulePrice} hoverAnimation detailPage="/detailPage"/>
+            {capsules.map((capsule, index) => (
+                <CapsuleCard key={index} title={capsule.title} icon={capsule.icon} stickerValue={75}
+                    capsulePrice={capsule.average_price} hoverAnimation detailPage="/detailPage"/>
             ))}
         </div>
     )
