@@ -2,6 +2,8 @@ import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
 import getCapsules from "../../app/libs/getCapsules";
 import CapsuleInfo from "../../capsules.json";
+import app from "../../firebase/config";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 let cardArr = [{
     title: "Paris 2023 Legends",
@@ -60,6 +62,13 @@ let cardArr = [{
 
 async function CardSection() {
     const capsules = await getCapsules(CapsuleInfo.major_capsules);
+
+    const db = getFirestore(app);
+    try{
+        await setDoc(doc(db, "test-collection", "1"), {text: "Servus"})
+    }catch (e){
+        console.log(e);
+    }
     
     return (
         <div className={styles.cardSection}>

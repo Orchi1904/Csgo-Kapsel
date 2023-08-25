@@ -1,4 +1,5 @@
 //Todo: Fix issue that dreamhack 2014 cant be found + check data on website + change http icon to https or it wont work
+//+ Look at Firebase Next.js Website I saved on Chrome + remove current firebase code
 import { Capsule } from "@/types";
 
 export default async function getCapsules(capsules: Capsule[]) {
