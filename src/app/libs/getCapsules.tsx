@@ -15,6 +15,7 @@ export default async function getCapsules() {
     CapsuleInfo.major_capsules.map(async (capsule) => {
         const item = itemsList[capsule.title];
 
+        //Some capsules are not listed in the response so we have to fetch from another route
         if (!item) {
             const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=${capsule.title}&icon=1`);
 
