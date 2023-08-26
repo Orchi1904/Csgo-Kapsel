@@ -61,7 +61,7 @@ let cardArr = [{
 }]
 
 async function CardSection() {
-    const capsules = await getCapsules(CapsuleInfo.major_capsules);
+    const capsules = await getCapsules();
 
     const db = getFirestore(app);
     try{
@@ -72,9 +72,9 @@ async function CardSection() {
     
     return (
         <div className={styles.cardSection}>
-            {capsules.map((capsule, index) => (
+            {cardArr.map((capsule, index) => (
                 <CapsuleCard key={index} title={capsule.title} icon={capsule.icon} stickerValue={75}
-                    capsulePrice={capsule.average_price} hoverAnimation detailPage="/detailPage"/>
+                    capsulePrice={capsule.capsulePrice} hoverAnimation detailPage="/detailPage"/>
             ))}
         </div>
     )
