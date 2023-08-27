@@ -1,7 +1,7 @@
-import { Capsule } from "@/types";
+import { Capsule, Sticker } from "@/types";
 
-export default async function getStickers(capsule: Capsule, itemsList: any) {
-    const stickerArr: any[] = [];
+export default function getStickers(capsule: Capsule, itemsList: any): Sticker[] {
+    const stickerArr: Sticker[] = [];
     
     capsule.stickers.map(async (sticker) => {
         const stickerItem = itemsList["Sticker | " + sticker];
@@ -17,8 +17,6 @@ export default async function getStickers(capsule: Capsule, itemsList: any) {
             const notListedSticker = await response.json();
             
             if(notListedSticker.success !== "false"){
-
-
                 stickerArr.push({
                     name: sticker,
                     average_price: notListedSticker.average_price ? notListedSticker.average_price : "N/A",
