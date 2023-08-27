@@ -1,14 +1,22 @@
 /*Todo: Comment out this code and use current data from firebase to display things
-        Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase
+        Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase?
 */
 
 import addData from "@/firebase/firestore/addData";
 import CapsuleInfo from "../../capsules.json";
 import getStickers from "./getStickers";
 import { CapsuleData, Sticker } from "@/types";
+import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 
-export default async function getCapsules() {
-    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/");
+export default async function getCapsules(): Promise<CapsuleData[]> {
+
+    return await getCapsulesFB();
+
+
+
+    //Leave this code allone! It will be needed to push things as long as we are not done and will later be
+    //used for updating data if needed (after 8h)
+    /*const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/");
 
     if (!response.ok) {
         throw new Error("Failed to load CSGO data");
@@ -33,11 +41,11 @@ export default async function getCapsules() {
             const notListedCapsule = await response.json();
 
             average_price = notListedCapsule.average_price ? notListedCapsule.average_price : "N/A";
-            icon = notListedCapsule.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
+            icon = "https://steamcommunity.com/economy/image/" + notListedCapsule.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
             currency = notListedCapsule.currency;
         } else {
             average_price = item.price["7_days"]?.average ? item.price["7_days"].average : "N/A";
-            icon = item.icon_url;
+            icon = "https://steamcommunity.com/economy/image/" + item.icon_url;
             currency = csgoData.currency;
         }
 
@@ -48,10 +56,11 @@ export default async function getCapsules() {
             average_price,
             icon,
             currency,
+            steam_link: `https://steamcommunity.com/market/listings/730/${capsule.title}`,
             stickers,
             last_updated: new Date().getTime()
         }
 
-        //await addData("capsules", capsule.title, capsuleData);
-    })
+        await addData("capsules", capsule.title, capsuleData);
+    })*/
 }

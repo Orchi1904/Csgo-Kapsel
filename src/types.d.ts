@@ -9,6 +9,7 @@ export type Sticker = {
     name: string,
     average_price: number | "N/A",
     currency: string,
+    steam_link: string,
     icon: string,
 }
 
@@ -17,6 +18,7 @@ export type CapsuleData = {
     average_price: number | "N/A",
     currency: string,
     icon: string,
+    steam_link: string,
     last_updated: number,
     stickers: Sticker[]
 }

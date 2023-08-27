@@ -59,12 +59,13 @@ let cardArr = [{
 
 async function CardSection() {
     const capsules = await getCapsules();
+    console.log(capsules);
     
     return (
         <div className={styles.cardSection}>
-            {cardArr.map((capsule, index) => (
-                <CapsuleCard key={index} title={capsule.title} icon={capsule.icon} stickerValue={75}
-                    capsulePrice={capsule.capsulePrice} hoverAnimation detailPage="/detailPage"/>
+            {capsules.map((capsule, index) => (
+                <CapsuleCard key={index} title={capsule.name} icon={capsule.icon} stickerValue={75}
+                    capsulePrice={capsule.average_price} hoverAnimation detailPage="/detailPage"/>
             ))}
         </div>
     )

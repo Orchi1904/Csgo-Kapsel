@@ -20,7 +20,8 @@ export default function getStickers(capsule: Capsule, itemsList: any): Sticker[]
                 stickerArr.push({
                     name: sticker,
                     average_price: notListedSticker.average_price ? notListedSticker.average_price : "N/A",
-                    icon: notListedSticker.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1),
+                    icon: "https://steamcommunity.com/economy/image/" + notListedSticker.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1),
+                    steam_link: `https://steamcommunity.com/market/listings/730/${sticker}`,
                     currency: notListedSticker.currency
                 })
             }
@@ -29,7 +30,8 @@ export default function getStickers(capsule: Capsule, itemsList: any): Sticker[]
             stickerArr.push({
                 name: sticker,
                 average_price: stickerItem.price["7_days"]?.average ? stickerItem.price["7_days"].average : "N/A",
-                icon: stickerItem.icon_url,
+                icon: "https://steamcommunity.com/economy/image/" + stickerItem.icon_url,
+                steam_link: `https://steamcommunity.com/market/listings/730/${sticker}`,
                 currency: "USD",
             })
         }

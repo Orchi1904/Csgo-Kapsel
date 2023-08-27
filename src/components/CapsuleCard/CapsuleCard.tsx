@@ -7,7 +7,7 @@ type Props = {
     title?: string,
     icon: string,
     stickerValue?: number,
-    capsulePrice?: number,
+    capsulePrice?: number | "N/A",
     detailPage?: string,
     hoverAnimation?: boolean,
 }
