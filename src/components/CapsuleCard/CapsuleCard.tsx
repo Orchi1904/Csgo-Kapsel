@@ -15,8 +15,6 @@ type Props = {
 function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, detailPage }: Props) {
     const router = useRouter();
 
-    console.log(typeof (capsulePrice));
-
     return (
         <div className={styles.card} onClick={() => { detailPage ? router.push(detailPage) : null }}>
             {title ? (

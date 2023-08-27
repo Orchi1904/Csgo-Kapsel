@@ -8,7 +8,15 @@ import StickerCardSection from "@/components/StickerCardSection/StickerCardSecti
 import InputSection from "@/components/InputSection/InputSection";
 import EndLine from "@/components/EndLine/EndLine";
 
-function Page() {
+type Props = {
+  params: {
+    id: string
+  }
+}
+
+function Page({ params: { id } }: Props) {
+  console.log(id); //Mit id Anfrage stellen und infos über einzelne Kapsel bekommen (getCapsule), siehe Vid
+
   return (
     <>
       <NavHead />

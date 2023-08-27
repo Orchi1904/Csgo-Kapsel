@@ -1,4 +1,7 @@
-/*Todo: Comment out this code and use current data from firebase to display things
+/*Todo: Calculate Sticker Value for every Capsule where there is no N/A
+        Implement getCapsule
+        Show specific data on [id] page
+        Check every Steam Link and other data
         Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase?
 */
 
