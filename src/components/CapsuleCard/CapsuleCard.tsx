@@ -15,6 +15,8 @@ type Props = {
 function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, detailPage }: Props) {
     const router = useRouter();
 
+    console.log(typeof (capsulePrice));
+
     return (
         <div className={styles.card} onClick={() => { detailPage ? router.push(detailPage) : null }}>
             {title ? (
@@ -22,7 +24,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
             ) : ""}
 
             <div className={styles.iconContainer}>
-                <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation} alt={title + " image"}/>
+                <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation} alt={title + " image"} />
             </div>
 
             {stickerValue || capsulePrice ? (
@@ -36,7 +38,12 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
                     {capsulePrice ? (
                         <div className={styles.information}>
                             <p>Capsule Price: </p>
-                            <p>{capsulePrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
+                            <p>
+                                {capsulePrice !== "N/A" ?
+                                    Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")
+                                    : "N/A"
+                                }
+                            </p>
                         </div>
                     ) : ""}
                 </div>

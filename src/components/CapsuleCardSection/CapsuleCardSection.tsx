@@ -59,7 +59,7 @@ let cardArr = [{
 
 async function CardSection() {
     const capsules = await getCapsules();
-    console.log(capsules);
+    //console.log(capsules);
     
     return (
         <div className={styles.cardSection}>

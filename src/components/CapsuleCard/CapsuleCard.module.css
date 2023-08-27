@@ -20,6 +20,7 @@
     font-family: "Outfit", sans-serif;
     color: var(--beige);
     margin-bottom: 22px;
+    text-align: center;
 }
 
 .iconContainer{
