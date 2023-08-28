@@ -1,4 +1,4 @@
-/*Todo: Calculate Sticker Value for every Capsule where there is no N/A
+/*Todo: Why are some sticker average_prices still 0?
         Implement getCapsule
         Show specific data on [id] page
         Check every Steam Link and other data
@@ -8,7 +8,7 @@
 import addData from "@/firebase/firestore/addData";
 import CapsuleInfo from "../../capsules.json";
 import getStickers from "./getStickers";
-import { CapsuleData, Sticker } from "@/types";
+import { CapsuleData, Sticker, StickerData } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 
 export default async function getCapsules(): Promise<CapsuleData[]> {
@@ -30,7 +30,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
     let average_price: number | "N/A", icon: string, currency: string;
 
-    CapsuleInfo.major_capsules.map(async (capsule) => {
+    for(const capsule of CapsuleInfo.major_capsules){
         const item = itemsList[capsule.title];
 
         //Some capsules are not listed in the response so we have to fetch from another route
@@ -52,7 +52,9 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
             currency = csgoData.currency;
         }
 
-        const stickers: Sticker[] = getStickers(capsule, itemsList);
+        const stickerData: StickerData = await getStickers(capsule, itemsList);
+
+        const stickerValue = calculateStickerValue(stickerData.containsAllStickers, stickerData.stickerArr);
 
         const capsuleData: CapsuleData = {
             name: capsule.title,
@@ -60,10 +62,33 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
             icon,
             currency,
             steam_link: `https://steamcommunity.com/market/listings/730/${capsule.title}`,
-            stickers,
+            contains_all_stickers: stickerData.containsAllStickers,
+            sticker_value: stickerValue,
+            stickers: stickerData.stickerArr,
             last_updated: new Date().getTime()
         }
 
         await addData("capsules", capsule.title, capsuleData);
-    })*/
+    }*/
+}
+
+function calculateStickerValue(containsAllStickers: boolean, stickerArr: Sticker[]): number | "N/A" {
+    if (!containsAllStickers) {
+        return "N/A";
+    }
+
+    let stickerValue: number | "N/A" = 0;
+
+    stickerArr.map((sticker) => {
+        if (sticker.average_price === "N/A") {
+            stickerValue = "N/A";
+            return;
+        }
+
+        if(stickerValue !== "N/A"){
+            stickerValue += sticker.average_price;
+        }
+    });
+
+    return stickerValue;
 }

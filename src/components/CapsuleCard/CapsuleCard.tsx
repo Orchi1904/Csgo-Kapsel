@@ -6,7 +6,7 @@ import styles from "./CapsuleCard.module.css";
 type Props = {
     title?: string,
     icon: string,
-    stickerValue?: number,
+    stickerValue?: number | "N/A",
     capsulePrice?: number | "N/A",
     detailPage?: string,
     hoverAnimation?: boolean,
