@@ -1,4 +1,6 @@
-/*Todo: Why are some sticker average_prices still 0?
+/*Todo: 
+        Add Favicon
+        Why are some sticker average_prices still 0?
         Implement getCapsule
         Show specific data on [id] page
         Check every Steam Link and other data
@@ -14,8 +16,6 @@ import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 export default async function getCapsules(): Promise<CapsuleData[]> {
 
     return await getCapsulesFB();
-
-
 
     //Leave this code allone! It will be needed to push things as long as we are not done and will later be
     //used for updating data if needed (after 8h)

@@ -60,7 +60,6 @@ let cardArr = [{
 async function CardSection() {
     const capsules = await getCapsules();
 
-    
     return (
         <div className={styles.cardSection}>
             {capsules.map((capsule, index) => (
