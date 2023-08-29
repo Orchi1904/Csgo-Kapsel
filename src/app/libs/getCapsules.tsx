@@ -1,5 +1,5 @@
 /*Todo: 
-        Add Favicon
+        Change getStickers back to like it was before, so it should first check if it finds the item and if not search on the other route
         Why are some sticker average_prices still 0?
         Implement getCapsule
         Show specific data on [id] page
