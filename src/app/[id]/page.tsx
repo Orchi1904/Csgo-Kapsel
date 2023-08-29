@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StickerCardSection from "@/components/StickerCardSection/StickerCardSection";
 import InputSection from "@/components/InputSection/InputSection";
 import EndLine from "@/components/EndLine/EndLine";
+import getCapsule from "@/firebase/firestore/getCapsule";
 
 type Props = {
   params: {
@@ -14,8 +15,8 @@ type Props = {
   }
 }
 
-function Page({ params: { id } }: Props) {
-  console.log(id); //Mit id Anfrage stellen und infos über einzelne Kapsel bekommen (getCapsule), siehe Vid
+async function Page({ params: { id } }: Props) {
+  const capsuleData = await getCapsule(id);
 
   return (
     <>

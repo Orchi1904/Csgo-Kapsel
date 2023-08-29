@@ -1,5 +1,5 @@
-/*Todo: Why are some sticker average_prices still 0?
-        Implement getCapsule
+/*Todo: Implement getCapsule
+        When scrolling on main page it also scrolls on id page -> fix this!
         Show specific data on [id] page
         Check every Steam Link and other data
         Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase?
