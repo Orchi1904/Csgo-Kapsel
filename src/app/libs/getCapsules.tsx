@@ -1,5 +1,5 @@
-/*Todo: Implement getCapsule
-        When scrolling on main page it also scrolls on id page -> fix this!
+/*Todo: Change currency sign to dollar
+        When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
         Show specific data on [id] page
         Check every Steam Link and other data
         Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase?

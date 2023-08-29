@@ -2,8 +2,8 @@ import styles from "./CapsuleInfo.module.css";
 
 type Props = {
     title: string,
-    stickerValue: number,
-    capsulePrice: number,
+    stickerValue: number | "N/A",
+    capsulePrice: number | "N/A",
 }
 
 function CapsuleInfo({ title, stickerValue, capsulePrice }: Props) {
