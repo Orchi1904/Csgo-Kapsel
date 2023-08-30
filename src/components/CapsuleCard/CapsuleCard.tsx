@@ -30,7 +30,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
                     {stickerValue ? (
                         <div className={styles.information}>
                             <p>Sticker Value: </p>
-                            <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
+                            <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
                         </div>
                     ) : ""}
                     {capsulePrice ? (
@@ -38,7 +38,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
                             <p>Capsule Price: </p>
                             <p>
                                 {capsulePrice !== "N/A" ?
-                                    Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")
+                                    Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")
                                     : "N/A"
                                 }
                             </p>

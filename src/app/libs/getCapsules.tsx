@@ -1,6 +1,5 @@
 /*Todo: When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
-        Check every Steam Link and other data
-        Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase?
+        Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase!
         Remove capsule and sticker test arrays from code
 */
 
