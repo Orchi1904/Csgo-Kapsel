@@ -20,7 +20,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
         <div className={styles.stickerDetails}>
           <h3 className={styles.stickerTitle}>{title}</h3>
           <p className={styles.stickerPrice}>
-            {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}
+            {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}
           </p>
         </div>
       </div>
