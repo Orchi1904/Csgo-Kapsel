@@ -33,7 +33,7 @@ async function Page({ params: { id } }: Props) {
           <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
           <InputSection id="stickerSort" />
         </div>
-        <StickerCardSection />
+        <StickerCardSection stickerArr={capsuleData.stickers}/>
         <EndLine bgImage="/images/backgrounds/endLineRedBG.svg" />
       </div>
     </>

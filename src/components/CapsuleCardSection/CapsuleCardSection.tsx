@@ -62,8 +62,8 @@ async function CardSection() {
 
     return (
         <div className={styles.cardSection}>
-            {capsules.map((capsule, index) => (
-                <CapsuleCard key={index} title={capsule.name} icon={capsule.icon} stickerValue={capsule.sticker_value}
+            {capsules.map((capsule) => (
+                <CapsuleCard key={capsule.name} title={capsule.name} icon={capsule.icon} stickerValue={capsule.sticker_value}
                     capsulePrice={capsule.average_price} hoverAnimation detailPage={capsule.name}/>
             ))}
         </div>

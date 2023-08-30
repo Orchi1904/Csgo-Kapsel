@@ -5,7 +5,7 @@ type Props = {
   title: string,
   icon: string,
   steamLink: string,
-  stickerPrice: number,
+  stickerPrice: number | "N/A",
 }
 
 function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {

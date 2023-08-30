@@ -1,3 +1,4 @@
+import { Sticker } from "@/types";
 import StickerCard from "../StickerCard/StickerCard";
 import styles from "./StickerCardSection.module.css";
 
@@ -52,12 +53,16 @@ let cardArr = [{
   stickerPrice: 0.82,
 }]
 
-function StickerCardSection() {
+type Props = {
+  stickerArr: Sticker[],
+}
+
+function StickerCardSection({stickerArr}: Props) {
   return (
     <div className={styles.stickerCardSection}>
-      {cardArr.map((card, index) => (
-        <StickerCard key={index} title={card.title} icon={card.icon} steamLink={card.steamLink}
-          stickerPrice={card.stickerPrice} />
+      {stickerArr.map((sticker) => (
+        <StickerCard key={sticker.name} title={sticker.name} icon={sticker.icon} steamLink={sticker.steam_link}
+          stickerPrice={sticker.average_price} />
       ))}
     </div>
   )

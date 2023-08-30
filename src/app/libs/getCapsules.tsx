@@ -2,6 +2,7 @@
         Show specific data on [id] page
         Check every Steam Link and other data
         Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase?
+        Remove capsule and sticker test arrays from code
 */
 
 import addData from "@/firebase/firestore/addData";
