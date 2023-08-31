@@ -1,5 +1,7 @@
 /*Todo: When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
         -> Check if there are answers on StackOverflow
+        Check if newest data will be instantly shown on website when older than 8h
+        Footer als Aufgabe in Jira hinzufügen
 */
 
 import updateData from "@/firebase/firestore/updateData";
