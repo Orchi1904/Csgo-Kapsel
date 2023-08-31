@@ -1,6 +1,5 @@
 /*Todo: When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
         -> Check if there are answers on StackOverflow
-        Remove capsule and sticker test arrays from code
 */
 
 import updateData from "@/firebase/firestore/updateData";
