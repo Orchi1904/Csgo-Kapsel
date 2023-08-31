@@ -1,21 +1,34 @@
 /*Todo: When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
-        Change code used to add data on firebase so it can be used for updating data -> Remove capsules.json, only use firebase!
+        -> Check if there are answers on StackOverflow
         Remove capsule and sticker test arrays from code
 */
 
-import addData from "@/firebase/firestore/addData";
-import CapsuleInfo from "../../capsules.json";
+import updateData from "@/firebase/firestore/updateData";
 import getStickers from "./getStickers";
+import Capsules from "../../capsules.json";
 import { CapsuleData, Sticker, StickerData } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 
 export default async function getCapsules(): Promise<CapsuleData[]> {
 
-    return await getCapsulesFB();
+    const capsuleDataFB: CapsuleData[] = await getCapsulesFB();
+    const lastUpdatedTimestampHours = capsuleDataFB[0].last_updated / 1000 / 3600;
+    const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
+    const timeStampHoursDiff = currentTimeStampHours - lastUpdatedTimestampHours;
 
-    //Leave this code allone! It will be needed to push things as long as we are not done and will later be
-    //used for updating data if needed (after 8h)
-    /*const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/");
+    /*Fetch new data if data is older than 8 hours, because 
+      csgobackpack api updates every 8 hours*/
+    if (timeStampHoursDiff > 8) {
+        await updateCapsulesFB();
+        return await getCapsulesFB();
+    } else {
+        return capsuleDataFB;
+    }
+}
+
+
+async function updateCapsulesFB() {
+    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/");
 
     if (!response.ok) {
         throw new Error("Failed to load CSGO data");
@@ -26,7 +39,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
     let average_price: number | "N/A", icon: string, currency: string;
 
-    for(const capsule of CapsuleInfo.major_capsules){
+    for (const capsule of Capsules.major_capsules) {
         const item = itemsList[capsule.title];
 
         //Some capsules are not listed in the response so we have to fetch from another route
@@ -63,10 +76,10 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
             stickers: stickerData.stickerArr,
             last_updated: new Date().getTime()
         }
-
-        await addData("capsules", capsule.title, capsuleData);
-    }*/
+        await updateData("capsules", capsule.title, capsuleData);
+    }
 }
+
 
 function calculateStickerValue(containsAllStickers: boolean, stickerArr: Sticker[]): number | "N/A" {
     if (!containsAllStickers) {
@@ -81,7 +94,7 @@ function calculateStickerValue(containsAllStickers: boolean, stickerArr: Sticker
             return;
         }
 
-        if(stickerValue !== "N/A"){
+        if (stickerValue !== "N/A") {
             stickerValue += sticker.average_price;
         }
     });
