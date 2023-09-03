@@ -1,5 +1,7 @@
 /*Todo: When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
         -> Check if there are answers on StackOverflow
+        Change Euro to Dollar on start screen
+        Change every price to number
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Check if newest data will be instantly shown on website when older than 8h
