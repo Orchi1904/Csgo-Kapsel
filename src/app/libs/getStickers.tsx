@@ -20,7 +20,7 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
             if (differentRouteSticker.success === true) {
                 stickerArr.push({
                     name: sticker,
-                    average_price: differentRouteSticker.average_price !== 0 ? parseFloat(differentRouteSticker.average_price) : "N/A",
+                    average_price: differentRouteSticker.average_price !== 0 ? Number(differentRouteSticker.average_price) : "N/A",
                     icon: "https://steamcommunity.com/economy/image/" + differentRouteSticker.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1),
                     steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker}`,
                     currency: differentRouteSticker.currency
@@ -29,7 +29,7 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
                 containsAllStickers = false;
             }
         } else {
-            let averagePrice: number | "N/A" = "N/A";
+            let averagePrice: number = 0;
 
             //Have to do that because sometimes there is only 30_days available
             if (stickerItem.price["24_hours"]) {
@@ -42,7 +42,7 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
 
             stickerArr.push({
                 name: sticker,
-                average_price: averagePrice !== 0 ? averagePrice : "N/A",
+                average_price: averagePrice !== 0 ? Number(averagePrice) : "N/A",
                 icon: "https://steamcommunity.com/economy/image/" + stickerItem.icon_url,
                 steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker}`,
                 currency: "USD",

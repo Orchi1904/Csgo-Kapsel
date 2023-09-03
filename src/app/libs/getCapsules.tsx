@@ -1,7 +1,5 @@
 /*Todo: When scrolling on main page it also scrolls on id page -> fix this! -> BUT HOWWWW????
         -> Check if there are answers on StackOverflow
-        Change Euro to Dollar on start screen
-        Change every price to number
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Check if newest data will be instantly shown on website when older than 8h
@@ -28,7 +26,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
         return await getCapsulesFB();
     } else {*/
         return capsuleDataFB;
-    /*}*/
+    //}
 }
 
 
@@ -57,11 +55,11 @@ async function updateCapsulesFB() {
 
             const notListedCapsule = await response.json();
 
-            average_price = notListedCapsule.average_price ? notListedCapsule.average_price : "N/A";
+            average_price = notListedCapsule.average_price ? Number(notListedCapsule.average_price) : "N/A";
             icon = "https://steamcommunity.com/economy/image/" + notListedCapsule.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
             currency = notListedCapsule.currency;
         } else {
-            average_price = item.price["7_days"]?.average ? item.price["7_days"].average : "N/A";
+            average_price = item.price["7_days"]?.average ? Number(item.price["7_days"].average) : "N/A";
             icon = "https://steamcommunity.com/economy/image/" + item.icon_url;
             currency = csgoData.currency;
         }
