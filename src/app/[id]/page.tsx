@@ -21,7 +21,7 @@ type Props = {
 
 function Page({ params: { id } }: Props) {
   const [capsuleData, setCapsuleData] = useState<CapsuleData>();
-  const [fetchError, setFetchError] = useState();
+  const [fetchError, setFetchError] = useState<string>();
 
   useEffect(() => {
     const getCapsuleData = async () => {
