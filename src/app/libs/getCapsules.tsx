@@ -2,6 +2,8 @@
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Check if newest data will be instantly shown on website when older than 8h
+        Fix Information text for apple watch
+        Zu Jira hinzufügen: Evtl Price/Sticker Value ratio
 */
 
 import updateData from "@/firebase/firestore/updateData";

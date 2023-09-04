@@ -1,18 +1,17 @@
-.card{
-    height: fit-content;
+.card {
+    height: 100%;
     background-image: url("/images/backgrounds/capsuleBG.svg");
     background-size: cover;
     border-radius: 5px;
     padding: 16px 7%;
     box-sizing: border-box;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/*.card:hover .icon[data-hover-animation="true"]{
-    transform: scale(1.1);
-}*/
-
-.title{
+.title {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -23,17 +22,17 @@
     text-align: center;
 }
 
-.iconContainer{
+.iconContainer {
     display: flex;
     justify-content: center;
 }
 
-.icon{
+.icon {
     width: 100%;
-    transition: transform 0.5s; 
+    transition: transform 0.5s;
 }
 
-.informationContainer{
+.informationContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,15 +40,21 @@
     margin-top: 6px;
 }
 
-.information{
+.information {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.information > p{
+.information>p {
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     margin: 0;
     color: white;
+}
+
+@media (min-width: 1024px) {
+    .card:hover .icon[data-hover-animation="true"] {
+        transform: scale(1.1);
+    }
 }

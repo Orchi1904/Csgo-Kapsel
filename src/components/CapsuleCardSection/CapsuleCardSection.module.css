@@ -3,3 +3,16 @@
     flex-direction: column;
     gap: 20px;
 }
+
+@media (min-width: 640px){
+    .cardSection{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 1875px){
+    .cardSection{
+        gap: 30px;
+    }
+}

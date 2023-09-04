@@ -12,7 +12,7 @@ function InputSection({ search, id }: Props) {
     <div className={styles.inputSection}>
       <Dropdown name={id} width="100%" />
       {search ?
-        <Search name={id} />
+        <Search name={id} width="100%"/>
       : ""}
     </div>
   )

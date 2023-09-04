@@ -21,31 +21,33 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
                 <h3 className={styles.title}>{title}</h3>
             ) : ""}
 
-            <div className={styles.iconContainer}>
-                <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation} alt={title + " image"} />
-            </div>
-
-            {stickerValue || capsulePrice ? (
-                <div className={styles.informationContainer}>
-                    {stickerValue ? (
-                        <div className={styles.information}>
-                            <p>Sticker Value: </p>
-                            <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
-                        </div>
-                    ) : ""}
-                    {capsulePrice ? (
-                        <div className={styles.information}>
-                            <p>Capsule Price: </p>
-                            <p>
-                                {capsulePrice !== "N/A" ?
-                                    Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")
-                                    : "N/A"
-                                }
-                            </p>
-                        </div>
-                    ) : ""}
+            <div className={styles.iconAndInformationContainer}>
+                <div className={styles.iconContainer}>
+                    <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation} alt={title + " image"} />
                 </div>
-            ) : ""}
+
+                {stickerValue || capsulePrice ? (
+                    <div className={styles.informationContainer}>
+                        {stickerValue ? (
+                            <div className={styles.information}>
+                                <p>Sticker Value: </p>
+                                <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
+                            </div>
+                        ) : ""}
+                        {capsulePrice ? (
+                            <div className={styles.information}>
+                                <p>Capsule Price: </p>
+                                <p>
+                                    {capsulePrice !== "N/A" ?
+                                        Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")
+                                        : "N/A"
+                                    }
+                                </p>
+                            </div>
+                        ) : ""}
+                    </div>
+                ) : ""}
+            </div>
         </div>
     )
 }
