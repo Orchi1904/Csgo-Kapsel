@@ -23,3 +23,9 @@
     font-size: 15px;
     padding-right: 2px;
 }
+
+@media (min-height: 800px){
+    .search{
+        font-size: 14px;
+    }
+}

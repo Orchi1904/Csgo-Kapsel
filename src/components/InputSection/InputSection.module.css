@@ -3,3 +3,16 @@
     flex-direction: column;
     gap: 10px;
 }
+
+@media (min-width: 1024px){
+    .inputSection{
+        flex-direction: row-reverse;
+        gap: 50%;
+    }
+}
+
+@media (min-height: 800px){
+    .inputSection{
+        height: 35px;
+    }
+}
