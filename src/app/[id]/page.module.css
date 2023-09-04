@@ -27,3 +27,42 @@
 .errorText{
     text-align: center;
 }
+
+@media (min-width: 768px){
+    .capsuleSectionContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .capsuleCardContainer{
+        width: 45%;
+        box-sizing: border-box;
+    }
+
+    .infoContainer{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        max-width: 800px;
+        margin-bottom: 0;
+    }
+
+    .outlineButtonContainer{
+        width: 50%;
+        align-self: self-end;
+    }
+}
+
+@media (min-width: 1024px){
+    .infoContainer{
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1280px){
+    .infoContainer{
+        gap: 80px;
+    }
+}

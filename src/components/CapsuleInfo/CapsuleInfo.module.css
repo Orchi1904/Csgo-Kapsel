@@ -26,3 +26,33 @@
     font-family: "Roboto", sans-serif;
     font-size: 14px;
 }
+
+@media (min-width: 1024px){
+    .title{
+        margin-bottom: 40px;
+        font-size: 26px;
+    }
+
+    .capsulePriceInfoContainer{
+        gap: 10px;
+    }
+
+    .capsulePriceInfo > p{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1280px){
+    .title{
+        margin-bottom: 80px;
+        font-size: 28px;
+    }
+
+    .capsulePriceInfoContainer{
+        gap: 15px;
+    }
+
+    .capsulePriceInfo > p{
+        font-size: 20px;
+    }
+}

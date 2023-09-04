@@ -41,12 +41,18 @@ function Page({ params: { id } }: Props) {
       <NavHead />
       {capsuleData ?
         <>
-          <CapsuleCard icon={capsuleData.icon} />
-          <div className={styles.infoContainer}>
-            <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}
-              capsulePrice={capsuleData.average_price} />
-            <OutlineButton href={capsuleData.steam_link} width="100%" icon={<ShoppingCartIcon style={{ fontSize: "14px" }} />}
-              text="BUY ON STEAM" fontSize="12px" />
+          <div className={styles.capsuleSectionContainer}>
+            <div className={styles.capsuleCardContainer}>
+              <CapsuleCard icon={capsuleData.icon} />
+            </div>
+            <div className={styles.infoContainer}>
+              <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}
+                capsulePrice={capsuleData.average_price} />
+              <div className={styles.outlineButtonContainer}>
+                <OutlineButton href={capsuleData.steam_link} width="100%" icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
+                  text="BUY ON STEAM" fontSize="14px" />
+              </div>
+            </div>
           </div>
           <div className={styles.stickerSectionContainer}>
             <div className={styles.stickerSectionHead}>

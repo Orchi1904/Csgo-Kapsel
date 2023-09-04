@@ -5,10 +5,13 @@
     border-radius: 5px;
     padding: 16px 7%;
     box-sizing: border-box;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.card:hover .icon[data-hover-animation="true"] {
+    cursor: pointer;
 }
 
 .title {

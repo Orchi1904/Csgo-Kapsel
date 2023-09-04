@@ -1,4 +1,4 @@
-.outlineButton{
+.outlineButton {
     color: var(--beige);
     background-color: transparent;
     border: none;
@@ -16,22 +16,24 @@
     box-sizing: border-box;
 }
 
-.outlineButton:hover{
+.outlineButton:hover {
     border: 2px solid var(--blueDark60);
 }
 
-.icon{
+.icon {
     transition: scale 0.4s;
 }
 
-/*.outlineButton:hover .icon{
-    scale: 1.2;
+.outlineButton>p {
+    margin: 0;
 }
 
-.outlineButton:hover > p{
-    font-weight: bold;
-}*/
+@media (min-width: 1024px) {
+    .outlineButton:hover .icon {
+        scale: 1.2;
+    }
 
-.outlineButton > p{
-    margin: 0;
+    .outlineButton:hover>p {
+        font-weight: bold;
+    }
 }
