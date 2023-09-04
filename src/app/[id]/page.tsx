@@ -58,7 +58,9 @@ function Page({ params: { id } }: Props) {
           </div>
         </>
         :
-        <h1>{fetchError}</h1>
+        <h1 className={styles.errorText}>
+          {fetchError}
+        </h1>
       }
     </>
   )

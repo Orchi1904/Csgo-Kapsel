@@ -23,3 +23,7 @@
     font-size: 20px;
     margin: 0;
 }
+
+.errorText{
+    text-align: center;
+}
