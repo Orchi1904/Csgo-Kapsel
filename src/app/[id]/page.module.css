@@ -20,7 +20,7 @@
 .stickerSectionHeadTitle{
     font-family: "Outfit", sans-serif;
     color: var(--beige);
-    font-size: 20px;
+    font-size: 24px;
     margin: 0;
 }
 
@@ -59,10 +59,23 @@
     .infoContainer{
         gap: 40px;
     }
+
+    .stickerSectionHead{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .stickerSectionHeadTitle{
+        font-size: 28px;
+    }
 }
 
 @media (min-width: 1280px){
     .infoContainer{
         gap: 80px;
+    }
+
+    .stickerSectionHeadTitle{
+        font-size: 30px;
     }
 }
