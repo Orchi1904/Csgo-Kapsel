@@ -4,20 +4,16 @@
     border-radius: 5px;
     border: double 2px transparent;
     background-image: linear-gradient(var(--black), var(--black)),
-    linear-gradient(90deg, #A63A50, #788aa3);
+        linear-gradient(90deg, #A63A50, #788aa3);
     background-origin: border-box;
     background-clip: content-box, border-box;
 }
 
-.stickerCardContainer{
+.stickerCardContainer {
     display: flex;
     padding: 5px;
     width: 100%;
 }
-
-/*.stickerCardContainer:hover .stickerIcon {
-    transform: scale(1.1);
-}*/
 
 .stickerCard {
     background-image: url("/images/backgrounds/stickerBG.svg");
@@ -85,4 +81,59 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/*CSS used for Sticker Cards on wider screens*/
+@media (min-width: 768px) {
+    .stickerCardWide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 7%;
+        background-image: url("/images/backgrounds/stickerBG.svg");
+        background-size: cover;
+        border-radius: 5px;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .stickerTitleWide {
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        color: var(--beige);
+        margin: 0;
+        text-align: center;
+    }
+
+    .stickerIconAndInformationContainerWide {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stickerIconContainerWide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .stickerIconWide {
+        width: 100%;
+    }
+
+    .stickerPriceWide {
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .stickerPriceWide>p {
+        margin: 0;
+    }
+
+    .steamButtonContainer {
+        display: flex;
+        justify-content: center;
+    }
 }
