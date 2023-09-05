@@ -1,5 +1,4 @@
-/*Todo: 
-        Continue responsiveness with sticker detail page, starting with stickers headline (make it bigger like the other headline too)
+/*Todo: Implement sorting -> Maybe new Component for Input and Cards -> Remove async from cards and use useEffect and add loading there
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Check if newest data will be instantly shown on website when older than 8h
