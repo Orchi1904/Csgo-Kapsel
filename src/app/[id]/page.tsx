@@ -19,6 +19,15 @@ type Props = {
   }
 }
 
+const dropdownValues = [
+  "Price ASC",
+  "Price DESC",
+  "Name ASC",
+  "Name DESC",
+  "Rarity ASC",
+  "Rarity DESC"
+]
+
 function Page({ params: { id } }: Props) {
   const [capsuleData, setCapsuleData] = useState<CapsuleData>();
   const [fetchError, setFetchError] = useState<string>();
@@ -57,7 +66,7 @@ function Page({ params: { id } }: Props) {
           <div className={styles.stickerSectionContainer}>
             <div className={styles.stickerSectionHead}>
               <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
-              <InputSection id="stickerSort" />
+              <InputSection id="stickerSort" dropdownValues={dropdownValues}/>
             </div>
             <StickerCardSection stickerArr={capsuleData.stickers} />
             <EndLine bgImage="/images/backgrounds/endLineRedBG.svg" />
