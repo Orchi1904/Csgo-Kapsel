@@ -10,7 +10,7 @@
     justify-content: space-between;
 }
 
-.card:hover .icon[data-hover-animation="true"] {
+.card[data-hover-animation="true"] {
     cursor: pointer;
 }
 
@@ -57,7 +57,7 @@
 }
 
 @media (min-width: 1024px) {
-    .card:hover .icon[data-hover-animation="true"] {
+    .card[data-hover-animation="true"]:hover .icon {
         transform: scale(1.1);
     }
 }

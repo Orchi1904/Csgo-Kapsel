@@ -16,14 +16,15 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, hoverAnimation, 
     const router = useRouter();
 
     return (
-        <div className={styles.card} onClick={() => { detailPage ? router.push(detailPage) : null }}>
+        <div className={styles.card} onClick={() => { detailPage ? router.push(detailPage) : null }}
+            data-hover-animation={hoverAnimation}>
             {title ? (
                 <h3 className={styles.title}>{title}</h3>
             ) : ""}
 
             <div className={styles.iconAndInformationContainer}>
                 <div className={styles.iconContainer}>
-                    <img className={styles.icon} src={icon} data-hover-animation={hoverAnimation} alt={title + " image"} />
+                    <img className={styles.icon} src={icon} alt={title + " image"} />
                 </div>
 
                 {stickerValue || capsulePrice ? (
