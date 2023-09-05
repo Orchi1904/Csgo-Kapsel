@@ -55,7 +55,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
               <p>{stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
             </div>
             <div className={styles.steamButtonContainer}>
-              <OutlineButton text="BUY ON STEAM" href={steamLink} fontSize="12px"
+              <OutlineButton text="BUY ON STEAM" href={steamLink} fontSize="14px"
                 icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
                 width="100%" />
             </div>
