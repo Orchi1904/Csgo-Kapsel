@@ -18,7 +18,6 @@ function CapsuleWrapper({ search, inputId, dropdownValues }: Props) {
 
     return (
         <div className={styles.capsuleCardSection}>
-            <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
             <InputSection search={search} id={inputId} dropdownValues={dropdownValues}
                 setSorting={setSorting} />
             <CapsuleCardSection sorting={sorting} />

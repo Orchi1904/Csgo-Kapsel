@@ -3,3 +3,33 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.stickerSectionHead{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stickerSectionHeadTitle{
+    font-family: "Outfit", sans-serif;
+    color: var(--beige);
+    font-size: 24px;
+    margin: 0;
+}
+
+@media (min-width: 1024px){
+    .stickerSectionHead{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .stickerSectionHeadTitle{
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1280px){
+    .stickerSectionHeadTitle{
+        font-size: 30px;
+    }
+}
