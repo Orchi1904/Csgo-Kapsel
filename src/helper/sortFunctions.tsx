@@ -1,7 +1,7 @@
 import { CapsuleData } from "@/types";
 
 const sortFunctions = {
-    "": (a: any, b:any) => 0,
+    "default": (a: any, b:any) => 0,
     "Capsule Price ASC": (a: CapsuleData, b: CapsuleData) =>
         sortNAToEnd(Number(a.average_price), Number(b.average_price)),
     "Capsule Price DESC": (a: CapsuleData, b: CapsuleData) =>
@@ -17,11 +17,24 @@ const sortFunctions = {
 }
 
 const sortNAToEnd = (aPrice: number | "N/A", bPrice: number | "N/A") => {
-    if(aPrice === "N/A" && bPrice !== "N/A") return 1;
-    if(aPrice !== "N/A" && bPrice === "N/A") return -1;
-    if(aPrice === "N/A" && bPrice === "N/A") return 0;
+    let result = -5;
+    
+    console.log("Erstes: " + aPrice);
+    console.log("Zweites: " + bPrice);
 
-    return Number(aPrice) - Number(bPrice);
+    if(aPrice === "N/A" && bPrice !== "N/A") result = 1; //eig return
+    if(aPrice !== "N/A" && bPrice === "N/A") result = -1;
+    if(aPrice === "N/A" && bPrice === "N/A") result = 0;
+
+    console.log(result)
+
+    if(result === -5){
+        result = Number(aPrice) - Number(bPrice);
+    }
+
+    console.log(result);
+
+    return result;
 }
 
 export default sortFunctions;

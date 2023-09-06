@@ -22,7 +22,7 @@ function CapsuleCardSection({ sorting }: Props) {
     }, []);
 
     const sortedCapsules = capsules ? [...capsules].sort(
-        sortFunctions[sorting] || ((a,b) => 0)
+        sortFunctions[sorting] || sortFunctions["default"]
     ) : [];
 
     return (

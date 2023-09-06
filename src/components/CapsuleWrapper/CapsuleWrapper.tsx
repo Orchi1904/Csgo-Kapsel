@@ -14,11 +14,7 @@ type Props = {
 }
 
 function CapsuleWrapper({ search, inputId, dropdownValues }: Props) {
-    const [sorting, setSorting] = useState<keyof typeof sortFunctions>("");
-
-    useEffect(() => {
-        console.log(sorting);
-    }, [sorting]);
+    const [sorting, setSorting] = useState<keyof typeof sortFunctions>("default");
 
     return (
         <div className={styles.capsuleCardSection}>
