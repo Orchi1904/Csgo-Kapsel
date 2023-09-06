@@ -1,18 +1,40 @@
 import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
 import getCapsules from "../../app/libs/getCapsules";
+import { useEffect, useState } from "react";
+import { CapsuleData } from "@/types";
+import sortFunctions from "@/helper/sortFunctions";
 
-async function CardSection() {
-    const capsules = await getCapsules();
+type Props = {
+    sorting: keyof typeof sortFunctions,
+}
+
+function CapsuleCardSection({ sorting }: Props) {
+    const [capsules, setCapsules] = useState<CapsuleData[]>();
+
+    useEffect(() => {
+        const fetchCapsules = async () => {
+            const capsules = await getCapsules();
+            setCapsules(capsules);
+        }
+
+        fetchCapsules();
+    }, []);
+
+    const sortedCapsules = capsules ? [...capsules].sort(
+        sortFunctions[sorting] || ((a,b) => 0)
+    ) : [];
 
     return (
         <div className={styles.cardSection}>
-            {capsules.map((capsule) => (
-                <CapsuleCard key={capsule.name} title={capsule.name} icon={capsule.icon} stickerValue={capsule.sticker_value}
-                    capsulePrice={capsule.average_price} hoverAnimation detailPage={capsule.name}/>
-            ))}
+            {sortedCapsules &&
+                sortedCapsules.map((capsule) => (
+                    <CapsuleCard key={capsule.name} title={capsule.name} icon={capsule.icon} stickerValue={capsule.sticker_value}
+                        capsulePrice={capsule.average_price} hoverAnimation detailPage={capsule.name} />
+                ))
+            }
         </div>
     )
 }
 
-export default CardSection
+export default CapsuleCardSection;

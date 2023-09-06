@@ -1,8 +1,7 @@
 import NavHead from '@/components/NavHead/NavHead';
 import HeroSection from '@/components/HeroSection/HeroSection';
-import InputSection from '@/components/InputSection/InputSection';
-import CardSection from '@/components/CapsuleCardSection/CapsuleCardSection';
 import EndLine from '@/components/EndLine/EndLine';
+import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 
 const dropdownValues = [
   "Capsule Price ASC",
@@ -19,10 +18,7 @@ function Home() {
     <>
       <NavHead />
       <HeroSection />
-      <div className="capsuleSectionContainer">
-        <InputSection search={true} id="capsuleSort" dropdownValues={dropdownValues} />
-        <CardSection />
-      </div>
+      <CapsuleWrapper search={true} inputId='capsuleSort' dropdownValues={dropdownValues} />
       <EndLine bgImage='/images/backgrounds/endLineBlueBG.svg' />
     </>
   )
