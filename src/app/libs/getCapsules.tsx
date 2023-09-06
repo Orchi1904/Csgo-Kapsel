@@ -1,5 +1,4 @@
-/*Todo: Fix Sorting on Capsule Cards
-        Implement Loading for Capsule Cards
+/*Todo: Implement Loading for Capsule Cards
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Check if newest data will be instantly shown on website when older than 8h
