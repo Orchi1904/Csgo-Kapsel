@@ -12,6 +12,7 @@ import EndLine from "@/components/EndLine/EndLine";
 import getCapsule from "@/firebase/firestore/getCapsule";
 import { useEffect, useState } from "react";
 import { CapsuleData } from "@/types";
+import sortFunctions from "@/helper/sortFunctions";
 
 type Props = {
   params: {
@@ -31,6 +32,7 @@ const dropdownValues = [
 function Page({ params: { id } }: Props) {
   const [capsuleData, setCapsuleData] = useState<CapsuleData>();
   const [fetchError, setFetchError] = useState<string>();
+  const [sorting, setSorting] = useState<keyof typeof sortFunctions>("");
 
   useEffect(() => {
     const getCapsuleData = async () => {
@@ -66,7 +68,7 @@ function Page({ params: { id } }: Props) {
           <div className={styles.stickerSectionContainer}>
             <div className={styles.stickerSectionHead}>
               <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
-              <InputSection id="stickerSort" dropdownValues={dropdownValues}/>
+              <InputSection id="stickerSort" dropdownValues={dropdownValues} setSorting={setSorting}/>
             </div>
             <StickerCardSection stickerArr={capsuleData.stickers} />
             <EndLine bgImage="/images/backgrounds/endLineRedBG.svg" />
