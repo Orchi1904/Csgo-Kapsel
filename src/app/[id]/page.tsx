@@ -32,7 +32,7 @@ const dropdownValues = [
 function Page({ params: { id } }: Props) {
   const [capsuleData, setCapsuleData] = useState<CapsuleData>();
   const [fetchError, setFetchError] = useState<string>();
-  const [sorting, setSorting] = useState<keyof typeof sortFunctions>("");
+  const [sorting, setSorting] = useState<keyof typeof sortFunctions>("default");
 
   useEffect(() => {
     const getCapsuleData = async () => {
