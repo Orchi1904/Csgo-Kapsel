@@ -3,10 +3,10 @@ import styles from "./CapsuleCardSection.module.css";
 import getCapsules from "../../app/libs/getCapsules";
 import { useEffect, useState } from "react";
 import { CapsuleData } from "@/types";
-import sortFunctions from "@/helper/sortFunctions";
+import { capsuleSortFunctions } from "@/helper/sortFunctions";
 
 type Props = {
-    sorting: keyof typeof sortFunctions,
+    sorting: keyof typeof capsuleSortFunctions,
 }
 
 function CapsuleCardSection({ sorting }: Props) {
@@ -22,7 +22,7 @@ function CapsuleCardSection({ sorting }: Props) {
     }, []);
 
     const sortedCapsules = capsules ? [...capsules].sort(
-        sortFunctions[sorting] || sortFunctions["default"]
+        capsuleSortFunctions[sorting] || capsuleSortFunctions["default"]
     ) : [];
 
     return (

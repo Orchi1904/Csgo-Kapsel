@@ -1,11 +1,11 @@
-import sortFunctions from "@/helper/sortFunctions";
+import { capsuleSortFunctions, stickerSortFunctions } from "@/helper/sortFunctions";
 import styles from "./Dropdown.module.css";
 
 type Props = {
   name: string,
   width: string,
   dropdownValues: string[],
-  setSorting: (sorting: keyof typeof sortFunctions) => void
+  setSorting: (sorting: keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions) => void
 }
 
 function Dropdown({ name, width, dropdownValues, setSorting }: Props) {
@@ -15,7 +15,8 @@ function Dropdown({ name, width, dropdownValues, setSorting }: Props) {
 
       <select className={styles.dropdown} name={name} id={name}
         style={{ width: `${width}` }} defaultValue="Sort"
-        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => { setSorting(e.target.value as keyof typeof sortFunctions) }}
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => 
+          { setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions) }}
       >
         <option value="Sort" disabled hidden>Sort</option>
         {dropdownValues.map((value, index) => (

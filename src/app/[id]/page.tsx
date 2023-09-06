@@ -6,13 +6,11 @@ import CapsuleCard from "@/components/CapsuleCard/CapsuleCard";
 import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
 import OutlineButton from "@/components/OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import StickerCardSection from "@/components/StickerCardSection/StickerCardSection";
-import InputSection from "@/components/InputSection/InputSection";
 import EndLine from "@/components/EndLine/EndLine";
 import getCapsule from "@/firebase/firestore/getCapsule";
 import { useEffect, useState } from "react";
 import { CapsuleData } from "@/types";
-import sortFunctions from "@/helper/sortFunctions";
+import StickerWrapper from "@/components/StickerWrapper/StickerWrapper";
 
 type Props = {
   params: {
@@ -32,7 +30,6 @@ const dropdownValues = [
 function Page({ params: { id } }: Props) {
   const [capsuleData, setCapsuleData] = useState<CapsuleData>();
   const [fetchError, setFetchError] = useState<string>();
-  const [sorting, setSorting] = useState<keyof typeof sortFunctions>("default");
 
   useEffect(() => {
     const getCapsuleData = async () => {
@@ -65,14 +62,9 @@ function Page({ params: { id } }: Props) {
               </div>
             </div>
           </div>
-          <div className={styles.stickerSectionContainer}>
-            <div className={styles.stickerSectionHead}>
-              <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
-              <InputSection id="stickerSort" dropdownValues={dropdownValues} setSorting={setSorting}/>
-            </div>
-            <StickerCardSection stickerArr={capsuleData.stickers} />
-            <EndLine bgImage="/images/backgrounds/endLineRedBG.svg" />
-          </div>
+          <StickerWrapper inputId="stickerSort" dropdownValues={dropdownValues}
+            stickerArr={capsuleData.stickers} />
+          <EndLine bgImage="/images/backgrounds/endLineRedBG.svg" />
         </>
         :
         <h1 className={styles.errorText}>
