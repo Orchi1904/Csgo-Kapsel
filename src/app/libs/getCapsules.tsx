@@ -1,8 +1,6 @@
-/*Todo: Sort stickers by rarity
-        Implement Loading for Capsule Cards
-        Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
+/*Todo: Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
-        Add every sticker to website
+        Add every sticker to website, even if it cant be found from API
         Check if newest data will be instantly shown on website when older than 8h
         Check if there are better pictures of stickers and capsules
         Fix Information text for apple watch

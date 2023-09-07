@@ -6,12 +6,16 @@ import { capsuleSortFunctions } from "@/helper/sortFunctions";
 type Props = {
     capsules: CapsuleData[],
     sorting: keyof typeof capsuleSortFunctions,
+    searchTerm: string,
 }
 
-function CapsuleCardSection({ capsules, sorting }: Props) {
-    const sortedCapsules = capsules ? [...capsules].sort(
+function CapsuleCardSection({ capsules, sorting, searchTerm }: Props) {
+    let sortedCapsules = capsules ? [...capsules].sort(
         capsuleSortFunctions[sorting] || capsuleSortFunctions["default"]
     ) : [];
+
+    sortedCapsules = sortedCapsules.filter((capsule) => 
+    capsule.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <div className={styles.cardSection}>

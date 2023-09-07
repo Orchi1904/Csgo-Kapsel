@@ -1,4 +1,4 @@
-import { CapsuleData, Sticker, StickerData } from "@/types";
+import { CapsuleData, Sticker } from "@/types";
 
 export const capsuleSortFunctions = {
     "default": (a: any, b: any) => 0,
