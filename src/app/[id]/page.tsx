@@ -1,12 +1,11 @@
 "use client"
 
-import NavHead from "@/components/NavHead/NavHead";
+import NavHead from "@/components/PageWrapper/PageWrapper";
 import styles from "./page.module.css";
 import CapsuleCard from "@/components/CapsuleCard/CapsuleCard";
 import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
 import OutlineButton from "@/components/OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import EndLine from "@/components/EndLine/EndLine";
 import getCapsule from "@/firebase/firestore/getCapsule";
 import { useEffect, useState } from "react";
 import { CapsuleData } from "@/types";
@@ -46,31 +45,31 @@ function Page({ params: { id } }: Props) {
 
   return (
     <>
-      <NavHead />
-      {capsuleData ?
-        <>
-          <div className={styles.capsuleSectionContainer}>
-            <div className={styles.capsuleCardContainer}>
-              <CapsuleCard icon={capsuleData.icon} />
-            </div>
-            <div className={styles.infoContainer}>
-              <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}
-                capsulePrice={capsuleData.average_price} />
-              <div className={styles.outlineButtonContainer}>
-                <OutlineButton href={capsuleData.steam_link} width="100%" icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
-                  text="BUY ON STEAM" fontSize="14px" />
+      <NavHead endLineBgImg="'/images/backgrounds/endLineRedBG.svg'">
+        {capsuleData ?
+          <>
+            <div className={styles.capsuleSectionContainer}>
+              <div className={styles.capsuleCardContainer}>
+                <CapsuleCard icon={capsuleData.icon} />
+              </div>
+              <div className={styles.infoContainer}>
+                <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}
+                  capsulePrice={capsuleData.average_price} />
+                <div className={styles.outlineButtonContainer}>
+                  <OutlineButton href={capsuleData.steam_link} width="100%" icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
+                    text="BUY ON STEAM" fontSize="14px" />
+                </div>
               </div>
             </div>
-          </div>
-          <StickerWrapper inputId="stickerSort" dropdownValues={dropdownValues}
-            stickerArr={capsuleData.stickers} />
-          <EndLine bgImage="/images/backgrounds/endLineRedBG.svg" />
-        </>
-        :
-        <h1 className={styles.errorText}>
-          {fetchError}
-        </h1>
-      }
+            <StickerWrapper inputId="stickerSort" dropdownValues={dropdownValues}
+              stickerArr={capsuleData.stickers} />
+          </>
+          :
+          <h1 className={styles.errorText}>
+            {fetchError}
+          </h1>
+        }
+      </NavHead>
     </>
   )
 }

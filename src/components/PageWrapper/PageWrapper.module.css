@@ -1,0 +1,29 @@
+.logoContainer{
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--black);
+}
+
+.contentContainer{
+    min-height: 100vh;
+}
+
+.childrenContainer{
+    padding-top: 81px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.endLine{
+    height: 12px;
+    margin: 0 -8.8%;
+    background-position: center center; /*Used because if it is not there, the endLine will be too bright*/
+    margin-top: 20px;
+}
