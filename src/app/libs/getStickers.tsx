@@ -5,7 +5,7 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
     let containsAllStickers = true;
 
     for (const sticker of capsule.stickers) {
-        const stickerItem = itemsList["Sticker | " + sticker];
+        const stickerItem = itemsList["Sticker | " + sticker.name];
 
         //Fetching data from another route because some stickers are not in current route response
         if (!stickerItem) {
@@ -19,7 +19,8 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
 
             if (differentRouteSticker.success === true) {
                 stickerArr.push({
-                    name: sticker,
+                    name: sticker.name,
+                    rarity: sticker.rarity,
                     average_price: differentRouteSticker.average_price !== 0 ? Number(differentRouteSticker.average_price) : "N/A",
                     icon: "https://steamcommunity.com/economy/image/" + differentRouteSticker.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1),
                     steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker}`,
@@ -41,7 +42,8 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
             }
 
             stickerArr.push({
-                name: sticker,
+                name: sticker.name,
+                rarity: sticker.rarity,
                 average_price: averagePrice !== 0 ? Number(averagePrice) : "N/A",
                 icon: "https://steamcommunity.com/economy/image/" + stickerItem.icon_url,
                 steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker}`,

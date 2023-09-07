@@ -2,15 +2,21 @@ export type Capsule = {
     title: string,
     icon: string,
     average_price: number,
-    stickers: string[],
+    stickers: StickerJson[],
 }
 
 export type Sticker = {
     name: string,
+    rarity: string,
     average_price: number | "N/A",
     currency: string,
     steam_link: string,
     icon: string,
+}
+
+export type StickerJson = {
+    name: string,
+    rarity: string,
 }
 
 export type StickerData = {
