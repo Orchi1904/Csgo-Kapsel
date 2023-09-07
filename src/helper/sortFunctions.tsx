@@ -20,12 +20,17 @@ export const stickerSortFunctions = {
     "default": (a: any, b: any) => 0,
     "Price ASC": (a: Sticker, b: Sticker) =>
         sortNotAvailableToEnd(a.average_price, b.average_price, "ASC"),
-    "Price DESC": (a: Sticker, b: Sticker) => 
+    "Price DESC": (a: Sticker, b: Sticker) =>
         sortNotAvailableToEnd(b.average_price, a.average_price, "DESC"),
-    "Name ASC": (a: Sticker, b: Sticker) => 
+    "Name ASC": (a: Sticker, b: Sticker) =>
         a.name.localeCompare(b.name),
-    "Name DESC": (a: Sticker, b: Sticker) =>  
-        b.name.localeCompare(a.name)
+    "Name DESC": (a: Sticker, b: Sticker) =>
+        b.name.localeCompare(a.name),
+    "Rarity ASC": (a: Sticker, b: Sticker) => 
+        sortRarity(a.rarity, b.rarity),
+    "Rarity DESC": (a: Sticker, b: Sticker) =>
+        sortRarity(b.rarity, a.rarity)
+    
 }
 
 //Is needed so that "N/A" will be sorted to the end
@@ -39,4 +44,22 @@ const sortNotAvailableToEnd = (aPrice: number | "N/A", bPrice: number | "N/A", s
     if (bPrice === "N/A") return sortAbeforeB;
 
     return aPrice - bPrice;
+}
+
+const sortRarity = (aRarity: string, bRarity: string) => {
+    const rarityOrder = {
+        "default": 1,
+        "glitter": 2,
+        "holo": 3,
+        "foil": 4,
+        "gold": 5
+    }
+
+    const aRarityIndex = aRarity as keyof typeof rarityOrder;
+    const bRarityIndex = bRarity as keyof typeof rarityOrder;
+    
+    let aRarityValue = rarityOrder[aRarityIndex] || 0;
+    let bRarityValue = rarityOrder[bRarityIndex] || 0;
+
+    return aRarityValue - bRarityValue;
 }
