@@ -6,21 +6,23 @@ import InputSection from '../InputSection/InputSection';
 import CapsuleCardSection from '../CapsuleCardSection/CapsuleCardSection';
 import { useState } from "react";
 import { capsuleSortFunctions } from '@/helper/sortFunctions';
+import { CapsuleData } from '@/types';
 
 type Props = {
+    capsules: CapsuleData[],
     search: boolean,
     inputId: string,
     dropdownValues: string[],
 }
 
-function CapsuleWrapper({ search, inputId, dropdownValues }: Props) {
+function CapsuleWrapper({ capsules, search, inputId, dropdownValues }: Props) {
     const [sorting, setSorting] = useState<keyof typeof capsuleSortFunctions>("default");
 
     return (
         <div className={styles.capsuleCardSection}>
             <InputSection search={search} id={inputId} dropdownValues={dropdownValues}
                 setSorting={setSorting} />
-            <CapsuleCardSection sorting={sorting} />
+            <CapsuleCardSection capsules={capsules} sorting={sorting} />
         </div>
     )
 }

@@ -23,12 +23,12 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
-    if (timeStampHoursDiff > 8) {
-        await updateCapsulesFB();
+    /*if (timeStampHoursDiff > 8) {
+        await updateCapsulesFB();*/
         return await getCapsulesFB();
-    } else {
+   /* } else {
         return capsuleDataFB;
-    }
+    }*/
 }
 
 

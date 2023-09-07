@@ -1,26 +1,14 @@
 import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
-import getCapsules from "../../app/libs/getCapsules";
-import { useEffect, useState } from "react";
 import { CapsuleData } from "@/types";
 import { capsuleSortFunctions } from "@/helper/sortFunctions";
 
 type Props = {
+    capsules: CapsuleData[],
     sorting: keyof typeof capsuleSortFunctions,
 }
 
-function CapsuleCardSection({ sorting }: Props) {
-    const [capsules, setCapsules] = useState<CapsuleData[]>();
-
-    useEffect(() => {
-        const fetchCapsules = async () => {
-            const capsules = await getCapsules();
-            setCapsules(capsules);
-        }
-
-        fetchCapsules();
-    }, []);
-
+function CapsuleCardSection({ capsules, sorting }: Props) {
     const sortedCapsules = capsules ? [...capsules].sort(
         capsuleSortFunctions[sorting] || capsuleSortFunctions["default"]
     ) : [];
