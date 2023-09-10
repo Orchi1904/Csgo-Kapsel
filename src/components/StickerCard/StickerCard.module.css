@@ -76,7 +76,6 @@
     margin: 0;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
-    color: white;
     text-align: end;
     white-space: nowrap;
     overflow: hidden;
@@ -125,7 +124,6 @@
         font-family: "Roboto", sans-serif;
         font-size: 30px;
         font-weight: bold;
-        color: white;
     }
 
     .stickerPriceWide>p {
