@@ -13,7 +13,7 @@ type Props = {
 function PageWrapper({ children, endLineBgImg }: Props) {
 
     return (
-        <div className={styles.contentContainer}>
+        <div className={styles.pageWrapper}>
             <div className={styles.logoContainer}>
                 <Link className={styles.link} onClick={() => { window.scrollTo(0, 0) }} href="/">
                     <Image
@@ -26,11 +26,9 @@ function PageWrapper({ children, endLineBgImg }: Props) {
                 </Link>
             </div>
             <div className={styles.childrenContainer}>
-                <div>
-                    {children}
-                </div>
-                <div className={styles.endLine} style={{ backgroundImage: `url(${endLineBgImg})`, backgroundSize: "cover" }} />
+                {children}
             </div>
+            <div className={styles.endLine} style={{ backgroundImage: `url(${endLineBgImg})`, backgroundSize: "cover" }} />
         </div>
     )
 }

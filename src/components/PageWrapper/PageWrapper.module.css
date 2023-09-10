@@ -1,3 +1,11 @@
+.pageWrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
 .logoContainer{
     height: 70px;
     position: fixed;
@@ -8,17 +16,8 @@
     background-color: var(--black);
 }
 
-.contentContainer{
-    min-height: 100vh;
-}
-
 .childrenContainer{
     padding-top: 81px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
 }
 
 .endLine{

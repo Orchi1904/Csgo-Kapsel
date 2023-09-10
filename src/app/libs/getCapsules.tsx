@@ -1,5 +1,4 @@
-/*Todo: PageWrapper kontrollieren ob soweit alles passt und der Strich sich verhält wie gewollt
-        + globals.css nach unnötigen Sachen durchsuchen + evtl. schauen wieso Card-Größe sich verändert
+/*Todo: globals.css nach unnötigen Sachen durchsuchen + evtl. schauen wieso Card-Größe sich verändert
         wenn scroll da ist, vs wenn nicht + Search Aufgabe abschließen auf jira
         
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h

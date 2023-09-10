@@ -1,6 +1,6 @@
 "use client"
 
-import NavHead from "@/components/PageWrapper/PageWrapper";
+import PageWrapper from "@/components/PageWrapper/PageWrapper";
 import styles from "./page.module.css";
 import CapsuleCard from "@/components/CapsuleCard/CapsuleCard";
 import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
@@ -45,7 +45,7 @@ function Page({ params: { id } }: Props) {
 
   return (
     <>
-      <NavHead endLineBgImg="'/images/backgrounds/endLineRedBG.svg'">
+      <PageWrapper endLineBgImg="'/images/backgrounds/endLineRedBG.svg'">
         {capsuleData ?
           <>
             <div className={styles.capsuleSectionContainer}>
@@ -69,7 +69,7 @@ function Page({ params: { id } }: Props) {
             {fetchError}
           </h1>
         }
-      </NavHead>
+      </PageWrapper>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import NavHead from '@/components/PageWrapper/PageWrapper';
+import PageWrapper from '@/components/PageWrapper/PageWrapper';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 import getCapsules from './libs/getCapsules';
@@ -17,11 +17,11 @@ async function Home() {
 
   return (
     <>
-      <NavHead endLineBgImg="/images/backgrounds/endLineBlueBG.svg">
+      <PageWrapper endLineBgImg="/images/backgrounds/endLineBlueBG.svg">
         <HeroSection />
         <CapsuleWrapper search={true} inputId='capsuleSort' dropdownValues={dropdownValues}
           capsules={capsules} />
-      </NavHead>
+      </PageWrapper>
     </>
   )
 }
