@@ -7,11 +7,12 @@ import Image from 'next/image';
 import Footer from '../Footer/Footer';
 
 type Props = {
-    children: ReactNode;
+    children: ReactNode,
+    accentColor: string,
     endLineBgImg: string,
 }
 
-function PageWrapper({ children, endLineBgImg }: Props) {
+function PageWrapper({ children, accentColor, endLineBgImg }: Props) {
 
     return (
         <div className={styles.pageWrapper}>
@@ -30,7 +31,7 @@ function PageWrapper({ children, endLineBgImg }: Props) {
                 {children}
             </div>
             <div className={styles.footerContainer}>
-                <Footer />
+                <Footer accentColor={accentColor}/>
                 <div className={styles.endLine} style={{ backgroundImage: `url(${endLineBgImg})`, backgroundSize: "cover" }} />
             </div>
         </div>

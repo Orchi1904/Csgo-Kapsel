@@ -45,7 +45,7 @@ function Page({ params: { id } }: Props) {
 
   return (
     <>
-      <PageWrapper endLineBgImg="'/images/backgrounds/endLineRedBG.svg'">
+      <PageWrapper accentColor="var(--red)" endLineBgImg="'/images/backgrounds/endLineRedBG.svg'">
         {capsuleData ?
           <>
             <div className={styles.capsuleSectionContainer}>
