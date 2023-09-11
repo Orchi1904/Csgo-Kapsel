@@ -1,0 +1,55 @@
+.footer{
+    background-color: var(--footerBlack);
+    margin: 0 -8.8%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.footerSlogan{
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heartIcon{
+    margin: 0 2px;
+}
+
+.contactContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.contactHeadline{
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+}
+
+.contactIconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.contactIcon{
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+/*Have to do this because LinkedIn icon has more blank space around itself*/
+.linkedInIcon{
+    width: 28px;
+    height: 28px;
+}

@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import styles from './PageWrapper.module.css';
 import Image from 'next/image';
+import Footer from '../Footer/Footer';
 
 type Props = {
     children: ReactNode;
@@ -28,7 +29,10 @@ function PageWrapper({ children, endLineBgImg }: Props) {
             <div className={styles.childrenContainer}>
                 {children}
             </div>
-            <div className={styles.endLine} style={{ backgroundImage: `url(${endLineBgImg})`, backgroundSize: "cover" }} />
+            <div className={styles.footerContainer}>
+                <Footer />
+                <div className={styles.endLine} style={{ backgroundImage: `url(${endLineBgImg})`, backgroundSize: "cover" }} />
+            </div>
         </div>
     )
 }
