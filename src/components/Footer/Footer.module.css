@@ -1,7 +1,7 @@
 .footer{
     background-color: var(--footerBlack);
     margin: 0 -8.8%;
-    margin-top: 35px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -50,10 +50,43 @@
     width: 24px;
     height: 24px;
     color: white;
+    transition: color 0.3s;
 }
 
 /*Have to do this because LinkedIn icon has more blank space around itself*/
 .linkedInIcon{
     width: 28px;
     height: 28px;
+}
+
+@media (min-width: 1024px){
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 8.8%;
+        margin-top: 100px;
+    }
+
+    .footerSlogan{
+        font-size: 32px;
+    }
+
+    .heartIcon{
+        font-size: 34px;
+    }
+
+    .contactHeadline{
+        font-size: 24px;
+    }
+
+    .contactIcon{
+        width: 26px;
+        height: 26px;
+    }
+
+    .linkedInIcon{
+        width: 30px;
+        height: 30px;
+    }
 }
