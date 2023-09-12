@@ -50,7 +50,6 @@
     width: 24px;
     height: 24px;
     color: white;
-    transition: color 0.3s;
 }
 
 /*Have to do this because LinkedIn icon has more blank space around itself*/

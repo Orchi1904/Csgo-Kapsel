@@ -59,7 +59,7 @@ function Footer({ accentColor }: Props) {
                             onMouseEnter={() => handleMouseEnter("Frontend Mentor")}
                             onMouseLeave={() => handleMouseLeave()}>
                             <FrontendMentorIcon fill={isHovered && hoveredIcon === "Frontend Mentor" 
-                                                    ? accentColor : "white"} style={{transition: "fill 0.3s"}}/>
+                                                    ? accentColor : "white"}/>
                         </div>
                     </Link>
                 </div>
