@@ -1,4 +1,5 @@
-/*Todo: 
+/*Todo: Bei Kapseln: Schauen ob es bessere Bilder gibt (Bei CsgoStash nicht), vlt icons kleiner machen in der Card
+        Bei Stickern: Neue icons wie bei csgostash oder vlt. CSGOAPI sind gut, siehe SK Gaming holo Boston 2018
         
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
@@ -24,11 +25,11 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
     /*if (timeStampHoursDiff > 8) {
-        await updateCapsulesFB();*/
+        await updateCapsulesFB();
         return await getCapsulesFB();
-   /* } else {
+    } else {*/
         return capsuleDataFB;
-    }*/
+    //}
 }
 
 

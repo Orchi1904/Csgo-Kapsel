@@ -23,7 +23,7 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
                     rarity: sticker.rarity,
                     average_price: differentRouteSticker.average_price !== 0 ? Number(differentRouteSticker.average_price) : "N/A",
                     icon: "https://steamcommunity.com/economy/image/" + differentRouteSticker.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1),
-                    steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker}`,
+                    steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker.name}`,
                     currency: differentRouteSticker.currency
                 })
             } else {
@@ -46,7 +46,7 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
                 rarity: sticker.rarity,
                 average_price: averagePrice !== 0 ? Number(averagePrice) : "N/A",
                 icon: "https://steamcommunity.com/economy/image/" + stickerItem.icon_url,
-                steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker}`,
+                steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker.name}`,
                 currency: "USD",
             })
         }
