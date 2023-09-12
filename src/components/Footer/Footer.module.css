@@ -52,6 +52,10 @@
     color: white;
 }
 
+.contactIcon:hover{
+    color: var(--hoverColor);
+}
+
 /*Have to do this because LinkedIn icon has more blank space around itself*/
 .linkedInIcon{
     width: 28px;

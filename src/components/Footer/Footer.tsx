@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "./Footer.module.css";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -13,21 +13,9 @@ type Props = {
 }
 
 function Footer({ accentColor }: Props) {
-    const [isHovered, setIsHovered] = useState<boolean>(false);
-    const [hoveredIcon, setHoveredIcon] = useState<string>("");
-
     const hoverStyle = {
-        color: isHovered ? accentColor : "",
-    }
-
-    const handleMouseEnter = (iconName: "LinkedIn" | "GitHub" | "Frontend Mentor") => {
-        setIsHovered(true);
-        setHoveredIcon(iconName);
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-        setHoveredIcon("");
+        "--hoverColor": accentColor,
+        transition: "color 0.3s, fill 0.3s",  
     }
 
     return (
@@ -44,22 +32,15 @@ function Footer({ accentColor }: Props) {
                 <div className={styles.contactIconContainer}>
                     <Link href={"https://www.linkedin.com/in/alexej-kunz/"}>
                         <LinkedInIcon className={`${styles.contactIcon} ${styles.linkedInIcon}`}
-                            style={hoveredIcon === "LinkedIn" ? hoverStyle : {}}
-                            onMouseEnter={() => handleMouseEnter("LinkedIn")}
-                            onMouseLeave={() => handleMouseLeave()} />
+                            style={hoverStyle} />
                     </Link>
                     <Link href={"https://github.com/Orchi1904"}>
                         <GitHubIcon className={styles.contactIcon}
-                            style={hoveredIcon === "GitHub" ? hoverStyle : {}}
-                            onMouseEnter={() => handleMouseEnter("GitHub")}
-                            onMouseLeave={() => handleMouseLeave()} />
+                            style={hoverStyle} />
                     </Link>
                     <Link href={"https://www.frontendmentor.io/profile/Orchi1904"}>
-                        <div className={styles.contactIcon}
-                            onMouseEnter={() => handleMouseEnter("Frontend Mentor")}
-                            onMouseLeave={() => handleMouseLeave()}>
-                            <FrontendMentorIcon fill={isHovered && hoveredIcon === "Frontend Mentor" 
-                                                    ? accentColor : "white"}/>
+                        <div className={styles.contactIcon}>
+                            <FrontendMentorIcon style={hoverStyle} fill="white"/>
                         </div>
                     </Link>
                 </div>
