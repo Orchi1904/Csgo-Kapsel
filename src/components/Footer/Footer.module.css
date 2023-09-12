@@ -1,4 +1,4 @@
-.footer{
+.footer {
     background-color: var(--footerBlack);
     margin: 0 -8.8%;
     margin-top: 50px;
@@ -8,24 +8,24 @@
     padding: 20px 10px;
 }
 
-.footerSlogan{
+.footerSlogan {
     margin: 0;
     font-family: "Outfit", sans-serif;
     font-size: 24px;
     text-align: center;
 }
 
-.heartIconContainer{
+.heartIconContainer {
     margin: 0 2px;
     display: inline-block;
     vertical-align: middle;
 }
 
-.heartIcon{
+.heartIcon {
     font-size: 26px;
 }
 
-.contactContainer{
+.contactContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,37 +33,33 @@
     gap: 5px;
 }
 
-.contactHeadline{
+.contactHeadline {
     margin: 0;
     font-family: "Outfit", sans-serif;
     font-size: 20px;
 }
 
-.contactIconContainer{
+.contactIconContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
 
-.contactIcon{
+.contactIcon {
     width: 24px;
     height: 24px;
     color: white;
 }
 
-.contactIcon:hover{
-    color: var(--hoverColor);
-}
-
 /*Have to do this because LinkedIn icon has more blank space around itself*/
-.linkedInIcon{
+.linkedInIcon {
     width: 28px;
     height: 28px;
 }
 
-@media (min-width: 1024px){
-    .footer{
+@media (min-width: 1024px) {
+    .footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -71,25 +67,32 @@
         margin-top: 100px;
     }
 
-    .footerSlogan{
+    .footerSlogan {
         font-size: 32px;
     }
 
-    .heartIcon{
+    .heartIcon {
         font-size: 34px;
     }
 
-    .contactHeadline{
+    .contactHeadline {
         font-size: 24px;
     }
 
-    .contactIcon{
+    .contactIcon {
         width: 26px;
         height: 26px;
     }
 
-    .linkedInIcon{
+    .linkedInIcon {
         width: 30px;
         height: 30px;
+    }
+}
+
+/*Only do this on devices with hover capability*/
+@media (hover: hover) {
+    .contactIcon:hover {
+        color: var(--hoverColor);
     }
 }

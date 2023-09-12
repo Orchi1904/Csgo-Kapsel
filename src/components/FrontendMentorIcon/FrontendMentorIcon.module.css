@@ -1,3 +1,6 @@
-.frontendMentorIcon:hover > path{
-    fill: var(--hoverColor);
+/*Only do this on devices with hover capability*/
+@media (hover: hover) {
+    .frontendMentorIcon:hover>path {
+        fill: var(--hoverColor);
+    }
 }
