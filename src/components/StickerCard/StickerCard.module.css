@@ -52,7 +52,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Outfit", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--beige);
     /* Lines with /**/
     /*are the alternative to overflow:hidden; text-overflow:ellipsis;
@@ -84,7 +84,7 @@
 }
 
 /*CSS used for Sticker Cards on wider screens*/
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .stickerCardWide {
         display: flex;
         flex-direction: column;
@@ -108,7 +108,7 @@
     .stickerIconAndInformationContainerWide {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
     }
 
     .stickerIconContainerWide {
@@ -123,7 +123,7 @@
     .stickerPriceWide {
         text-align: center;
         font-family: "Roboto", sans-serif;
-        font-size: 30px;
+        font-size: 24px;
         font-weight: bold;
     }
 

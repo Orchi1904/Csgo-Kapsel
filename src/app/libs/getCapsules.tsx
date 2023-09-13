@@ -1,5 +1,6 @@
-/*Todo: Bei Kapseln: Schauen ob es bessere Bilder gibt (Bei CsgoStash nicht), vlt icons kleiner machen in der Card
+/*Todo: Repsonsiveness durchtesten was aussehen angeht
         
+
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Add every sticker to website, even if it cant be found from API

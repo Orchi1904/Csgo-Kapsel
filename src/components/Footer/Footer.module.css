@@ -1,11 +1,11 @@
 .footer {
     background-color: var(--footerBlack);
-    margin: 0 -8.8%;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 20px 10px;
+    
 }
 
 .footerSlogan {

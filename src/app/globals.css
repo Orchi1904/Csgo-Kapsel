@@ -11,8 +11,8 @@
 }
 
 .layout{
-  background-color: var(--black);
-  max-width: 85%;
+  background-color: var(--black); 
   color: white;
+  width: 100%;
   margin: 0px auto;
 }

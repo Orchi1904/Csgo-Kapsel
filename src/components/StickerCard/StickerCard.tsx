@@ -28,7 +28,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
 
   return (
     <>
-      {windowWidth < 768 ?
+      {windowWidth < 1024 ?
         <Link className={styles.stickerCardContainerBorder} href={steamLink}>
           <div className={styles.stickerCardContainer}>
             <div className={styles.stickerCard}>
