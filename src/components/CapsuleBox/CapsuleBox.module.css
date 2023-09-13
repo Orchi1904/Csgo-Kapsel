@@ -13,6 +13,12 @@
     margin: 20px 0;
 }
 
+@media (min-width: 360px){
+    .icon{
+        max-width: 260px;
+    }
+}
+
 @media (min-width: 1024px){
     .capsuleBox{
         height: 350px;

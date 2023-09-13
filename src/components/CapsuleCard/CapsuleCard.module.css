@@ -8,9 +8,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.card[data-hover-animation="true"] {
     cursor: pointer;
 }
 
@@ -31,7 +28,8 @@
 }
 
 .icon {
-    width: 75%;
+    width: 95%;
+    max-width: 260px;
     transition: transform 0.5s;
 }
 
@@ -55,8 +53,8 @@
     margin: 0;
 }
 
-@media (min-width: 1024px) {
-    .card[data-hover-animation="true"]:hover .icon {
+@media (hover: hover) {
+    .card:hover .icon {
         transform: scale(1.1);
     }
 }

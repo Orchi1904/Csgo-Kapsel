@@ -13,10 +13,9 @@ type Props = {
     search: boolean,
     inputId: string,
     dropdownValues: string[],
-    infoCard?: boolean,
 }
 
-function CapsuleWrapper({ capsules, search, inputId, dropdownValues, infoCard }: Props) {
+function CapsuleWrapper({ capsules, search, inputId, dropdownValues }: Props) {
     const [sorting, setSorting] = useState<keyof typeof capsuleSortFunctions>("default");
     const [searchTerm, setSearchTerm] = useState<string>("");
 
@@ -24,7 +23,7 @@ function CapsuleWrapper({ capsules, search, inputId, dropdownValues, infoCard }:
         <div className={styles.capsuleCardSection}>
             <InputSection search={search} id={inputId} dropdownValues={dropdownValues}
                 setSorting={setSorting} setSearchTerm={setSearchTerm}/>
-            <CapsuleCardSection capsules={capsules} sorting={sorting} searchTerm={searchTerm} infoCard={infoCard}/>
+            <CapsuleCardSection capsules={capsules} sorting={sorting} searchTerm={searchTerm} />
         </div>
     )
 }
