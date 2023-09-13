@@ -20,7 +20,7 @@ async function Home() {
       <PageWrapper accentColor="var(--blue)" endLineBgImg="/images/backgrounds/endLineBlueBG.svg">
         <HeroSection />
         <CapsuleWrapper search={true} inputId='capsuleSort' dropdownValues={dropdownValues}
-          capsules={capsules} />
+          capsules={capsules} infoCard={true}/>
       </PageWrapper>
     </>
   )

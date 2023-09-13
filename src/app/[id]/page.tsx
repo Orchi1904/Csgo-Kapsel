@@ -10,6 +10,7 @@ import getCapsule from "@/firebase/firestore/getCapsule";
 import { useEffect, useState } from "react";
 import { CapsuleData } from "@/types";
 import StickerWrapper from "@/components/StickerWrapper/StickerWrapper";
+import CapsuleBox from "@/components/CapsuleBox/CapsuleBox";
 
 type Props = {
   params: {
@@ -50,7 +51,7 @@ function Page({ params: { id } }: Props) {
           <>
             <div className={styles.capsuleSectionContainer}>
               <div className={styles.capsuleCardContainer}>
-                <CapsuleCard icon={capsuleData.icon} />
+                <CapsuleBox icon={capsuleData.icon} alt={capsuleData.name + " image"}/>
               </div>
               <div className={styles.infoContainer}>
                 <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}

@@ -1,0 +1,20 @@
+.capsuleBox{
+    background-image: url("/images/backgrounds/capsuleBG.svg");
+    background-size: cover;
+    border-radius: 5px;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+@media (min-width: 1024px){
+    .capsuleBox{
+        height: 350px;
+    }
+}

@@ -7,9 +7,10 @@ type Props = {
     capsules: CapsuleData[],
     sorting: keyof typeof capsuleSortFunctions,
     searchTerm: string,
+    infoCard?: boolean,
 }
 
-function CapsuleCardSection({ capsules, sorting, searchTerm }: Props) {
+function CapsuleCardSection({ capsules, sorting, searchTerm, infoCard }: Props) {
     let sortedCapsules = capsules ? [...capsules].sort(
         capsuleSortFunctions[sorting] || capsuleSortFunctions["default"]
     ) : [];
@@ -22,7 +23,7 @@ function CapsuleCardSection({ capsules, sorting, searchTerm }: Props) {
             {sortedCapsules &&
                 sortedCapsules.map((capsule) => (
                     <CapsuleCard key={capsule.name} title={capsule.name} icon={capsule.icon} stickerValue={capsule.sticker_value}
-                        capsulePrice={capsule.average_price} hoverAnimation detailPage={capsule.name} />
+                        capsulePrice={capsule.average_price} hoverAnimation detailPage={capsule.name} infoCard={infoCard}/>
                 ))
             }
         </div>

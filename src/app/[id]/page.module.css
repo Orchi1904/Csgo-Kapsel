@@ -14,19 +14,20 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
         margin-bottom: 40px;
-        border: 1px solid red;
     }
 
     .capsuleCardContainer{
         width: 45%;
+        max-width: 600px;
         box-sizing: border-box;
     }
 
     .infoContainer{
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 55%;
         max-width: 800px;
         margin-bottom: 0;
     }
