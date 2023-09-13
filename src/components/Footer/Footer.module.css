@@ -1,11 +1,13 @@
 .footer {
     background-color: var(--footerBlack);
     margin-top: 50px;
+    padding: 20px 10px;
+}
+
+.footerContent{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 20px 10px;
-    
 }
 
 .footerSlogan {
@@ -60,11 +62,16 @@
 
 @media (min-width: 1024px) {
     .footer {
+        padding: 50px 8.8%;
+        margin-top: 100px;
+    }
+
+    .footerContent{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 50px 8.8%;
-        margin-top: 100px;
+        max-width: 1440px;
+        margin: 0px auto;
     }
 
     .footerSlogan {
