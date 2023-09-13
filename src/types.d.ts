@@ -17,6 +17,7 @@ export type Sticker = {
 export type StickerJson = {
     name: string,
     rarity: string,
+    icon: string,
 }
 
 export type StickerData = {

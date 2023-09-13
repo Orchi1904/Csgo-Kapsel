@@ -1,5 +1,4 @@
 /*Todo: Bei Kapseln: Schauen ob es bessere Bilder gibt (Bei CsgoStash nicht), vlt icons kleiner machen in der Card
-        Bei Stickern: Neue icons wie bei csgostash oder vlt. CSGOAPI sind gut, siehe SK Gaming holo Boston 2018
         
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
@@ -15,40 +14,12 @@ import Capsules from "../../helper/capsules.json";
 import { CapsuleData, Sticker, StickerData } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 
-const fs = require('fs');
-const path = require('path');
-
 export default async function getCapsules(): Promise<CapsuleData[]> {
 
     const capsuleDataFB: CapsuleData[] = await getCapsulesFB();
     const lastUpdatedTimestampHours = capsuleDataFB[0].last_updated / 1000 / 3600;
     const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
     const timeStampHoursDiff = currentTimeStampHours - lastUpdatedTimestampHours;
-
-    const response = await fetch("https://bymykel.github.io/CSGO-API/api/en/stickers.json");
-    const allStickers = await response.json();
-
-    try {
-        const fullPath = path.join(process.cwd(), "src", "/helper/capsules.json");
-        const jsonData = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
-
-
-        for (const capsule of jsonData.major_capsules) {
-            capsule.stickers.map((sticker: any) => {
-                const result = allStickers.filter((oneSticker: any) => oneSticker.name === "Sticker | " + sticker.name);
-                const stickerImage = result[0].image;
-                sticker.icon = stickerImage;
-            })
-            console.log("HI");
-        }
-        console.log("Fertig");
-
-        fs.writeFileSync(fullPath, JSON.stringify(jsonData, null, 2));
-        console.log("Erfolgreich geschrieben");
-
-    } catch (error) {
-        console.error("Fehler beim Schreiben: " + error);
-    }
 
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
