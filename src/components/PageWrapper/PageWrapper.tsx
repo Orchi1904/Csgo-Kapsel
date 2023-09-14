@@ -17,7 +17,7 @@ function PageWrapper({ children, accentColor, endLineBgImg }: Props) {
     return (
         <div className={styles.pageWrapper}>
             <div className={styles.logoContainer}>
-                <Link className={styles.link} onClick={() => { window.scrollTo(0, 0) }} href="/">
+                <Link className={styles.link} href="/">
                     <Image
                         className={styles.logo}
                         src="/images/logoGroß.svg"
