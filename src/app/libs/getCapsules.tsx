@@ -11,7 +11,7 @@
 import updateData from "@/firebase/firestore/updateData";
 import getStickers from "./getStickers";
 import Capsules from "../../helper/capsules.json";
-import { CapsuleData, Sticker, StickerData } from "@/types";
+import { CapsuleData, Sticker } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 
 export default async function getCapsules(): Promise<CapsuleData[]> {
@@ -66,9 +66,9 @@ async function updateCapsulesFB() {
             currency = csgoData.currency;
         }
 
-        const stickerData: StickerData = await getStickers(capsule, itemsList);
+        const stickerArr: Sticker[] = await getStickers(capsule, itemsList);
 
-        const stickerValue = calculateStickerValue(stickerData.containsAllStickers, stickerData.stickerArr);
+        const stickerValue = calculateStickerValue(stickerArr);
 
         const capsuleData: CapsuleData = {
             name: capsule.title,
@@ -76,9 +76,8 @@ async function updateCapsulesFB() {
             icon,
             currency,
             steam_link: `https://steamcommunity.com/market/listings/730/${capsule.title}`,
-            contains_all_stickers: stickerData.containsAllStickers,
             sticker_value: stickerValue,
-            stickers: stickerData.stickerArr,
+            stickers: stickerArr,
             last_updated: new Date().getTime()
         }
         await updateData("capsules", capsule.title, capsuleData);
@@ -86,11 +85,7 @@ async function updateCapsulesFB() {
 }
 
 
-function calculateStickerValue(containsAllStickers: boolean, stickerArr: Sticker[]): number | "N/A" {
-    if (!containsAllStickers) {
-        return "N/A";
-    }
-
+function calculateStickerValue(stickerArr: Sticker[]): number | "N/A" {
     let stickerValue: number | "N/A" = 0;
 
     stickerArr.map((sticker) => {

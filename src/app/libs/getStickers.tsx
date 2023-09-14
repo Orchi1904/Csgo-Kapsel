@@ -1,8 +1,8 @@
-import { Capsule, Sticker, StickerData } from "@/types";
+import { Capsule, Sticker } from "@/types";
 
-export default async function getStickers(capsule: Capsule, itemsList: any): Promise<StickerData> {
+export default async function getStickers(capsule: Capsule, itemsList: any): Promise<Sticker[]> {
     const stickerArr: Sticker[] = [];
-    let containsAllStickers = true;
+    let price: number | "N/A" = "N/A"; 
 
     for (const sticker of capsule.stickers) {
         const stickerItem = itemsList["Sticker | " + sticker.name];
@@ -18,39 +18,32 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
             const differentRouteSticker = await response.json();
 
             if (differentRouteSticker.success === true) {
-                stickerArr.push({
-                    name: sticker.name,
-                    rarity: sticker.rarity,
-                    average_price: differentRouteSticker.average_price !== 0 ? Number(differentRouteSticker.average_price) : "N/A",
-                    icon: sticker.icon,
-                    steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker.name}`,
-                    currency: differentRouteSticker.currency
-                })
+                price = differentRouteSticker.average_price !== 0 ? Number(differentRouteSticker.average_price) : "N/A";
             } else {
-                containsAllStickers = false;
+                price = "N/A";
             }
         } else {
-            let averagePrice: number = 0;
-
             //Have to do that because sometimes there is only 30_days available
             if (stickerItem.price["24_hours"]) {
-                averagePrice = stickerItem.price["24_hours"].average;
+                price = stickerItem.price["24_hours"].average;
             } else if (stickerItem.price["7_days"]) {
-                averagePrice = stickerItem.price["7_days"].average;
+                price = stickerItem.price["7_days"].average;
             } else if (stickerItem.price["30_days"]) {
-                averagePrice = stickerItem.price["30_days"].average;
+                price = stickerItem.price["30_days"].average;
             }
-
-            stickerArr.push({
-                name: sticker.name,
-                rarity: sticker.rarity,
-                average_price: averagePrice !== 0 ? Number(averagePrice) : "N/A",
-                icon: sticker.icon,
-                steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker.name}`,
-                currency: "USD",
-            })
         }
+
+        console.log(price);
+
+        stickerArr.push({
+            name: sticker.name,
+            rarity: sticker.rarity,
+            average_price: price !== 0 ? price : "N/A",
+            icon: sticker.icon,
+            steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker.name}`,
+            currency: "USD",
+        })
     }
 
-    return { containsAllStickers, stickerArr };
+    return stickerArr;
 }

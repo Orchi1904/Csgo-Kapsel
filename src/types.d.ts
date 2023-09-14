@@ -20,11 +20,6 @@ export type StickerJson = {
     icon: string,
 }
 
-export type StickerData = {
-    stickerArr: Sticker[],
-    containsAllStickers: boolean,
-}
-
 export type CapsuleData = {
     name: string,
     average_price: number | "N/A",
@@ -32,7 +27,6 @@ export type CapsuleData = {
     icon: string,
     steam_link: string,
     last_updated: number,
-    contains_all_stickers: boolean,
     sticker_value: number | "N/A",
     stickers: Sticker[]
 }
