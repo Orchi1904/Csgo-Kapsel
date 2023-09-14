@@ -2,22 +2,44 @@
     position: relative;
     height: 175px;
     margin-bottom: 20px;
-}
-
-.heroImage{
-    border-radius: 10px;
-    object-fit: cover;
+    background-image: url("/images/hero.svg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
 }
 
 .heroText{
-    position: relative;
-    top: 50%; /*Aligns the text to vertical center*/
-    left: 50%; /*Aligns the text to horizontal center*/
-    transform: translate(-50%, -50%); /*Center the text by moving it by its own height and width*/
     color: var(--beige);
     text-align: center;
     font-family: "Outfit", sans-serif;
     margin: 0px;
     text-shadow: 2px 2px 10px black;
     padding: 5px;
+    margin: 25px 0;
+}
+
+@media (min-width: 640px){
+    .heroText{
+        margin: 30px 0;
+    }
+}
+
+@media (min-width: 768px){
+    .heroText{
+        margin: 35px 0;
+    }
+}
+
+@media (min-width: 1024px){
+    .heroText{
+        margin: 40px 0;
+    }
+}
+
+@media (min-width: 1280px){
+    .heroText{
+        margin: 45px 0;
+    }
 }
