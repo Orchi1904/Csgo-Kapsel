@@ -28,6 +28,7 @@ export type CapsuleData = {
     steam_link: string,
     last_updated: number,
     sticker_value: number | "N/A",
+    svp_ratio: number | "N/A",
     stickers: Sticker[]
 }
 

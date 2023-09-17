@@ -33,8 +33,6 @@ export default async function getStickers(capsule: Capsule, itemsList: any): Pro
             }
         }
 
-        console.log(price);
-
         stickerArr.push({
             name: sticker.name,
             rarity: sticker.rarity,

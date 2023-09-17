@@ -1,4 +1,7 @@
-/*Todo: Implement SVP ratio
+/*Todo: Safe svp ratio in firebase and check if its right
+        Show svp ratio on every capsule
+        Add capsule sorting by svp ratio
+        Add text that explains svp ratio
 
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
@@ -66,6 +69,8 @@ async function updateCapsulesFB() {
         const stickerArr: Sticker[] = await getStickers(capsule, itemsList);
 
         const stickerValue = calculateStickerValue(stickerArr);
+        const svpRatio = stickerValue !== "N/A" && average_price !== "N/A" ? stickerValue/average_price : "N/A";
+        console.log(svpRatio);
 
         const capsuleData: CapsuleData = {
             name: capsule.title,
@@ -74,6 +79,7 @@ async function updateCapsulesFB() {
             currency,
             steam_link: `https://steamcommunity.com/market/listings/730/${capsule.title}`,
             sticker_value: stickerValue,
+            svp_ratio: svpRatio,
             stickers: stickerArr,
             last_updated: new Date().getTime()
         }
