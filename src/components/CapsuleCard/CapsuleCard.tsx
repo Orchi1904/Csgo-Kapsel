@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./CapsuleCard.module.css";
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 type Props = {
     title: string,

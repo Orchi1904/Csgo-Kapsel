@@ -55,7 +55,7 @@ function Page({ params: { id } }: Props) {
               </div>
               <div className={styles.infoContainer}>
                 <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}
-                  capsulePrice={capsuleData.average_price} />
+                  capsulePrice={capsuleData.average_price} svpRatio={capsuleData.svp_ratio}/>
                 <div className={styles.outlineButtonContainer}>
                   <OutlineButton href={capsuleData.steam_link} width="100%" icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
                     text="BUY ON STEAM" fontSize="14px" />
