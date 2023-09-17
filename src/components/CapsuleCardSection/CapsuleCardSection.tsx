@@ -22,7 +22,7 @@ function CapsuleCardSection({ capsules, sorting, searchTerm }: Props) {
             {sortedCapsules &&
                 sortedCapsules.map((capsule) => (
                     <CapsuleCard key={capsule.name} title={capsule.name} icon={capsule.icon} stickerValue={capsule.sticker_value}
-                        capsulePrice={capsule.average_price} detailPage={capsule.name} />
+                        capsulePrice={capsule.average_price} svpRatio={capsule.svp_ratio} detailPage={capsule.name} />
                 ))
             }
         </div>

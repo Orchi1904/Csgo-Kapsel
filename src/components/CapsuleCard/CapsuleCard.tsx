@@ -8,10 +8,11 @@ type Props = {
     icon: string,
     stickerValue: number | "N/A",
     capsulePrice: number | "N/A",
+    svpRatio: number | "N/A",
     detailPage: string,
 }
 
-function CapsuleCard({ title, icon, stickerValue, capsulePrice, detailPage }: Props) {
+function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detailPage }: Props) {
     const router = useRouter();
 
     return (
@@ -31,6 +32,15 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, detailPage }: Pr
                         <p>
                             {capsulePrice !== "N/A" ?
                                 Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")
+                                : "N/A"
+                            }
+                        </p>
+                    </div>
+                    <div className={styles.information}>
+                        <p>SV/P Ratio:</p>
+                        <p>
+                            {svpRatio !== "N/A" ?
+                                svpRatio.toFixed(2) + " x"
                                 : "N/A"
                             }
                         </p>
