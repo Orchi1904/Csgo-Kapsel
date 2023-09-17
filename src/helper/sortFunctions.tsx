@@ -13,7 +13,11 @@ export const capsuleSortFunctions = {
     "Sticker Value ASC": (a: CapsuleData, b: CapsuleData) =>
         sortNotAvailableToEnd(a.sticker_value, b.sticker_value, "ASC"),
     "Sticker Value DESC": (a: CapsuleData, b: CapsuleData) =>
-        sortNotAvailableToEnd(b.sticker_value, a.sticker_value, "DESC")
+        sortNotAvailableToEnd(b.sticker_value, a.sticker_value, "DESC"),
+    "SV/P Ratio ASC": (a: CapsuleData, b: CapsuleData) => 
+        sortNotAvailableToEnd(a.svp_ratio, b.svp_ratio, "ASC"),
+    "SV/P Ratio DESC": (a: CapsuleData, b: CapsuleData) => 
+        sortNotAvailableToEnd(b.svp_ratio, a.svp_ratio, "DESC")
 }
 
 export const stickerSortFunctions = {
@@ -34,16 +38,16 @@ export const stickerSortFunctions = {
 }
 
 //Is needed so that "N/A" will be sorted to the end
-const sortNotAvailableToEnd = (aPrice: number | "N/A", bPrice: number | "N/A", sortType: "ASC" | "DESC") => {
+const sortNotAvailableToEnd = (aValue: number | "N/A", bValue: number | "N/A", sortType: "ASC" | "DESC") => {
     const keepOriginalOrder = 0;
     const sortAafterB = sortType === "ASC" ? 1 : -1;
     const sortAbeforeB = sortType === "ASC" ? -1 : 1;
 
-    if (aPrice === "N/A" && bPrice === "N/A") return keepOriginalOrder;
-    if (aPrice === "N/A") return sortAafterB;
-    if (bPrice === "N/A") return sortAbeforeB;
+    if (aValue === "N/A" && bValue === "N/A") return keepOriginalOrder;
+    if (aValue === "N/A") return sortAafterB;
+    if (bValue === "N/A") return sortAbeforeB;
 
-    return aPrice - bPrice;
+    return aValue - bValue;
 }
 
 const sortRarity = (aRarity: string, bRarity: string) => {

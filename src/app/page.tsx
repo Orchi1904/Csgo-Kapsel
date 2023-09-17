@@ -9,7 +9,9 @@ const dropdownValues = [
   "Name ASC",
   "Name DESC",
   "Sticker Value ASC",
-  "Sticker Value DESC"
+  "Sticker Value DESC",
+  "SV/P Ratio ASC",
+  "SV/P Ratio DESC"
 ]
 
 async function Home() {
