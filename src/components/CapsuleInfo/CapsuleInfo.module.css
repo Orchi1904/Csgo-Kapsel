@@ -32,6 +32,11 @@
     gap: 4px;
 }
 
+.tooltipText{
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+
 .infoIcon{
     font-size: 15px;
     cursor: pointer;

@@ -1,6 +1,5 @@
-/*Todo: Add text that explains svp ratio as tooltip
-
-        Vlt CapsuleInfo auch verwenden für die Capsule
+/*Todo: 
+        Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
         Request for all csgo data takes up about 10s, but vercel only allows max 5s -> Website doesnt work if data on firebase is older than 8h
         -> Fix this maybe with search route
         Check if newest data will be instantly shown on website when older than 8h
