@@ -72,6 +72,8 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                         },
                                     },
                                 }}
+                                enterDelay={0}
+                                leaveDelay={5000}
                                 TransitionComponent={Zoom}
                                 arrow
                             >
