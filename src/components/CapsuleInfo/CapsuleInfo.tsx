@@ -1,4 +1,7 @@
+"use client"
+
 import styles from "./CapsuleInfo.module.css";
+import InfoIcon from '@mui/icons-material/Info';
 
 type Props = {
     title: string,
@@ -21,7 +24,10 @@ function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
                     <p>{capsulePrice.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
-                    <p>SV/P Ratio:</p>
+                    <p className={styles.svpRatioKey}>
+                        <InfoIcon className={styles.infoIcon} onClick={(e) => alert("HI")} />
+                        SV/P Ratio:
+                    </p>
                     <p>{svpRatio !== "N/A" ?
                         svpRatio.toFixed(2) + " x"
                         : "N/A"

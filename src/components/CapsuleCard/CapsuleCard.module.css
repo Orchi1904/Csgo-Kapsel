@@ -53,6 +53,16 @@
     margin: 0;
 }
 
+.svpRatioKey {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.infoIcon{
+    font-size: 17px;
+}
+
 @media (hover: hover) {
     .card:hover .icon {
         transform: scale(1.1);

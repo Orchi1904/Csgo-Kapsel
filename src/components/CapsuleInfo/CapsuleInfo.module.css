@@ -26,6 +26,17 @@
     font-size: 14px;
 }
 
+.svpRatioKey {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.infoIcon{
+    font-size: 15px;
+    cursor: pointer;
+}
+
 @media (min-width: 1024px){
     .title{
         margin-bottom: 40px;
@@ -38,6 +49,10 @@
 
     .capsulePriceInfo > p{
         font-size: 18px;
+    }
+
+    .infoIcon{
+        font-size: 20px;
     }
 }
 
@@ -53,5 +68,9 @@
 
     .capsulePriceInfo > p{
         font-size: 20px;
+    }
+
+    .infoIcon{
+        font-size: 22px;
     }
 }

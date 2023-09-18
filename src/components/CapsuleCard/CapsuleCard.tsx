@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./CapsuleCard.module.css";
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import InfoIcon from '@mui/icons-material/Info';
 
 type Props = {
     title: string,
@@ -15,6 +15,11 @@ type Props = {
 
 function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detailPage }: Props) {
     const router = useRouter();
+
+    const handleInfoIconClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+        e.stopPropagation();
+        alert("Hi");
+    }
 
     return (
         <div className={styles.card} onClick={() => { router.push(detailPage) }}>
@@ -38,7 +43,10 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                         </p>
                     </div>
                     <div className={styles.information}>
-                        <p>SV/P Ratio:</p>
+                        <p className={styles.svpRatioKey}>
+                            <InfoIcon className={styles.infoIcon} onClick={(e) => handleInfoIconClick(e)} />
+                            SV/P Ratio:
+                        </p>
                         <p>
                             {svpRatio !== "N/A" ?
                                 svpRatio.toFixed(2) + " x"
