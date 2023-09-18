@@ -35,7 +35,6 @@ function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
                             Sticker Value and the Capsule Price, serving as an indicator of how cheap or expensive
                             a capsule is, the higher the cheaper/better
                         </span>}
-                            placement="right"
                             componentsProps={{
                                 tooltip: {
                                     sx: {

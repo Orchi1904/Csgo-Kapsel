@@ -52,7 +52,18 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                 Sticker Value and the Capsule Price, serving as an indicator of how cheap or expensive
                                 a capsule is, the higher the cheaper/better
                             </span>}
-                                placement="right"
+                                PopperProps={{
+                                    popperOptions: {
+                                        modifiers: [
+                                            {
+                                                name: 'preventOverflow',
+                                                options: {
+                                                    boundariesElement: 'viewport', // Begrenze den Tooltip innerhalb des sichtbaren Bereichs des Viewports
+                                                },
+                                            },
+                                        ],
+                                    },
+                                }}
                                 componentsProps={{
                                     tooltip: {
                                         sx: {
@@ -60,7 +71,6 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                             '& .MuiTooltip-arrow': {
                                                 color: "#181818",
                                             },
-                                            maxWidth: "300px",
                                         },
                                     },
                                 }}
