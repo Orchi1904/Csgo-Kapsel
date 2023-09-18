@@ -56,7 +56,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                             {
                                                 name: 'preventOverflow',
                                                 options: {
-                                                    boundariesElement: 'viewport', // Begrenze den Tooltip innerhalb des sichtbaren Bereichs des Viewports
+                                                    boundariesElement: 'viewport', 
                                                 },
                                             },
                                         ],
@@ -73,7 +73,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                     },
                                 }}
                                 enterTouchDelay={0}
-                                leaveTouchDelay={5000}
+                                leaveTouchDelay={10000}
                                 TransitionComponent={Zoom}
                                 arrow
                             >
