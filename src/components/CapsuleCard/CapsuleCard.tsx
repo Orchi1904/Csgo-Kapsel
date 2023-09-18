@@ -60,6 +60,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                             '& .MuiTooltip-arrow': {
                                                 color: "#181818",
                                             },
+                                            maxWidth: "300px",
                                         },
                                     },
                                 }}
