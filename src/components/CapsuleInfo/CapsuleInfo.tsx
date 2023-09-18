@@ -50,7 +50,7 @@ function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
                             onClose={() => setTooltipOpen(false)}
                             open={tooltipOpen}
                         >
-                            <InfoIcon onClick={(e) => setTooltipOpen(true)}
+                            <InfoIcon onClick={() => setTooltipOpen(true)}
                                 onMouseEnter={() => setTooltipOpen(true)} />
                         </Tooltip>
                         SV/P Ratio:
