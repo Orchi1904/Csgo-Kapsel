@@ -18,10 +18,6 @@ type Props = {
 function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detailPage }: Props) {
     const router = useRouter();
 
-    const handleInfoIconClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
-        e.stopPropagation();
-    }
-
     return (
         <div className={styles.card} onClick={() => { router.push(detailPage) }}>
             <h3 className={styles.title}>{title}</h3>
@@ -77,7 +73,7 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                                 TransitionComponent={Zoom}
                                 arrow
                             >
-                                <InfoIcon />
+                                <InfoIcon onClick={(e) => e.stopPropagation()}/>
                             </Tooltip>
                             SV/P Ratio:
                         </p>

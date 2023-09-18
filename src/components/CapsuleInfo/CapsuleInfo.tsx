@@ -13,9 +13,6 @@ type Props = {
 }
 
 function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
-    const [tooltipOpen, setTooltipOpen] = useState<boolean>(false);
-
-
     return (
         <div className={styles.capsuleInfo}>
             <h3 className={styles.title}>{title}</h3>
@@ -61,11 +58,8 @@ function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
                             arrow
                             enterTouchDelay={0}
                             leaveTouchDelay={10000}
-                            onClose={() => setTooltipOpen(false)}
-                            open={tooltipOpen}
                         >
-                            <InfoIcon onClick={() => setTooltipOpen(true)}
-                                onMouseEnter={() => setTooltipOpen(true)} />
+                            <InfoIcon />
                         </Tooltip>
                         SV/P Ratio:
                     </p>
