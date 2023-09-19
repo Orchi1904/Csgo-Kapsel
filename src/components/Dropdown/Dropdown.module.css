@@ -12,6 +12,7 @@
     border-radius: 5px;
     outline: none;
     height: 28px;
+    width: 100%;
 }
 
 @media (min-width: 1024px){

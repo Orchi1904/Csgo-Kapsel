@@ -1,24 +1,27 @@
+"use client"
+
 import { capsuleSortFunctions, stickerSortFunctions } from "@/helper/sortFunctions";
 import styles from "./Dropdown.module.css";
 
 type Props = {
   name: string,
-  width: string,
   dropdownValues: string[],
-  setSorting: (sorting: keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions) => void
+  defaultValue: string,
+  setSorting?: (sorting: keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions) => void
 }
 
-function Dropdown({ name, width, dropdownValues, setSorting }: Props) {
+function Dropdown({ name, dropdownValues, defaultValue, setSorting }: Props) {
   return (
     <div className={styles.dropdownContainer}>
       <label htmlFor={name} />
 
       <select className={styles.dropdown} name={name} id={name}
-        style={{ width: `${width}` }} defaultValue="Sort"
+              defaultValue={defaultValue}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => 
-          { setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions) }}
+          { setSorting ? setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
+                       : ""}}
       >
-        <option value="Sort" disabled hidden>Sort</option>
+        <option value={defaultValue} disabled hidden>{defaultValue}</option>
         {dropdownValues.map((value, index) => (
           <option key={index} value={value}>{value}</option>
         ))}
