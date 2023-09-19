@@ -1,4 +1,5 @@
-/*Todo: Check where to save the selected currency
+/*Todo: Bessere Möglichkeit finden, um localStorage für Dropdown zu nutzen
+        Währungs-API implementieren
         Check if Vercel works now after 8h
 
         Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren

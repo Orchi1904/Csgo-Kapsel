@@ -27,7 +27,7 @@ function PageWrapper({ children, accentColor, endLineBgImg }: Props) {
                         </Image>
                     </Link>
                     <Dropdown dropdownValues={["$ USD", "£ GBP", "€ EUR", "₿ BTC"]} name="currencyDropdown" 
-                              defaultValue="$ USD"/>
+                              defaultValue="$ USD" type="currency" />
                 </div>
             </div>
             <div className={styles.childrenContainer}>
