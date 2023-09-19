@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.logoContainer{
+.logoBackground{
     height: 70px;
     position: fixed;
     top: 0;
@@ -14,6 +14,18 @@
     width: 100%;
     z-index: 5000;
     background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.logoContainer{
+    margin: 0 7.5%;
+    padding: 0;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .childrenContainer{
@@ -21,7 +33,6 @@
     width: 85%;
     max-width: 1440px;
     margin: 0px auto;
-    
 }
 
 .endLine{
