@@ -1,5 +1,6 @@
-/*Todo: Bessere Möglichkeit finden, um localStorage für Dropdown zu nutzen
-        Währungs-API implementieren
+/*Todo: Währungs-API implementieren
+        Währungs-API nutzen bei Kapseln und Detailseite
+        LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
         Check if Vercel works now after 8h
 
         Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
