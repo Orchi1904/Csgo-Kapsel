@@ -41,7 +41,7 @@ async function updateCapsulesFB() {
         const capsuleItem = await response.json();
 
         average_price = capsuleItem.average_price ? Number(capsuleItem.average_price) : "N/A";
-        icon = "https://steamcommunity.com/economy/image/" + capsuleItem.icon.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
+        icon = "https://steamcommunity.com/economy/image/" + capsuleItem.icon?.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
         currency = capsuleItem.currency;
 
         const stickerArr: Sticker[] = await getStickers(capsule);
