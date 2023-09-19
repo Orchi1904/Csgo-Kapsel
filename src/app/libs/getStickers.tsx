@@ -5,8 +5,8 @@ export default async function getStickers(capsule: Capsule): Promise<Sticker[]> 
     let price: number | "N/A" = "N/A";
 
     for (const sticker of capsule.stickers) {
-        const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=Sticker | ${sticker}&icon=1`);
-
+        const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=Sticker | ${sticker.name}&extend=1&icon=1`);
+        
         if (!response.ok) {
             throw new Error("Failed to load CSGO data");
         }

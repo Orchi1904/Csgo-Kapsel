@@ -1,4 +1,5 @@
-/*Todo: Csgobackpack-API request should now only use the search route because of the vercel issue
+/*Todo: 
+        Check if Vercel works now after 8h
 
         Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
         Check if newest data will be instantly shown on website when older than 8h
@@ -32,7 +33,7 @@ async function updateCapsulesFB() {
     let average_price: number | "N/A", icon: string, currency: string;
 
     for (const capsule of Capsules.major_capsules) {
-        const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=${capsule.title}&icon=1`);
+        const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=${capsule.title}&extend=1&icon=1`);
 
         if (!response.ok) {
             throw new Error("Failed to load CSGO data");
@@ -51,7 +52,7 @@ async function updateCapsulesFB() {
 
         const capsuleData: CapsuleData = {
             name: capsule.title,
-            average_price,
+            average_price: average_price !== 0 ? average_price : "N/A",
             icon,
             currency,
             steam_link: `https://steamcommunity.com/market/listings/730/${capsule.title}`,
