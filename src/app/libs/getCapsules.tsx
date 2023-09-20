@@ -1,4 +1,5 @@
-/*Todo: Währungs-API implementieren->Nur EUR als base ist möglich
+/*Todo: Update Code wegen Vercel/Netlify verbessern und testen ob es noch funktioniert
+        Währungs-API implementieren->Nur EUR als base ist möglich
         Währungs-API nutzen bei Kapseln und Detailseite
         LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
         Vercel Problem evtl. beheben (was aktuelle Daten angeht)
@@ -22,7 +23,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
-    if (timeStampHoursDiff < 8) {
+    if (timeStampHoursDiff > 8) {
         return await updateCapsulesFB();
         //return await getCapsulesFB();
     } else {
