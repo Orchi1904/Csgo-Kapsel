@@ -32,7 +32,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
 
 async function updateCapsulesFB() {
-    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1");
+    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1", {next: {revalidate: 0}});
 
     if (!response.ok) {
         throw new Error("Failed to load CSGO data");
