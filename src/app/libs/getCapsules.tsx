@@ -1,7 +1,8 @@
-/*Todo: Währungs-API implementieren
+/*Todo: Währungs-API implementieren->Nur EUR als base ist möglich -> Alle Preise standardmäßig in Euro abspeichern in Firebase und dann umwandeln
+        -> Auch darauf achten, dass Dropdown und Co angepasst werden dahingehend...
         Währungs-API nutzen bei Kapseln und Detailseite
         LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
-        Check if Vercel works now after 8h
+        Vercel Problem evtl. beheben (was aktuelle Daten angeht)
 
         Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
         Check if newest data will be instantly shown on website when older than 8h

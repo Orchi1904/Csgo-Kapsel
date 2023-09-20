@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import styles from "./CapsuleCard.module.css";
 import InfoIcon from '@mui/icons-material/Info';
 import { Tooltip, Zoom } from "@mui/material";
-import { useState } from "react";
 
 type Props = {
     title: string,
