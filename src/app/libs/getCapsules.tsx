@@ -22,12 +22,12 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
-    if (timeStampHoursDiff > 8) {
+    /*if (timeStampHoursDiff > 8) {
         await updateCapsulesFB();
         return await getCapsulesFB();
-    } else {
+    } else {*/
         return capsuleDataFB;
-    }
+    //}
 }
 
 
@@ -45,7 +45,7 @@ async function updateCapsulesFB() {
 
         average_price = capsuleItem.average_price ? Number(capsuleItem.average_price) : "N/A";
         icon = "https://steamcommunity.com/economy/image/" + capsuleItem.icon?.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
-        currency = capsuleItem.currency;
+        currency = "USD";
 
         const stickerArr: Sticker[] = await getStickers(capsule);
 
