@@ -2,6 +2,7 @@ import PageWrapper from '@/components/PageWrapper/PageWrapper';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 import getCapsules from './libs/getCapsules';
+import updateData from '@/firebase/firestore/updateData';
 
 const dropdownValues = [
   "Capsule Price ASC",
@@ -16,6 +17,14 @@ const dropdownValues = [
 
 async function Home() {
   const capsules = await getCapsules();
+
+  const updateDataFB = async () => {
+    for (const capsule of capsules) {
+      await updateData("capsules", capsule.name, capsule);
+    };
+  }
+
+  setTimeout(updateDataFB, 2000);
 
   return (
     <>

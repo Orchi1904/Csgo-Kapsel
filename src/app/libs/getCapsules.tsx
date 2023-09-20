@@ -23,8 +23,8 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
     if (timeStampHoursDiff < 8) {
-        await updateCapsulesFB();
-        return await getCapsulesFB();
+        return await updateCapsulesFB();
+        //return await getCapsulesFB();
     } else {
     return capsuleDataFB;
     }
@@ -33,6 +33,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
 async function updateCapsulesFB() {
     const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1", {next: {revalidate: 0}});
+    const capsuleArr: CapsuleData[] = [];
 
     if (!response.ok) {
         throw new Error("Failed to load CSGO data");
@@ -76,8 +77,10 @@ async function updateCapsulesFB() {
             stickers: stickerArr,
             last_updated: new Date().getTime()
         }
+        capsuleArr.push(capsuleData);
         //await updateData("capsules", capsule.title, capsuleData);
     }
+    return capsuleArr;
 }
 
 
