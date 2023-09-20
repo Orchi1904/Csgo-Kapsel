@@ -27,13 +27,13 @@ function CapsuleCard({ title, icon, stickerValue, capsulePrice, svpRatio, detail
                 <div className={styles.informationContainer}>
                     <div className={styles.information}>
                         <p>Sticker Value: </p>
-                        <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
+                        <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
                     </div>
                     <div className={styles.information}>
                         <p>Capsule Price: </p>
                         <p>
                             {capsulePrice !== "N/A" ?
-                                Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")
+                                Number(capsulePrice).toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")
                                 : "N/A"
                             }
                         </p>

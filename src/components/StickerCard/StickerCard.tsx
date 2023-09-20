@@ -39,7 +39,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
             <div className={styles.stickerDetails}>
               <h3 className={styles.stickerTitle}>{title}</h3>
               <p className={styles.stickerPrice}>
-                {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}
+                {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
               <img className={styles.stickerIconWide} src={icon} alt={title + " image"} />
             </div>
             <div className={styles.stickerPriceWide}>
-              <p>{stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
+              <p>{stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
             </div>
             <div className={styles.steamButtonContainer}>
               <OutlineButton text="BUY ON STEAM" href={steamLink} fontSize="14px"

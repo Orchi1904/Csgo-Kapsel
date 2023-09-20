@@ -1,20 +1,20 @@
 import { Capsule, Sticker } from "@/types";
 
-export default async function getStickers(capsule: Capsule): Promise<Sticker[]> {
+export default async function getStickers(capsule: Capsule, itemsList: any): Promise<Sticker[]> {
     const stickerArr: Sticker[] = [];
     let price: number | "N/A" = "N/A";
 
     for (const sticker of capsule.stickers) {
-        const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=Sticker | ${sticker.name}&extend=1&icon=1`);
-        
-        if (!response.ok) {
-            throw new Error("Failed to load CSGO data");
-        }
+        const stickerItem = itemsList["Sticker | " + sticker.name]
 
-        const stickerItem = await response.json();
-
-        if (stickerItem.success === true) {
-            price = stickerItem.average_price !== 0 ? Number(stickerItem.average_price) : "N/A";
+        if (stickerItem.price["24_hours"]) {
+            price = stickerItem.price["24_hours"].average;
+        } else if (stickerItem.price["7_days"]) {
+            price = stickerItem.price["7_days"].average;
+        } else if (stickerItem.price["30_days"]) {
+            price = stickerItem.price["30_days"].average;
+        } else if (stickerItem.price["all_time"].average) {
+            price = stickerItem.price["all_time"].average;
         } else {
             price = "N/A";
         }
@@ -25,7 +25,7 @@ export default async function getStickers(capsule: Capsule): Promise<Sticker[]> 
             average_price: price !== 0 ? price : "N/A",
             icon: sticker.icon,
             steam_link: `https://steamcommunity.com/market/listings/730/Sticker | ${sticker.name}`,
-            currency: "USD",
+            currency: "EUR",
         })
     }
 

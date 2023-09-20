@@ -1,5 +1,4 @@
-/*Todo: Währungs-API implementieren->Nur EUR als base ist möglich -> Alle Preise standardmäßig in Euro abspeichern in Firebase und dann umwandeln
-        -> Auch darauf achten, dass Dropdown und Co angepasst werden dahingehend...
+/*Todo: Währungs-API implementieren->Nur EUR als base ist möglich
         Währungs-API nutzen bei Kapseln und Detailseite
         LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
         Vercel Problem evtl. beheben (was aktuelle Daten angeht)
@@ -23,35 +22,48 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
-    /*if (timeStampHoursDiff > 8) {
+    if (timeStampHoursDiff < 8) {
         await updateCapsulesFB();
         return await getCapsulesFB();
-    } else {*/
-        return capsuleDataFB;
-    //}
+    } else {
+    return capsuleDataFB;
+    }
 }
 
 
 async function updateCapsulesFB() {
+    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1");
+
+    if (!response.ok) {
+        throw new Error("Failed to load CSGO data");
+    }
+
+    const csgoData = await response.json();
+    const itemsList = csgoData.items_list;
+
     let average_price: number | "N/A", icon: string, currency: string;
 
     for (const capsule of Capsules.major_capsules) {
-        const response = await fetch(`http://csgobackpack.net/api/GetItemPrice/?id=${capsule.title}&extend=1&icon=1`);
+        const item = itemsList[capsule.title];
 
-        if (!response.ok) {
-            throw new Error("Failed to load CSGO data");
+        if (item.price["24_hours"]) {
+            average_price = item.price["24_hours"].average;
+        } else if (item.price["7_days"]) {
+            average_price = item.price["7_days"].average;
+        } else if (item.price["30_days"]) {
+            average_price = item.price["30_days"].average;
+        } else if (item.price["all_time"].average) {
+            average_price = item.price["all_time"].average;
+        } else {
+            average_price = "N/A";
         }
+       
+        icon = "https://steamcommunity.com/economy/image/" + item.icon_url;
+        currency = csgoData.currency;
 
-        const capsuleItem = await response.json();
-
-        average_price = capsuleItem.average_price ? Number(capsuleItem.average_price) : "N/A";
-        icon = "https://steamcommunity.com/economy/image/" + capsuleItem.icon?.replace("http://cdn.steamcommunity.com/economy/image/", "").slice(0, -1);
-        currency = "USD";
-
-        const stickerArr: Sticker[] = await getStickers(capsule);
-
+        const stickerArr: Sticker[] = await getStickers(capsule, itemsList);
         const stickerValue = calculateStickerValue(stickerArr);
-        const svpRatio = stickerValue !== "N/A" && average_price !== "N/A" ? stickerValue / average_price : "N/A";
+        const svpRatio = stickerValue !== "N/A" && average_price !== "N/A" ? stickerValue/average_price : "N/A";
 
         const capsuleData: CapsuleData = {
             name: capsule.title,

@@ -19,11 +19,11 @@ function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
             <div className={styles.capsulePriceInfoContainer}>
                 <div className={styles.capsulePriceInfo}>
                     <p>Sticker Value:</p>
-                    <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
+                    <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
                     <p>Capsule Price:</p>
-                    <p>{capsulePrice.toLocaleString("de-DE", { style: "currency", currency: "USD" }).replace(",", ".")}</p>
+                    <p>{capsulePrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
                     <p className={styles.svpRatioKey}>
