@@ -20,7 +20,9 @@ async function Home() {
 
   const updateDataFB = async () => {
     for (const capsule of capsules) {
-      await updateData("capsules", capsule.name, capsule);
+      if ((new Date().getTime() / 1000 / 3600) - (capsule.last_updated / 1000 / 3600)) {
+        await updateData("capsules", capsule.name, capsule);
+      }
     };
   }
 
