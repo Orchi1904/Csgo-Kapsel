@@ -1,4 +1,5 @@
 /*Todo: Update Code wegen Vercel/Netlify verbessern und testen ob es noch funktioniert
+        -> Das Sorting der vorherigen Page wird nicht beibehalten... -> Fixen
         Währungs-API implementieren->Nur EUR als base ist möglich
         Währungs-API nutzen bei Kapseln und Detailseite
         LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
@@ -16,7 +17,7 @@ import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 import { headers } from 'next/headers';
 
 export default async function getCapsules(): Promise<CapsuleData[]> {
-    //Maybe fixes the static page problem
+    //Fixes the static page problem, but probably leads to not saving the sort when going back to main page...
     const headersList = headers();
     const capsuleDataFB: CapsuleData[] = await getCapsulesFB();
     const lastUpdatedTimestampHours = capsuleDataFB[0].last_updated / 1000 / 3600;
