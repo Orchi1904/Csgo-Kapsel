@@ -19,8 +19,13 @@ async function Home() {
   const capsules = await getCapsules();
 
   const updateDataFB = async () => {
+    const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
     for (const capsule of capsules) {
-      if ((new Date().getTime() / 1000 / 3600) - (capsule.last_updated / 1000 / 3600) > 8) {
+      const lastUpdatedTimestampHours = capsule.last_updated / 1000 / 3600;
+      const timeStampHoursDiff = currentTimeStampHours - lastUpdatedTimestampHours;
+
+      if (timeStampHoursDiff > 8) {
+        capsule.last_updated = new Date().getTime();
         await updateData("capsules", capsule.name, capsule);
       }
     };

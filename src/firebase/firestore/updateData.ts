@@ -10,7 +10,6 @@ export default async function updateData(collection: string, id: string, data: C
 
     try{
         result = await updateDoc(doc(db, collection, id), data);
-        console.log(result);
     }catch (e){
         error = e;
         console.log(error);

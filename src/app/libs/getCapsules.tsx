@@ -78,7 +78,7 @@ async function updateCapsulesFB() {
             sticker_value: stickerValue,
             svp_ratio: svpRatio,
             stickers: stickerArr,
-            last_updated: new Date().getTime()
+            last_updated: 0,
         }
         capsuleArr.push(capsuleData);
         //await updateData("capsules", capsule.title, capsuleData);
