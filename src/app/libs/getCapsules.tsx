@@ -36,7 +36,7 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
 
 
 async function updateCapsulesFB() {
-    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1", {next: {revalidate: 0}});
+    const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1");
     const capsuleArr: CapsuleData[] = [];
 
     if (!response.ok) {
