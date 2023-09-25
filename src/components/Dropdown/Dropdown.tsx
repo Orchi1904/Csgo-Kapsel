@@ -3,7 +3,8 @@
 import { capsuleSortFunctions, stickerSortFunctions } from "@/helper/sortFunctions";
 import styles from "./Dropdown.module.css";
 import { useEffect, useState } from "react";
-import { setStorageItem, getStorageItem } from "@/helper/storageManager";
+import { useGlobalContext } from "@/app/Context/store";
+import { Currencies } from "@/types";
 
 type Props = {
   name: string,
@@ -15,6 +16,7 @@ type Props = {
 
 function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Props) {
   const [determinedDefaultValue, setDeterminedDefaultValue] = useState<string>("");
+  const { setCurrency } = useGlobalContext();
 
   /*Had to do this with this useEffect, otherwise the currency dropdown wont show the  
   saved currency on the first load. Also we have to check if window is defined, otherwise
@@ -23,7 +25,7 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
     if (type === "currency") {
       const localStorageCurrency = localStorage.getItem("currency")
       setDeterminedDefaultValue(localStorageCurrency !== null ? localStorageCurrency : defaultValue);
-    }else{
+    } else {
       const sessionStorageSorting = sessionStorage.getItem("capsuleSort");
       setDeterminedDefaultValue(sessionStorageSorting !== null ? sessionStorageSorting : defaultValue);
     }
@@ -31,12 +33,13 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (type === "sort") {
-      setSorting ? 
-      setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
-      : "";
+      setSorting ?
+        setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
+        : "";
       e.target.value in capsuleSortFunctions ? sessionStorage.setItem("capsuleSort", e.target.value) : "";
     } else if (type === "currency") {
       localStorage.setItem("currency", e.target.value);
+      setCurrency(e.target.value as Currencies);
     }
   }
 

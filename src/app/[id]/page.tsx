@@ -1,8 +1,7 @@
 "use client"
 
-import PageWrapper from "@/components/PageWrapper/PageWrapper";
+import PageWrapper from "@/app/PageWrapper/PageWrapper";
 import styles from "./page.module.css";
-import CapsuleCard from "@/components/CapsuleCard/CapsuleCard";
 import CapsuleInfo from "@/components/CapsuleInfo/CapsuleInfo";
 import OutlineButton from "@/components/OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';

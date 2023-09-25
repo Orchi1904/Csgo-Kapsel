@@ -1,10 +1,10 @@
-/*Todo: Währungs-API implementieren->Nur EUR als base ist möglich
-        Währungs-API nutzen bei Kapseln und Detailseite
-        LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
-        Vercel Problem evtl. beheben (was aktuelle Daten angeht)
+/*Todo: Currency bei Detailseite anpassen
+        Bitcoin mit 8 Nachkommastellen anzeigen lassen
+        Nur noch Context statt localStorage/sessionStorage nutzen
+        Currency-Umstellungen und Sortierung testen
+        CSGOBackpack-Typen Website Link schicken
 
         Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
-        Check if newest data will be instantly shown on website when older than 8h
 */
 
 import getStickers from "./getStickers";
@@ -25,14 +25,14 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
     /*Fetch new data if data is older than 8 hours, because 
       csgobackpack api updates every 8 hours*/
     if (timeStampHoursDiff > 8) {
-        return await updateCapsulesFB();
+        return await updateCapsules();
     } else {
         return capsuleDataFB;
     }
 }
 
 
-async function updateCapsulesFB() {
+async function updateCapsules() {
     const response = await fetch("http://csgobackpack.net/api/GetItemsList/v2/?currency=EUR&extend=1");
     const capsuleArr: CapsuleData[] = [];
 

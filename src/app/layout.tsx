@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { GlobalContextProvider } from './Context/store'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} layout`}>{children}</body>
+      <body className={`${inter.className} layout`}>
+        <GlobalContextProvider>
+          {children}
+        </GlobalContextProvider>
+      </body>
     </html>
   )
 }

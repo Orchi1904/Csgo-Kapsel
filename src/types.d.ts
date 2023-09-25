@@ -32,5 +32,7 @@ export type CapsuleData = {
     stickers: Sticker[]
 }
 
+type Currencies = "€ EUR" | "$ USD" | "£ GBP" | "₿ BTC";
+
 
 

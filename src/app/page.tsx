@@ -1,4 +1,4 @@
-import PageWrapper from '@/components/PageWrapper/PageWrapper';
+import PageWrapper from '@/app/PageWrapper/PageWrapper';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 import getCapsules from './libs/getCapsules';

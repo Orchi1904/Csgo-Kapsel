@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import styles from './PageWrapper.module.css';
 import Image from 'next/image';
-import Footer from '../Footer/Footer';
-import Dropdown from '../Dropdown/Dropdown';
+import Footer from '../../components/Footer/Footer';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 type Props = {
     children: ReactNode,
