@@ -1,5 +1,4 @@
-/*Todo: Update Code wegen Vercel/Netlify verbessern und testen ob es noch funktioniert
-        Währungs-API implementieren->Nur EUR als base ist möglich
+/*Todo: Währungs-API implementieren->Nur EUR als base ist möglich
         Währungs-API nutzen bei Kapseln und Detailseite
         LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
         Vercel Problem evtl. beheben (was aktuelle Daten angeht)
@@ -12,11 +11,11 @@ import getStickers from "./getStickers";
 import Capsules from "../../helper/capsules.json";
 import { CapsuleData, Sticker } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
-//import { headers } from 'next/headers';
+import { headers } from 'next/headers';
 
 export default async function getCapsules(): Promise<CapsuleData[]> {
-    //Fixes the static page problem
-    //const headersList = headers();
+    //Fixes the static page problem, otherwise updating data will not work on builded page
+    const headersList = headers();
     
     const capsuleDataFB: CapsuleData[] = await getCapsulesFB();
     const lastUpdatedTimestampHours = capsuleDataFB[0].last_updated / 1000 / 3600;
