@@ -19,6 +19,10 @@ function CapsuleWrapper({ capsules, search, inputId, dropdownValues }: Props) {
     const [sorting, setSorting] = useState<keyof typeof capsuleSortFunctions>("default");
     const [searchTerm, setSearchTerm] = useState<string>("");
 
+    useEffect(() => {;
+        setSorting(sessionStorage.getItem("capsuleSort") as keyof typeof capsuleSortFunctions);
+    }, []);
+
     return (
         <div className={styles.capsuleCardSection}>
             <InputSection search={search} id={inputId} dropdownValues={dropdownValues}

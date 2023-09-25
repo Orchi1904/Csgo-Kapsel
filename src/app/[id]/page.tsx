@@ -21,8 +21,8 @@ type Props = {
 const dropdownValues = [
   "Price ASC",
   "Price DESC",
-  "Name ASC",
-  "Name DESC",
+  "Sticker Name ASC",
+  "Sticker Name DESC",
   "Rarity ASC",
   "Rarity DESC"
 ]

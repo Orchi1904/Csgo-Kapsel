@@ -31,7 +31,7 @@ async function Home() {
     };
   }
 
-  setTimeout(updateDataFB, 2000);
+  updateDataFB();
 
   return (
     <>

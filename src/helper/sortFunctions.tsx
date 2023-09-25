@@ -26,9 +26,9 @@ export const stickerSortFunctions = {
         sortNotAvailableToEnd(a.average_price, b.average_price, "ASC"),
     "Price DESC": (a: Sticker, b: Sticker) =>
         sortNotAvailableToEnd(b.average_price, a.average_price, "DESC"),
-    "Name ASC": (a: Sticker, b: Sticker) =>
+    "Sticker Name ASC": (a: Sticker, b: Sticker) =>
         a.name.localeCompare(b.name),
-    "Name DESC": (a: Sticker, b: Sticker) =>
+    "Sticker Name DESC": (a: Sticker, b: Sticker) =>
         b.name.localeCompare(a.name),
     "Rarity ASC": (a: Sticker, b: Sticker) => 
         sortRarity(a.rarity, b.rarity),

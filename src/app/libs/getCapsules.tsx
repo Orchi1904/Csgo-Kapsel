@@ -1,5 +1,4 @@
 /*Todo: Update Code wegen Vercel/Netlify verbessern und testen ob es noch funktioniert
-        -> Das Sorting der vorherigen Page wird nicht beibehalten... -> Fixen
         Währungs-API implementieren->Nur EUR als base ist möglich
         Währungs-API nutzen bei Kapseln und Detailseite
         LocalStorage Code verbessern, falls man öfter den gleichen Code schreiben muss/musste
@@ -9,16 +8,16 @@
         Check if newest data will be instantly shown on website when older than 8h
 */
 
-import updateData from "@/firebase/firestore/updateData";
 import getStickers from "./getStickers";
 import Capsules from "../../helper/capsules.json";
 import { CapsuleData, Sticker } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
-import { headers } from 'next/headers';
+//import { headers } from 'next/headers';
 
 export default async function getCapsules(): Promise<CapsuleData[]> {
-    //Fixes the static page problem, but probably leads to not saving the sort when going back to main page...
-    const headersList = headers();
+    //Fixes the static page problem
+    //const headersList = headers();
+    
     const capsuleDataFB: CapsuleData[] = await getCapsulesFB();
     const lastUpdatedTimestampHours = capsuleDataFB[0].last_updated / 1000 / 3600;
     const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
@@ -28,9 +27,8 @@ export default async function getCapsules(): Promise<CapsuleData[]> {
       csgobackpack api updates every 8 hours*/
     if (timeStampHoursDiff > 8) {
         return await updateCapsulesFB();
-        //return await getCapsulesFB();
     } else {
-    return capsuleDataFB;
+        return capsuleDataFB;
     }
 }
 
@@ -62,13 +60,13 @@ async function updateCapsulesFB() {
         } else {
             average_price = "N/A";
         }
-       
+
         icon = "https://steamcommunity.com/economy/image/" + item.icon_url;
         currency = csgoData.currency;
 
         const stickerArr: Sticker[] = await getStickers(capsule, itemsList);
         const stickerValue = calculateStickerValue(stickerArr);
-        const svpRatio = stickerValue !== "N/A" && average_price !== "N/A" ? stickerValue/average_price : "N/A";
+        const svpRatio = stickerValue !== "N/A" && average_price !== "N/A" ? stickerValue / average_price : "N/A";
 
         const capsuleData: CapsuleData = {
             name: capsule.title,
@@ -82,7 +80,6 @@ async function updateCapsulesFB() {
             last_updated: 0,
         }
         capsuleArr.push(capsuleData);
-        //await updateData("capsules", capsule.title, capsuleData);
     }
     return capsuleArr;
 }

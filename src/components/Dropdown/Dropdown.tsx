@@ -24,7 +24,8 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
       const localStorageCurrency = localStorage.getItem("currency")
       setDeterminedDefaultValue(localStorageCurrency !== null ? localStorageCurrency : defaultValue);
     }else{
-      setDeterminedDefaultValue(defaultValue);
+      const sessionStorageSorting = sessionStorage.getItem("capsuleSort");
+      setDeterminedDefaultValue(sessionStorageSorting !== null ? sessionStorageSorting : defaultValue);
     }
   }, [])
 
@@ -33,6 +34,7 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
       setSorting ? 
       setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
       : "";
+      e.target.value in capsuleSortFunctions ? sessionStorage.setItem("capsuleSort", e.target.value) : "";
     } else if (type === "currency") {
       localStorage.setItem("currency", e.target.value);
     }
