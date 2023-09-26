@@ -1,7 +1,13 @@
+"use server"
+
 import getExchangeRatesFB from "@/firebase/firestore/getExchangeRates";
 import updateData from "@/firebase/firestore/updateData";
+import { headers } from 'next/headers';
 
 export default async function getExchangeRatesEUR() {
+    //Fixes the static page problem, otherwise updating data will not work on builded page
+    const headersList = headers();
+
     const exchangeRatesFB: any = await getExchangeRatesFB("1");
     const lastUpdatedTimestampHours = exchangeRatesFB.timestamp / 3600; //Seconds to hours
     const currentTimeStampHours = new Date().getTime() / 3600000; //Milliseconds to hours

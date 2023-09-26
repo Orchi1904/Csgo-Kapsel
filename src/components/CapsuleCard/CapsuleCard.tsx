@@ -7,24 +7,16 @@ import { Tooltip, Zoom } from "@mui/material";
 import { CapsuleData, Currencies } from "@/types";
 import { useEffect, useState } from "react";
 import getExchangeRatesEUR from "@/app/libs/getExchangeRatesEUR";
-import { useGlobalContext } from "@/app/Context/store";
+import { useGlobalContext } from "@/app/context/store";
 
 type Props = {
     capsule: CapsuleData,
+    exchangeRates: any,
 }
 
-function CapsuleCard({ capsule }: Props) {
-    const [exchangeRates, setExchangeRates] = useState();
+function CapsuleCard({ capsule, exchangeRates }: Props) {
     const { currency } = useGlobalContext();
     const router = useRouter();
-
-    useEffect(() => {
-        const getExchangeRates = async () => {
-            setExchangeRates(await getExchangeRatesEUR());
-        }
-
-        getExchangeRates();
-    }, []);
 
     const getCurrencyString = (value: number | "N/A") => {
         if (value !== "N/A" && exchangeRates) {

@@ -1,6 +1,5 @@
 /*Todo: Currency bei Detailseite anpassen
         Bitcoin mit 8 Nachkommastellen anzeigen lassen
-        Nur noch Context statt localStorage/sessionStorage nutzen
         Currency-Umstellungen und Sortierung testen
         CSGOBackpack-Typen Website Link schicken
 
