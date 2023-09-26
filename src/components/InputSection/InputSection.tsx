@@ -7,15 +7,16 @@ type Props = {
   search?: boolean,
   id: string,
   dropdownValues: string[],
+  type: "capsuleSort" | "stickerSort",
   setSorting: (sorting: any) => void,
   setSearchTerm?: (searchTerm: string) => void
 }
 
-function InputSection({ search, id, dropdownValues, setSorting, setSearchTerm }: Props) {
+function InputSection({ search, id, dropdownValues, type, setSorting, setSearchTerm }: Props) {
   return (
     <div className={styles.inputSection}>
       <Dropdown name={id} dropdownValues={dropdownValues} defaultValue="Sort" setSorting={setSorting} 
-                type="sort"/>
+                type={type}/>
       {search ?
         <Search name={id} width="100%" setSearchTerm={setSearchTerm}/>
         : ""}

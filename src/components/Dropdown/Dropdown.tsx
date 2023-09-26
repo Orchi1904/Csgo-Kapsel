@@ -10,7 +10,7 @@ type Props = {
   name: string,
   dropdownValues: string[],
   defaultValue: string,
-  type: "sort" | "currency",
+  type: "capsuleSort" | "stickerSort" | "currency",
   setSorting?: (sorting: keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions) => void
 }
 
@@ -22,23 +22,25 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
   saved currency on the first load. Also we have to check if window is defined, otherwise
   we will get an error saying window is not defined*/
   useEffect(() => {
-   if (type === "currency") {
+    if (type === "currency") {
       setDeterminedDefaultValue(currency);
-    } else {
+    } else if (type === "capsuleSort") {
       setDeterminedDefaultValue(capsuleSorting);
+    } else {
+      setDeterminedDefaultValue(defaultValue);
     }
   }, [])
 
-  useEffect(() => {
-    console.log(capsuleSorting);
-  }, [capsuleSorting]);
-
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (type === "sort") {
+    if (type === "stickerSort") {
       setSorting ?
         setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
         : "";
-      e.target.value in capsuleSortFunctions ? setCapsuleSorting(e.target.value as keyof typeof capsuleSortFunctions) : "";
+    } else if (type === "capsuleSort") {
+      setSorting ?
+        setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
+        : "";
+      setCapsuleSorting(e.target.value as keyof typeof capsuleSortFunctions);
     } else if (type === "currency") {
       setCurrency(e.target.value as Currencies);
     }

@@ -1,5 +1,4 @@
-/*Todo: Bitcoin mit 8 Nachkommastellen anzeigen lassen
-        Currency-Umstellungen und Sortierung testen
+/*Todo: Currency-Umstellungen und Sortierung testen
         CSGOBackpack-Typen Website Link schicken
 
         Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren

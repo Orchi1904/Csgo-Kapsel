@@ -30,7 +30,7 @@ function CapsuleWrapper({ capsules, search, inputId, dropdownValues, exchangeRat
 
     return (
         <div className={styles.capsuleCardSection}>
-            <InputSection search={search} id={inputId} dropdownValues={dropdownValues}
+            <InputSection search={search} id={inputId} dropdownValues={dropdownValues} type="capsuleSort"
                 setSorting={setSorting} setSearchTerm={setSearchTerm}/>
             <CapsuleCardSection capsules={capsules} sorting={sorting} searchTerm={searchTerm} />
         </div>

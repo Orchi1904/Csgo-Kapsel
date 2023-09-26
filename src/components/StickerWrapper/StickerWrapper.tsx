@@ -22,7 +22,7 @@ function StickerWrapper({ search, inputId, dropdownValues, stickerArr }: Props) 
         <div className={styles.stickerCardSection}>
             <div className={styles.stickerSectionHead}>
                 <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
-                <InputSection search={search} id={inputId} dropdownValues={dropdownValues}
+                <InputSection search={search} id={inputId} dropdownValues={dropdownValues} type="stickerSort"
                     setSorting={setSorting} />
             </div>
             <StickerCardSection stickerArr={stickerArr} sorting={sorting} />

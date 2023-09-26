@@ -1,6 +1,5 @@
 import { useGlobalContext } from "@/app/Context/store";
 
-
 export const getCurrencyString = (value: number | "N/A") => {
     const { currency, exchangeRates } = useGlobalContext();
 
@@ -9,7 +8,8 @@ export const getCurrencyString = (value: number | "N/A") => {
         if (currency !== "₿ BTC") {
             return convertedValue.toLocaleString("de-DE", { style: "currency", currency: currency.slice(2) }).replace(",", ".");
         } else {
-            return `${convertedValue.toLocaleString("de-DE").replace(",", ".")} ₿`
+            console.log(convertedValue);
+            return `${convertedValue.toFixed(8).replace(",", ".")} ₿`
         }
     } else if (!exchangeRates) {
         return value.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".");
