@@ -5,6 +5,7 @@ import styles from "./CapsuleInfo.module.css";
 import InfoIcon from '@mui/icons-material/Info';
 import { useState } from "react";
 import { getCurrencyString } from "@/helper/currencyFunctions";
+import { useGlobalContext } from "@/app/Context/store";
 
 type Props = {
     title: string,
@@ -14,17 +15,19 @@ type Props = {
 }
 
 function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
+    const { currency, exchangeRates } = useGlobalContext();
+
     return (
         <div className={styles.capsuleInfo}>
             <h3 className={styles.title}>{title}</h3>
             <div className={styles.capsulePriceInfoContainer}>
                 <div className={styles.capsulePriceInfo}>
                     <p>Sticker Value:</p>
-                    <p>{getCurrencyString(stickerValue)}</p>
+                    <p>{getCurrencyString(stickerValue, currency, exchangeRates)}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
                     <p>Capsule Price:</p>
-                    <p>{getCurrencyString(capsulePrice)}</p>
+                    <p>{getCurrencyString(capsulePrice, currency, exchangeRates)}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
                     <p className={styles.svpRatioKey}>

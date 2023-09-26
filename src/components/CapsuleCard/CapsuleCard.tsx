@@ -28,12 +28,12 @@ function CapsuleCard({ capsule }: Props) {
                 <div className={styles.informationContainer}>
                     <div className={styles.information}>
                         <p>Sticker Value: </p>
-                        <p>{getCurrencyString(capsule.sticker_value)}</p>
+                        <p>{getCurrencyString(capsule.sticker_value, currency, exchangeRates)}</p>
                     </div>
                     <div className={styles.information}>
                         <p>Capsule Price: </p>
                         <p>
-                            {getCurrencyString(capsule.average_price)}
+                            {getCurrencyString(capsule.average_price, currency, exchangeRates)}
                         </p>
                     </div>
                     <div className={styles.information}>

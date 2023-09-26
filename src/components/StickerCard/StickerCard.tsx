@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import OutlineButton from "../OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { getCurrencyString } from "@/helper/currencyFunctions";
+import { useGlobalContext } from "@/app/Context/store";
 
 type Props = {
   title: string,
@@ -16,6 +17,7 @@ type Props = {
 
 function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const { currency, exchangeRates } = useGlobalContext()
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,7 +42,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
             <div className={styles.stickerDetails}>
               <h3 className={styles.stickerTitle}>{title}</h3>
               <p className={styles.stickerPrice}>
-                {getCurrencyString(stickerPrice)}
+                {getCurrencyString(stickerPrice, currency, exchangeRates)}
               </p>
             </div>
           </div>
@@ -53,7 +55,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
               <img className={styles.stickerIconWide} src={icon} alt={title + " image"} />
             </div>
             <div className={styles.stickerPriceWide}>
-              <p>{getCurrencyString(stickerPrice)}</p>
+              <p>{getCurrencyString(stickerPrice, currency, exchangeRates)}</p>
             </div>
             <div className={styles.steamButtonContainer}>
               <OutlineButton text="BUY ON STEAM" href={steamLink} fontSize="14px"
