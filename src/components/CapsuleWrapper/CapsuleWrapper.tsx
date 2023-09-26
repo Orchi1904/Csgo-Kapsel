@@ -7,7 +7,7 @@ import CapsuleCardSection from '../CapsuleCardSection/CapsuleCardSection';
 import { useState } from "react";
 import { capsuleSortFunctions } from '@/helper/sortFunctions';
 import { CapsuleData } from '@/types';
-import { useGlobalContext } from '@/app/context/store';
+import { useGlobalContext } from '@/app/Context/store';
 import getExchangeRatesEUR from '@/app/libs/getExchangeRatesEUR';
 
 type Props = {

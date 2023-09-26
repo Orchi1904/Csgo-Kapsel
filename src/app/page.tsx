@@ -21,8 +21,6 @@ async function Home() {
   const capsules = await getCapsules();
   const exchangeRates = await getExchangeRatesEUR();
 
-  console.log(exchangeRates);
-
   const updateDataFB = async () => {
     const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
     for (const capsule of capsules) {

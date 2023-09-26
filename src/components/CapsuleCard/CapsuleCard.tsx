@@ -7,7 +7,7 @@ import { Tooltip, Zoom } from "@mui/material";
 import { CapsuleData, Currencies } from "@/types";
 import { useEffect, useState } from "react";
 import getExchangeRatesEUR from "@/app/libs/getExchangeRatesEUR";
-import { useGlobalContext } from "@/app/context/store";
+import { useGlobalContext } from "@/app/Context/store";
 
 type Props = {
     capsule: CapsuleData,
