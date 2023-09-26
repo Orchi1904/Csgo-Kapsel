@@ -4,6 +4,7 @@ import { Tooltip, Zoom } from "@mui/material";
 import styles from "./CapsuleInfo.module.css";
 import InfoIcon from '@mui/icons-material/Info';
 import { useState } from "react";
+import { getCurrencyString } from "@/helper/currencyFunctions";
 
 type Props = {
     title: string,
@@ -19,11 +20,11 @@ function CapsuleInfo({ title, stickerValue, capsulePrice, svpRatio }: Props) {
             <div className={styles.capsulePriceInfoContainer}>
                 <div className={styles.capsulePriceInfo}>
                     <p>Sticker Value:</p>
-                    <p>{stickerValue.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
+                    <p>{getCurrencyString(stickerValue)}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
                     <p>Capsule Price:</p>
-                    <p>{capsulePrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
+                    <p>{getCurrencyString(capsulePrice)}</p>
                 </div>
                 <div className={styles.capsulePriceInfo}>
                     <p className={styles.svpRatioKey}>

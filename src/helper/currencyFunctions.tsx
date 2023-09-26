@@ -1,17 +1,19 @@
-import { Currencies } from "@/types";
+import { useGlobalContext } from "@/app/Context/store";
 
-export const getCurrencyString = (value: number | "N/A", targetCurrency: Currencies, exchangeRates: any): string => {
-    const targetCurrencyValue = getTargetCurrencyValue(value, targetCurrency, exchangeRates);
-    return targetCurrencyValue.toLocaleString("de-DE", { style: "currency", currency: targetCurrency }).replace(",", ".");
-}
 
-const getTargetCurrencyValue = (sourceCurrencyValue: number | "N/A", targetCurrency: Currencies, exchangeRates: any) => {
-    if (sourceCurrencyValue !== "N/A") {
-        console.log("RATES: " + exchangeRates);
-        const targetCurrencyValue = sourceCurrencyValue * exchangeRates[targetCurrency];
-        return targetCurrencyValue;
+export const getCurrencyString = (value: number | "N/A") => {
+    const { currency, exchangeRates } = useGlobalContext();
+
+    if (value !== "N/A" && exchangeRates) {
+        const convertedValue = value * exchangeRates[currency.slice(2)];
+        if (currency !== "₿ BTC") {
+            return convertedValue.toLocaleString("de-DE", { style: "currency", currency: currency.slice(2) }).replace(",", ".");
+        } else {
+            return `${convertedValue.toLocaleString("de-DE").replace(",", ".")} ₿`
+        }
+    } else if (!exchangeRates) {
+        return value.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".");
     } else {
         return "N/A";
     }
 }
-

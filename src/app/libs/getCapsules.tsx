@@ -1,5 +1,4 @@
-/*Todo: Currency bei Detailseite anpassen
-        Bitcoin mit 8 Nachkommastellen anzeigen lassen
+/*Todo: Bitcoin mit 8 Nachkommastellen anzeigen lassen
         Currency-Umstellungen und Sortierung testen
         CSGOBackpack-Typen Website Link schicken
 

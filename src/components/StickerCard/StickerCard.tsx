@@ -5,6 +5,7 @@ import styles from "./StickerCard.module.css";
 import { useEffect, useState } from "react";
 import OutlineButton from "../OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { getCurrencyString } from "@/helper/currencyFunctions";
 
 type Props = {
   title: string,
@@ -39,7 +40,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
             <div className={styles.stickerDetails}>
               <h3 className={styles.stickerTitle}>{title}</h3>
               <p className={styles.stickerPrice}>
-                {stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}
+                {getCurrencyString(stickerPrice)}
               </p>
             </div>
           </div>
@@ -52,7 +53,7 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
               <img className={styles.stickerIconWide} src={icon} alt={title + " image"} />
             </div>
             <div className={styles.stickerPriceWide}>
-              <p>{stickerPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" }).replace(",", ".")}</p>
+              <p>{getCurrencyString(stickerPrice)}</p>
             </div>
             <div className={styles.steamButtonContainer}>
               <OutlineButton text="BUY ON STEAM" href={steamLink} fontSize="14px"

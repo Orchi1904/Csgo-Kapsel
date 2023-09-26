@@ -8,6 +8,7 @@ import { CapsuleData, Currencies } from "@/types";
 import { useEffect, useState } from "react";
 import getExchangeRatesEUR from "@/app/libs/getExchangeRatesEUR";
 import { useGlobalContext } from "@/app/Context/store";
+import { getCurrencyString } from "@/helper/currencyFunctions";
 
 type Props = {
     capsule: CapsuleData,
@@ -16,21 +17,6 @@ type Props = {
 function CapsuleCard({ capsule }: Props) {
     const { currency, exchangeRates } = useGlobalContext();
     const router = useRouter();
-
-    const getCurrencyString = (value: number | "N/A") => {
-        if (value !== "N/A" && exchangeRates) {
-            const convertedValue = value * exchangeRates[currency.slice(2)];
-            if (currency !== "₿ BTC") {
-                return convertedValue.toLocaleString("de-DE", { style: "currency", currency: currency.slice(2) }).replace(",", ".");
-            } else {
-                return `${convertedValue.toLocaleString("de-DE").replace(",", ".")} ₿`
-            }
-        } else if (!exchangeRates) {
-            return value.toLocaleString("de-DE", {style: "currency", currency: "EUR"}).replace(",", ".");
-        } else {
-            return "N/A";
-        }
-    }
 
     return (
         <div className={styles.card} onClick={() => { router.push(capsule.name) }}>
