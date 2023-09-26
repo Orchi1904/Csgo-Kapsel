@@ -3,6 +3,8 @@ import HeroSection from '@/components/HeroSection/HeroSection';
 import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 import getCapsules from './libs/getCapsules';
 import updateData from '@/firebase/firestore/updateData';
+import getExchangeRatesEUR from './libs/getExchangeRatesEUR';
+import { useEffect } from 'react';
 
 const dropdownValues = [
   "Capsule Price ASC",
@@ -17,6 +19,9 @@ const dropdownValues = [
 
 async function Home() {
   const capsules = await getCapsules();
+  const exchangeRates = await getExchangeRatesEUR();
+
+  console.log(exchangeRates);
 
   const updateDataFB = async () => {
     const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
@@ -38,7 +43,7 @@ async function Home() {
       <PageWrapper accentColor="var(--blue)" endLineBgImg="/images/backgrounds/endLineBlueBG.svg">
         <HeroSection />
         <CapsuleWrapper search={true} inputId='capsuleSort' dropdownValues={dropdownValues}
-          capsules={capsules} />
+          capsules={capsules} exchangeRates={exchangeRates}/>
       </PageWrapper>
     </>
   )

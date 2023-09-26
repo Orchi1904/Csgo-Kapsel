@@ -15,31 +15,24 @@ type Props = {
     search: boolean,
     inputId: string,
     dropdownValues: string[],
+    exchangeRates: any,
 }
 
-function CapsuleWrapper({ capsules, search, inputId, dropdownValues }: Props) {
+function CapsuleWrapper({ capsules, search, inputId, dropdownValues, exchangeRates }: Props) {
     const [sorting, setSorting] = useState<keyof typeof capsuleSortFunctions>("default");
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const [exchangeRates, setExchangeRates] = useState();
-    const {capsuleSorting} = useGlobalContext();
+    const {capsuleSorting, setExchangeRates} = useGlobalContext();
 
     useEffect(() => {;
         setSorting(capsuleSorting);
-
-        const getExchangeRates = async () => {
-            setExchangeRates(await getExchangeRatesEUR());
-        }
-
-        console.log(exchangeRates);
-
-        getExchangeRates();
+        setExchangeRates(exchangeRates);
     }, []);
 
     return (
         <div className={styles.capsuleCardSection}>
             <InputSection search={search} id={inputId} dropdownValues={dropdownValues}
                 setSorting={setSorting} setSearchTerm={setSearchTerm}/>
-            <CapsuleCardSection capsules={capsules} sorting={sorting} searchTerm={searchTerm} exchangeRates={exchangeRates}/>
+            <CapsuleCardSection capsules={capsules} sorting={sorting} searchTerm={searchTerm} />
         </div>
     )
 }

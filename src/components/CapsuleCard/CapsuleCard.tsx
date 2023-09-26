@@ -11,11 +11,10 @@ import { useGlobalContext } from "@/app/context/store";
 
 type Props = {
     capsule: CapsuleData,
-    exchangeRates: any,
 }
 
-function CapsuleCard({ capsule, exchangeRates }: Props) {
-    const { currency } = useGlobalContext();
+function CapsuleCard({ capsule }: Props) {
+    const { currency, exchangeRates } = useGlobalContext();
     const router = useRouter();
 
     const getCurrencyString = (value: number | "N/A") => {

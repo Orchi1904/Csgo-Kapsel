@@ -8,7 +8,9 @@ interface ContextProps {
     currency: Currencies,
     setCurrency: Dispatch<SetStateAction<Currencies>>,
     capsuleSorting: keyof typeof capsuleSortFunctions,
-    setCapsuleSorting: Dispatch<SetStateAction<keyof typeof capsuleSortFunctions>>
+    setCapsuleSorting: Dispatch<SetStateAction<keyof typeof capsuleSortFunctions>>,
+    exchangeRates: any,
+    setExchangeRates: Dispatch<SetStateAction<any>>
 }
 
 const GlobalContext = createContext<ContextProps>({
@@ -16,6 +18,8 @@ const GlobalContext = createContext<ContextProps>({
     setCurrency: () => "",
     capsuleSorting: "" as keyof typeof capsuleSortFunctions,
     setCapsuleSorting: () => "",
+    exchangeRates: {},
+    setExchangeRates: () => "" 
 })
 
 type Props = {
@@ -25,9 +29,11 @@ type Props = {
 export const GlobalContextProvider = ({children}: Props) => {
     const [currency, setCurrency] = useState("€ EUR" as Currencies);
     const [capsuleSorting, setCapsuleSorting] = useState("Sort" as keyof typeof capsuleSortFunctions);
+    const [exchangeRates, setExchangeRates] = useState({});
 
     return(
-        <GlobalContext.Provider value={{currency, setCurrency, capsuleSorting, setCapsuleSorting}}>
+        <GlobalContext.Provider value={{currency, setCurrency, capsuleSorting, setCapsuleSorting,
+                                        exchangeRates, setExchangeRates}}>
             {children}
         </GlobalContext.Provider>
     )
