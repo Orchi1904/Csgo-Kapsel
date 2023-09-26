@@ -3,7 +3,7 @@
 import { capsuleSortFunctions, stickerSortFunctions } from "@/helper/sortFunctions";
 import styles from "./Dropdown.module.css";
 import { useEffect, useState } from "react";
-import { useGlobalContext } from "@/app/Context/store";
+import { useGlobalContext } from "@/Context/store";
 import { Currencies } from "@/types";
 
 type Props = {

@@ -6,8 +6,8 @@ import InfoIcon from '@mui/icons-material/Info';
 import { Tooltip, Zoom } from "@mui/material";
 import { CapsuleData, Currencies } from "@/types";
 import { useEffect, useState } from "react";
-import getExchangeRatesEUR from "@/app/libs/getExchangeRatesEUR";
-import { useGlobalContext } from "@/app/Context/store";
+import getExchangeRatesEUR from "@/libs/getExchangeRatesEUR";
+import { useGlobalContext } from "@/Context/store";
 import { getCurrencyString } from "@/helper/currencyFunctions";
 
 type Props = {

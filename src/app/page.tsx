@@ -1,9 +1,9 @@
-import PageWrapper from '@/app/PageWrapper/PageWrapper';
+import PageWrapper from '@/components/PageWrapper/PageWrapper';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
-import getCapsules from './libs/getCapsules';
+import getCapsules from '../libs/getCapsules';
 import updateData from '@/firebase/firestore/updateData';
-import getExchangeRatesEUR from './libs/getExchangeRatesEUR';
+import getExchangeRatesEUR from '../libs/getExchangeRatesEUR';
 import { useEffect } from 'react';
 
 const dropdownValues = [

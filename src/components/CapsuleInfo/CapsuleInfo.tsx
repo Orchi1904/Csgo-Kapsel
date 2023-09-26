@@ -5,7 +5,7 @@ import styles from "./CapsuleInfo.module.css";
 import InfoIcon from '@mui/icons-material/Info';
 import { useState } from "react";
 import { getCurrencyString } from "@/helper/currencyFunctions";
-import { useGlobalContext } from "@/app/Context/store";
+import { useGlobalContext } from "@/Context/store";
 
 type Props = {
     title: string,

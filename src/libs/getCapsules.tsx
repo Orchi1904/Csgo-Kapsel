@@ -5,7 +5,7 @@
 */
 
 import getStickers from "./getStickers";
-import Capsules from "../../helper/capsules.json";
+import Capsules from "../helper/capsules.json";
 import { CapsuleData, Sticker } from "@/types";
 import { getCapsulesFB } from "@/firebase/firestore/getCapsules";
 import { headers } from 'next/headers';

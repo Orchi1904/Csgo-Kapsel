@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import OutlineButton from "../OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { getCurrencyString } from "@/helper/currencyFunctions";
-import { useGlobalContext } from "@/app/Context/store";
+import { useGlobalContext } from "@/Context/store";
 
 type Props = {
   title: string,

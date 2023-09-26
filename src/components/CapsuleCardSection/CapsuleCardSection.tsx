@@ -2,7 +2,7 @@ import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
 import { CapsuleData } from "@/types";
 import { capsuleSortFunctions } from "@/helper/sortFunctions";
-import getExchangeRatesEUR from "@/app/libs/getExchangeRatesEUR";
+import getExchangeRatesEUR from "@/libs/getExchangeRatesEUR";
 
 type Props = {
     capsules: CapsuleData[],

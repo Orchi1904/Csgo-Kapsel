@@ -7,8 +7,8 @@ import CapsuleCardSection from '../CapsuleCardSection/CapsuleCardSection';
 import { useState } from "react";
 import { capsuleSortFunctions } from '@/helper/sortFunctions';
 import { CapsuleData } from '@/types';
-import { useGlobalContext } from '@/app/Context/store';
-import getExchangeRatesEUR from '@/app/libs/getExchangeRatesEUR';
+import { useGlobalContext } from '@/Context/store';
+import getExchangeRatesEUR from '@/libs/getExchangeRatesEUR';
 
 type Props = {
     capsules: CapsuleData[],
