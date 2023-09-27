@@ -10,18 +10,17 @@ import { useGlobalContext } from '@/Context/store';
 
 type Props = {
     capsules: CapsuleData[],
-    search: boolean,
     inputId: string,
     dropdownValues: string[],
 }
 
-function CapsuleWrapper({ capsules, search, inputId, dropdownValues }: Props) {
+function CapsuleWrapper({ capsules, inputId, dropdownValues }: Props) {
     const [searchTerm, setSearchTerm] = useState<string>("");
     const {capsuleSorting, setCapsuleSorting} = useGlobalContext();
 
     return (
         <div className={styles.capsuleCardSectionContainer}>
-            <InputSection search={search} id={inputId} dropdownValues={dropdownValues} type="capsuleSort"
+            <InputSection id={inputId} dropdownValues={dropdownValues} type="capsuleSort"
                 setSorting={setCapsuleSorting} setSearchTerm={setSearchTerm}/>
             <CapsuleCardSection capsules={capsules} sorting={capsuleSorting} searchTerm={searchTerm} />
         </div>

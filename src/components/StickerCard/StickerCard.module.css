@@ -36,7 +36,6 @@
 .stickerIcon {
     box-sizing: border-box;
     width: 100%;
-    transition: transform 0.5s;
 }
 
 .stickerDetails {

@@ -9,20 +9,19 @@ import { stickerSortFunctions } from '@/helper/sortFunctions';
 import { Sticker } from '@/types';
 
 type Props = {
-    search?: boolean,
     inputId: string,
     dropdownValues: string[],
     stickerArr: Sticker[],
 }
 
-function StickerWrapper({ search, inputId, dropdownValues, stickerArr }: Props) {
+function StickerWrapper({ inputId, dropdownValues, stickerArr }: Props) {
     const [sorting, setSorting] = useState<keyof typeof stickerSortFunctions>("default");
 
     return (
         <div className={styles.stickerCardSection}>
             <div className={styles.stickerSectionHead}>
                 <h4 className={styles.stickerSectionHeadTitle}>Stickers</h4>
-                <InputSection search={search} id={inputId} dropdownValues={dropdownValues} type="stickerSort"
+                <InputSection id={inputId} dropdownValues={dropdownValues} type="stickerSort"
                     setSorting={setSorting} />
             </div>
             <StickerCardSection stickerArr={stickerArr} sorting={sorting} />

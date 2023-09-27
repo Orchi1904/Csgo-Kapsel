@@ -23,11 +23,10 @@ function PageWrapper({ children, accentColor, endLineBgImg }: Props) {
                             alt="CSGO Kapsel Logo"
                             width={185}
                             height={65}
-                        >
-                        </Image>
+                        />
                     </Link>
-                    <Dropdown dropdownValues={["€ EUR", "£ GBP", "$ USD", "₿ BTC"]} name="currencyDropdown" 
-                              defaultValue="€ EUR" type="currency" />
+                    <Dropdown dropdownValues={["€ EUR", "£ GBP", "$ USD", "₿ BTC"]} name="currencyDropdown"
+                        defaultValue="€ EUR" type="currency" />
                 </div>
             </div>
             <div className={styles.childrenContainer}>

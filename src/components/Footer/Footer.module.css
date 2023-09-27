@@ -4,7 +4,7 @@
     padding: 20px 10px;
 }
 
-.footerContent{
+.footerContent {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -66,7 +66,7 @@
         margin-top: 100px;
     }
 
-    .footerContent{
+    .footerContent {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;

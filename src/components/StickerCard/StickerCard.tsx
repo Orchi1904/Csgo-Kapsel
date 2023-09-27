@@ -7,15 +7,13 @@ import OutlineButton from "../OutlineButton/OutlineButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { getCurrencyString } from "@/helper/currencyFunctions";
 import { useGlobalContext } from "@/Context/store";
+import { Sticker } from "@/types";
 
 type Props = {
-  title: string,
-  icon: string,
-  steamLink: string,
-  stickerPrice: number | "N/A",
+  sticker: Sticker
 }
 
-function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
+function StickerCard({ sticker }: Props) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const { currency, exchangeRates } = useGlobalContext()
 
@@ -32,33 +30,33 @@ function StickerCard({ title, icon, steamLink, stickerPrice }: Props) {
   return (
     <>
       {windowWidth < 1024 ?
-        <Link className={styles.stickerCardContainerBorder} href={steamLink}>
+        <Link className={styles.stickerCardContainerBorder} href={sticker.steam_link}>
           <div className={styles.stickerCardContainer}>
             <div className={styles.stickerCard}>
               <div className={styles.stickerIconContainer}>
-                <img className={styles.stickerIcon} src={icon} alt={title + " image"} />
+                <img className={styles.stickerIcon} src={sticker.icon} alt={sticker.name + " image"} />
               </div>
             </div>
             <div className={styles.stickerDetails}>
-              <h3 className={styles.stickerTitle}>{title}</h3>
+              <h3 className={styles.stickerTitle}>{sticker.name}</h3>
               <p className={styles.stickerPrice}>
-                {getCurrencyString(stickerPrice, currency, exchangeRates)}
+                {getCurrencyString(sticker.average_price, currency, exchangeRates)}
               </p>
             </div>
           </div>
         </Link>
         :
         <div className={styles.stickerCardWide}>
-          <h3 className={styles.stickerTitleWide}>{title}</h3>
+          <h3 className={styles.stickerTitleWide}>{sticker.name}</h3>
           <div className={styles.stickerIconAndInformationContainerWide}>
             <div className={styles.stickerIconContainerWide}>
-              <img className={styles.stickerIconWide} src={icon} alt={title + " image"} />
+              <img className={styles.stickerIconWide} src={sticker.icon} alt={sticker.name + " image"} />
             </div>
             <div className={styles.stickerPriceWide}>
-              <p>{getCurrencyString(stickerPrice, currency, exchangeRates)}</p>
+              <p>{getCurrencyString(sticker.average_price, currency, exchangeRates)}</p>
             </div>
             <div className={styles.steamButtonContainer}>
-              <OutlineButton text="BUY ON STEAM" href={steamLink} fontSize="14px"
+              <OutlineButton text="BUY ON STEAM" href={sticker.steam_link} fontSize="14px"
                 icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
                 width="100%" />
             </div>

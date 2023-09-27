@@ -7,7 +7,7 @@ type Props = {
     stopPropagation?: boolean,
 }
 
-function SVPTooltip({stopPropagation}: Props) {
+function SVPTooltip({ stopPropagation }: Props) {
     return (
         <Tooltip title={<span className={styles.tooltipText}>
             <b>Sticker-Value-To-Price Ratio: </b> This metric calculates the ratio between the
@@ -41,7 +41,7 @@ function SVPTooltip({stopPropagation}: Props) {
             TransitionComponent={Zoom}
             arrow
         >
-            <InfoIcon className={styles.infoIcon} onClick={(e) => stopPropagation ? e.stopPropagation() : ""}/>
+            <InfoIcon className={styles.infoIcon} onClick={(e) => stopPropagation ? e.stopPropagation() : ""} />
         </Tooltip>
     )
 }

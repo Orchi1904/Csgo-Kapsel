@@ -1,35 +1,35 @@
-.stickerCardSection{
+.stickerCardSection {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.stickerSectionHead{
+.stickerSectionHead {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.stickerSectionHeadTitle{
+.stickerSectionHeadTitle {
     font-family: "Outfit", sans-serif;
     color: var(--beige);
     font-size: 24px;
     margin: 0;
 }
 
-@media (min-width: 1024px){
-    .stickerSectionHead{
+@media (min-width: 1024px) {
+    .stickerSectionHead {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .stickerSectionHeadTitle{
+    .stickerSectionHeadTitle {
         font-size: 28px;
     }
 }
 
-@media (min-width: 1280px){
-    .stickerSectionHeadTitle{
+@media (min-width: 1280px) {
+    .stickerSectionHeadTitle {
         font-size: 30px;
     }
 }

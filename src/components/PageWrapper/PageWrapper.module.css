@@ -1,4 +1,4 @@
-.pageWrapper{
+.pageWrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.logoBackground{
+.logoBackground {
     height: fit-content;
     position: fixed;
     top: 0;
@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-.logoContainer{
+.logoContainer {
     margin: 0 7.5%;
     padding: 0;
     width: 100%;
@@ -29,30 +29,31 @@
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     width: 140px !important;
     height: 40px !important;
 }
 
-.childrenContainer{
+.childrenContainer {
     padding-top: 81px;
     width: 85%;
     max-width: 1440px;
     margin: 0px auto;
 }
 
-.endLine{
+.endLine {
     height: 12px;
-    background-position: center center; /*Used because if it is not there, the endLine will be too bright*/
+    background-position: center center;
+    /*Used because if it is not there, the endLine will be too bright*/
 }
 
-@media (min-width: 310px){
-    .logo{
+@media (min-width: 310px) {
+    .logo {
         width: 185px !important;
         height: 65px !important;
     }
 
-    .logoContainer{
+    .logoContainer {
         flex-direction: row;
     }
 }

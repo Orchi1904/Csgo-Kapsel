@@ -1,11 +1,11 @@
-.inputSection{
+.inputSection {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-@media (min-width: 1024px){
-    .inputSection{
+@media (min-width: 1024px) {
+    .inputSection {
         flex-direction: row-reverse;
         gap: 50%;
     }

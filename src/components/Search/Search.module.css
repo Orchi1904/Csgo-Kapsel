@@ -1,4 +1,4 @@
-.searchContainer{
+.searchContainer {
     display: flex;
     border: 2px solid white;
     border-radius: 5px;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.search{
+.search {
     width: 100%;
     box-sizing: border-box;
     background-color: var(--black);
@@ -19,13 +19,13 @@
     color: white;
 }
 
-.searchIcon{
+.searchIcon {
     font-size: 18px !important;
     padding-right: 2px;
 }
 
-@media (min-height: 800px){
-    .search{
+@media (min-height: 800px) {
+    .search {
         font-size: 14px;
     }
 }

@@ -16,8 +16,7 @@ function StickerCardSection({ stickerArr, sorting }: Props) {
   return (
     <div className={styles.stickerCardSection}>
       {sortedStickerArr.map((sticker) => (
-        <StickerCard key={sticker.name} title={sticker.name} icon={sticker.icon} steamLink={sticker.steam_link}
-          stickerPrice={sticker.average_price} />
+        <StickerCard sticker={sticker} />
       ))}
     </div>
   )
