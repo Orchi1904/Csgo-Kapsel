@@ -3,7 +3,6 @@ import HeroSection from '@/components/HeroSection/HeroSection';
 import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 import getCapsules from '../libs/getCapsules';
 import updateData from '@/firebase/firestore/updateData';
-import getExchangeRatesEUR from '../libs/getExchangeRatesEUR';
 
 const dropdownValues = [
   "Capsule Price ASC",
@@ -35,7 +34,7 @@ async function Home() {
     <>
       <PageWrapper accentColor="var(--blue)" endLineBgImg="/images/backgrounds/endLineBlueBG.svg">
         <HeroSection />
-        <CapsuleWrapper search={true} inputId='capsuleSort' dropdownValues={dropdownValues}
+        <CapsuleWrapper inputId='capsuleSort' dropdownValues={dropdownValues}
           capsules={capsules} />
       </PageWrapper>
     </>

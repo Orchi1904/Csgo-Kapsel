@@ -1,4 +1,4 @@
-/*Todo: - Performanceoptimierung beginnen 
+/*Todo: - Performanceoptimierung beginnen -> Siehe YT Videos 
         CSGOBackpack-Typen Website Link schicken
 */
 
