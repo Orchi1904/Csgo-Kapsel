@@ -6,7 +6,6 @@ export const getCurrencyString = (value: number | "N/A", targetCurrency: Currenc
         if (targetCurrency !== "₿ BTC") {
             return convertedValue.toLocaleString("de-DE", { style: "currency", currency: targetCurrency.slice(2) }).replace(",", ".");
         } else {
-            console.log(convertedValue);
             return `${convertedValue.toFixed(8).replace(",", ".")} ₿`
         }
     } else if (!exchangeRates) {

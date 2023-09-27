@@ -4,7 +4,6 @@ import CapsuleWrapper from '@/components/CapsuleWrapper/CapsuleWrapper';
 import getCapsules from '../libs/getCapsules';
 import updateData from '@/firebase/firestore/updateData';
 import getExchangeRatesEUR from '../libs/getExchangeRatesEUR';
-import { useEffect } from 'react';
 
 const dropdownValues = [
   "Capsule Price ASC",
@@ -19,15 +18,11 @@ const dropdownValues = [
 
 async function Home() {
   const capsules = await getCapsules();
-  const exchangeRates = await getExchangeRatesEUR();
 
   const updateDataFB = async () => {
-    const currentTimeStampHours = new Date().getTime() / 1000 / 3600;
     for (const capsule of capsules) {
-      const lastUpdatedTimestampHours = capsule.last_updated / 1000 / 3600;
-      const timeStampHoursDiff = currentTimeStampHours - lastUpdatedTimestampHours;
-
-      if (timeStampHoursDiff > 8) {
+      //0 is set when the capusle data is older than 8h
+      if (capsule.last_updated === 0) {
         capsule.last_updated = new Date().getTime();
         await updateData("capsules", capsule.name, capsule);
       }
@@ -41,7 +36,7 @@ async function Home() {
       <PageWrapper accentColor="var(--blue)" endLineBgImg="/images/backgrounds/endLineBlueBG.svg">
         <HeroSection />
         <CapsuleWrapper search={true} inputId='capsuleSort' dropdownValues={dropdownValues}
-          capsules={capsules} exchangeRates={exchangeRates}/>
+          capsules={capsules} />
       </PageWrapper>
     </>
   )

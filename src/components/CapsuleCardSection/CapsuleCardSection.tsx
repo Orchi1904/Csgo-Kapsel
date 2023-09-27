@@ -2,7 +2,6 @@ import CapsuleCard from "../CapsuleCard/CapsuleCard";
 import styles from "./CapsuleCardSection.module.css";
 import { CapsuleData } from "@/types";
 import { capsuleSortFunctions } from "@/helper/sortFunctions";
-import getExchangeRatesEUR from "@/libs/getExchangeRatesEUR";
 
 type Props = {
     capsules: CapsuleData[],
@@ -10,7 +9,7 @@ type Props = {
     searchTerm: string,
 }
 
-function CapsuleCardSection({ capsules, sorting, searchTerm }: Props) {    
+function CapsuleCardSection({ capsules, sorting, searchTerm }: Props) {
     let sortedCapsules = capsules ? [...capsules].sort(
         capsuleSortFunctions[sorting] || capsuleSortFunctions["default"]
     ) : [];

@@ -39,8 +39,10 @@ function Page({ params: { id } }: Props) {
         const capsuleData = await getCapsule(id);
         setCapsuleData(capsuleData);
         setLoading(false);
-      } catch (error: any) {
-        setFetchError(error.message);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          setFetchError(error.message);
+        }
         setLoading(false);
       }
     }
@@ -56,12 +58,10 @@ function Page({ params: { id } }: Props) {
             <TailSpin
               height="80"
               width="80"
-              color="#A63A50"
+              color="var(--red)"
               ariaLabel="tail-spin-loading"
               radius="1"
               wrapperStyle={{ display: "flex", justifyContent: "center", }}
-              wrapperClass=""
-              visible={true}
             />
           </div>
           : capsuleData ?
@@ -71,8 +71,7 @@ function Page({ params: { id } }: Props) {
                   <CapsuleBox icon={capsuleData.icon} alt={capsuleData.name + " image"} />
                 </div>
                 <div className={styles.infoContainer}>
-                  <CapsuleInfo title={capsuleData.name} stickerValue={capsuleData.sticker_value}
-                    capsulePrice={capsuleData.average_price} svpRatio={capsuleData.svp_ratio} />
+                  <CapsuleInfo capsule={capsuleData} />
                   <div className={styles.outlineButtonContainer}>
                     <OutlineButton href={capsuleData.steam_link} width="100%" icon={<ShoppingCartIcon style={{ fontSize: "16px" }} />}
                       text="BUY ON STEAM" fontSize="14px" />

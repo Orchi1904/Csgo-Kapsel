@@ -1,8 +1,9 @@
 "use client"
 
 import { capsuleSortFunctions } from "@/helper/sortFunctions";
+import getExchangeRatesEUR from "@/libs/getExchangeRatesEUR";
 import { Currencies } from "@/types"
-import { createContext, useContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, useContext, Dispatch, SetStateAction, useState, useEffect } from "react";
 
 interface ContextProps {
     currency: Currencies,
@@ -10,7 +11,6 @@ interface ContextProps {
     capsuleSorting: keyof typeof capsuleSortFunctions,
     setCapsuleSorting: Dispatch<SetStateAction<keyof typeof capsuleSortFunctions>>,
     exchangeRates: any,
-    setExchangeRates: Dispatch<SetStateAction<any>>
 }
 
 const GlobalContext = createContext<ContextProps>({
@@ -19,7 +19,6 @@ const GlobalContext = createContext<ContextProps>({
     capsuleSorting: "" as keyof typeof capsuleSortFunctions,
     setCapsuleSorting: () => "",
     exchangeRates: {},
-    setExchangeRates: () => "" 
 })
 
 type Props = {
@@ -31,9 +30,18 @@ export const GlobalContextProvider = ({children}: Props) => {
     const [capsuleSorting, setCapsuleSorting] = useState("Sort" as keyof typeof capsuleSortFunctions);
     const [exchangeRates, setExchangeRates] = useState({});
 
+    useEffect(() => {
+        const getExchangeRates = async () => {
+            const exchangeRatesEUR = await getExchangeRatesEUR();
+            setExchangeRates(exchangeRatesEUR);
+        }
+        
+        getExchangeRates();
+    }, []);
+
     return(
         <GlobalContext.Provider value={{currency, setCurrency, capsuleSorting, setCapsuleSorting,
-                                        exchangeRates, setExchangeRates}}>
+                                        exchangeRates}}>
             {children}
         </GlobalContext.Provider>
     )

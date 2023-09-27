@@ -1,0 +1,9 @@
+.tooltipText{
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+
+.infoIcon{
+    font-size: 22px;
+    cursor: pointer;
+}

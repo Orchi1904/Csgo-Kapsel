@@ -1,7 +1,7 @@
-.title{
+.title {
     margin: 0;
     font-family: "Outfit", sans-serif;
-    color: beige;
+    color: var(--beige);
     font-size: 22px;
     text-align: center;
     word-wrap: break-word;
@@ -9,18 +9,18 @@
     margin-top: 5px;
 }
 
-.capsulePriceInfoContainer{
+.capsulePriceInfoContainer {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.capsulePriceInfo{
+.capsulePriceInfo {
     display: flex;
     justify-content: space-between;
 }
 
-.capsulePriceInfo > p{
+.capsulePriceInfo>p {
     margin: 0;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
@@ -32,50 +32,32 @@
     gap: 4px;
 }
 
-.tooltipText{
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-}
-
-.infoIcon{
-    font-size: 15px;
-    cursor: pointer;
-}
-
-@media (min-width: 1024px){
-    .title{
+@media (min-width: 1024px) {
+    .title {
         margin-bottom: 40px;
         font-size: 26px;
     }
 
-    .capsulePriceInfoContainer{
+    .capsulePriceInfoContainer {
         gap: 10px;
     }
 
-    .capsulePriceInfo > p{
+    .capsulePriceInfo>p {
         font-size: 18px;
-    }
-
-    .infoIcon{
-        font-size: 20px;
     }
 }
 
-@media (min-width: 1280px){
-    .title{
+@media (min-width: 1280px) {
+    .title {
         margin-bottom: 80px;
         font-size: 28px;
     }
 
-    .capsulePriceInfoContainer{
+    .capsulePriceInfoContainer {
         gap: 15px;
     }
 
-    .capsulePriceInfo > p{
+    .capsulePriceInfo>p {
         font-size: 20px;
-    }
-
-    .infoIcon{
-        font-size: 22px;
     }
 }

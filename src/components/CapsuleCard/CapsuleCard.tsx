@@ -2,13 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./CapsuleCard.module.css";
-import InfoIcon from '@mui/icons-material/Info';
-import { Tooltip, Zoom } from "@mui/material";
-import { CapsuleData, Currencies } from "@/types";
-import { useEffect, useState } from "react";
-import getExchangeRatesEUR from "@/libs/getExchangeRatesEUR";
+import { CapsuleData } from "@/types";
 import { useGlobalContext } from "@/Context/store";
 import { getCurrencyString } from "@/helper/currencyFunctions";
+import SVPTooltip from "../SVPTooltip/SVPTooltip";
 
 type Props = {
     capsule: CapsuleData,
@@ -32,46 +29,11 @@ function CapsuleCard({ capsule }: Props) {
                     </div>
                     <div className={styles.information}>
                         <p>Capsule Price: </p>
-                        <p>
-                            {getCurrencyString(capsule.average_price, currency, exchangeRates)}
-                        </p>
+                        <p>{getCurrencyString(capsule.average_price, currency, exchangeRates)}</p>
                     </div>
                     <div className={styles.information}>
                         <p className={styles.svpRatioKey}>
-                            <Tooltip title={<span className={styles.tooltipText}>
-                                <b>Sticker-Value-To-Price Ratio: </b> This metric calculates the ratio between the
-                                Sticker Value and the Capsule Price, serving as an indicator of how cheap or expensive
-                                a capsule is, the higher the cheaper/better
-                            </span>}
-                                PopperProps={{
-                                    popperOptions: {
-                                        modifiers: [
-                                            {
-                                                name: 'preventOverflow',
-                                                options: {
-                                                    boundariesElement: 'viewport',
-                                                },
-                                            },
-                                        ],
-                                    },
-                                }}
-                                componentsProps={{
-                                    tooltip: {
-                                        sx: {
-                                            bgcolor: "#181818",
-                                            '& .MuiTooltip-arrow': {
-                                                color: "#181818",
-                                            },
-                                        },
-                                    },
-                                }}
-                                enterTouchDelay={0}
-                                leaveTouchDelay={10000}
-                                TransitionComponent={Zoom}
-                                arrow
-                            >
-                                <InfoIcon onClick={(e) => e.stopPropagation()} />
-                            </Tooltip>
+                            <SVPTooltip stopPropagation />
                             SV/P Ratio:
                         </p>
                         <p>

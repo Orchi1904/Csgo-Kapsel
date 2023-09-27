@@ -2,6 +2,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 import app from "../config";
 import { CapsuleData } from "@/types";
 
+//Clean -> Vlt. db zentralisieren
 const db = getFirestore(app);
 
 export default async function getCapsule(id: string): Promise<CapsuleData> {

@@ -15,17 +15,15 @@ type Props = {
     search: boolean,
     inputId: string,
     dropdownValues: string[],
-    exchangeRates: any,
 }
 
-function CapsuleWrapper({ capsules, search, inputId, dropdownValues, exchangeRates }: Props) {
+function CapsuleWrapper({ capsules, search, inputId, dropdownValues }: Props) {
     const [sorting, setSorting] = useState<keyof typeof capsuleSortFunctions>("default");
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const {capsuleSorting, setExchangeRates} = useGlobalContext();
+    const {capsuleSorting} = useGlobalContext();
 
     useEffect(() => {;
         setSorting(capsuleSorting);
-        setExchangeRates(exchangeRates);
     }, []);
 
     return (
