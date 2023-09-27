@@ -13,11 +13,11 @@ export default async function getExchangeRatesEUR() {
     const currentTimeStampHours = new Date().getTime() / 3600000; //Milliseconds to hours
     const timeStampHoursDiff = currentTimeStampHours - lastUpdatedTimestampHours;
 
-    if(timeStampHoursDiff > 1){
+    if (timeStampHoursDiff > 1) {
         const updatedExchangeRates = await updateExchangeRates();
-        return updatedExchangeRates.rates;
-    }else{
-        return exchangeRatesFB.rates;
+        return updatedExchangeRates;
+    } else {
+        return exchangeRatesFB;
     }
 }
 

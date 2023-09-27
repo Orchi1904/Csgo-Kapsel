@@ -1,8 +1,6 @@
 import { CapsuleData } from "@/types";
-import app from "../../firebase/config";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
-
-const db = getFirestore(app);
+import { db } from "../../firebase/config";
+import { collection, getDocs } from "firebase/firestore";
 
 //Promise because it is an async function
 export async function getCapsulesFB(): Promise<CapsuleData[]> {

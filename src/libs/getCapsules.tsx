@@ -1,5 +1,4 @@
 /*Todo: - Performanceoptimierung beginnen 
-            -> Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
         CSGOBackpack-Typen Website Link schicken
 */
 
@@ -12,7 +11,7 @@ import { headers } from 'next/headers';
 export default async function getCapsules(): Promise<CapsuleData[]> {
     //Fixes the static page problem, otherwise updating data will not work on builded page
     const headersList = headers();
-    
+
     const capsuleDataFB: CapsuleData[] = await getCapsulesFB();
     const lastUpdatedTimestampHours = capsuleDataFB[0].last_updated / 1000 / 3600;
     const currentTimeStampHours = new Date().getTime() / 1000 / 3600;

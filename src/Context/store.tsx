@@ -2,7 +2,7 @@
 
 import { capsuleSortFunctions } from "@/helper/sortFunctions";
 import getExchangeRatesEUR from "@/libs/getExchangeRatesEUR";
-import { Currencies } from "@/types"
+import { Currencies, ExchangeRates } from "@/types"
 import { createContext, useContext, Dispatch, SetStateAction, useState, useEffect } from "react";
 
 interface ContextProps {
@@ -25,23 +25,25 @@ type Props = {
     children: React.ReactNode,
 }
 
-export const GlobalContextProvider = ({children}: Props) => {
+export const GlobalContextProvider = ({ children }: Props) => {
     const [currency, setCurrency] = useState("$ EUR" as Currencies);
     const [capsuleSorting, setCapsuleSorting] = useState("Sort" as keyof typeof capsuleSortFunctions);
-    const [exchangeRates, setExchangeRates] = useState({});
+    const [exchangeRates, setExchangeRates] = useState<ExchangeRates>();
 
     useEffect(() => {
         const getExchangeRates = async () => {
             const exchangeRatesEUR = await getExchangeRatesEUR();
             setExchangeRates(exchangeRatesEUR);
         }
-        
+
         getExchangeRates();
     }, []);
 
-    return(
-        <GlobalContext.Provider value={{currency, setCurrency, capsuleSorting, setCapsuleSorting,
-                                        exchangeRates}}>
+    return (
+        <GlobalContext.Provider value={{
+            currency, setCurrency, capsuleSorting, setCapsuleSorting,
+            exchangeRates
+        }}>
             {children}
         </GlobalContext.Provider>
     )

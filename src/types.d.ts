@@ -32,7 +32,17 @@ export type CapsuleData = {
     stickers: Sticker[]
 }
 
-type Currencies = "€ EUR" | "$ USD" | "£ GBP" | "₿ BTC";
+export type ExchangeRates = {
+    success: boolean;
+    timestamp: number;
+    base: string;
+    date: string;
+    rates: {
+        [currencyCode: string]: number;
+    };
+}
+
+export type Currencies = "€ EUR" | "$ USD" | "£ GBP" | "₿ BTC";
 
 
 

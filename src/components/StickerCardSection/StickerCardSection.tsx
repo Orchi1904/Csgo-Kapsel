@@ -16,7 +16,7 @@ function StickerCardSection({ stickerArr, sorting }: Props) {
   return (
     <div className={styles.stickerCardSection}>
       {sortedStickerArr.map((sticker) => (
-        <StickerCard sticker={sticker} />
+        <StickerCard key={sticker.name} sticker={sticker} />
       ))}
     </div>
   )

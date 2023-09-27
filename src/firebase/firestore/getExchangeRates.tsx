@@ -1,8 +1,6 @@
-import { doc, getDoc, getFirestore } from "firebase/firestore";
-import app from "../config";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../config";
 import { CapsuleData } from "@/types";
-
-const db = getFirestore(app);
 
 export default async function getExchangeRatesFB(id: string): Promise<CapsuleData> {
     const docRef = doc(db, "exchangeRates", id);
