@@ -1,4 +1,4 @@
-/*Todo: - Herz fixen + evtl. Dropdowns tatsächlich ausgewählt machen
+/*Todo: - evtl. Dropdowns tatsächlich ausgewählt machen
         - Performanceoptimierung beginnen 
         CSGOBackpack-Typen Website Link schicken
 
