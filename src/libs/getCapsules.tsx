@@ -1,8 +1,6 @@
-/*Todo: - evtl. Dropdowns tatsächlich ausgewählt machen
-        - Performanceoptimierung beginnen 
+/*Todo: - Performanceoptimierung beginnen 
+            -> Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
         CSGOBackpack-Typen Website Link schicken
-
-        Vlt CapsuleInfo auch verwenden für die Capsule bzw. zumindest Tooltip als Komponente exportieren
 */
 
 import getStickers from "./getStickers";

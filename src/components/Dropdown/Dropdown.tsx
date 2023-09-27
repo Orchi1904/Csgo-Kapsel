@@ -55,7 +55,10 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSelect(e)} >
         <option value={determinedDefaultValue} disabled hidden>{determinedDefaultValue}</option>
         {dropdownValues.map((value, index) => (
-          <option key={index} value={value}>{value}</option>
+          <option key={index} value={value}
+            selected={value === determinedDefaultValue ? true : false}>
+            {value}
+          </option>
         ))}
       </select>
     </div >
