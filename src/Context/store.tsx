@@ -26,7 +26,7 @@ type Props = {
 }
 
 export const GlobalContextProvider = ({children}: Props) => {
-    const [currency, setCurrency] = useState("€ EUR" as Currencies);
+    const [currency, setCurrency] = useState("$ EUR" as Currencies);
     const [capsuleSorting, setCapsuleSorting] = useState("Sort" as keyof typeof capsuleSortFunctions);
     const [exchangeRates, setExchangeRates] = useState({});
 

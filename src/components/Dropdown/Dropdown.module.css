@@ -1,4 +1,4 @@
-.dropdownContainer{
+.dropdownContainer {
     position: relative;
 }
 
@@ -15,14 +15,14 @@
     width: 100%;
 }
 
-@media (min-width: 1024px){
-    .dropdown{
+@media (min-width: 1024px) {
+    .dropdown {
         width: fit-content !important;
     }
 }
 
-@media (min-height: 800px){
-    .dropdown{
+@media (min-height: 800px) {
+    .dropdown {
         font-size: 14px;
     }
 }

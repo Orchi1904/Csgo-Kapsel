@@ -15,35 +15,31 @@ type Props = {
 }
 
 function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Props) {
-  const [determinedDefaultValue, setDeterminedDefaultValue] = useState<string>("");
-  const { currency, setCurrency, capsuleSorting, setCapsuleSorting } = useGlobalContext();
+  const [determinedDefaultValue, setDeterminedDefaultValue] = useState<string>(defaultValue);
+  const { currency, setCurrency, capsuleSorting } = useGlobalContext();
 
   /*Had to do this with this useEffect, otherwise the currency dropdown wont show the  
-  saved currency on the first load. Also we have to check if window is defined, otherwise
-  we will get an error saying window is not defined*/
+  saved currency on the first load. */
   useEffect(() => {
     if (type === "currency") {
       setDeterminedDefaultValue(currency);
     } else if (type === "capsuleSort") {
       setDeterminedDefaultValue(capsuleSorting);
-    } else {
-      setDeterminedDefaultValue(defaultValue);
     }
   }, [])
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (type === "stickerSort") {
+    const selectedValue = e.target.value;
+
+    if (type === "stickerSort" || type === "capsuleSort") {
       setSorting ?
-        setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
+        setSorting(selectedValue as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
         : "";
-    } else if (type === "capsuleSort") {
-      setSorting ?
-        setSorting(e.target.value as keyof typeof capsuleSortFunctions | keyof typeof stickerSortFunctions)
-        : "";
-      setCapsuleSorting(e.target.value as keyof typeof capsuleSortFunctions);
-    } else if (type === "currency") {
-      setCurrency(e.target.value as Currencies);
+    } else {
+      setCurrency(selectedValue as Currencies);
     }
+
+    setDeterminedDefaultValue(selectedValue);
   }
 
   return (
@@ -51,12 +47,11 @@ function Dropdown({ name, dropdownValues, defaultValue, type, setSorting }: Prop
       <label htmlFor={name} />
 
       <select className={styles.dropdown} name={name} id={name}
-        defaultValue={determinedDefaultValue}
+        value={determinedDefaultValue}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleSelect(e)} >
-        <option value={determinedDefaultValue} disabled hidden>{determinedDefaultValue}</option>
+        <option value={defaultValue} disabled hidden>{defaultValue}</option>
         {dropdownValues.map((value, index) => (
-          <option key={index} value={value}
-            selected={value === determinedDefaultValue ? true : false}>
+          <option key={index} value={value}>
             {value}
           </option>
         ))}
