@@ -29,15 +29,18 @@ function Footer({ accentColor }: Props) {
                 <div className={styles.contactContainer}>
                     <h4 className={styles.contactHeadline}>Contact me</h4>
                     <div className={styles.contactIconContainer}>
-                        <Link href={"https://www.linkedin.com/in/alexej-kunz/"} aria-label="My LinkedIn Profile">
+                        <Link href={"https://www.linkedin.com/in/alexej-kunz/"} aria-label="My LinkedIn Profile"
+                              target="_blank">
                             <LinkedInIcon className={`${styles.contactIcon} ${styles.linkedInIcon}`}
                                 style={hoverStyle} />
                         </Link>
-                        <Link href={"https://github.com/Orchi1904"} aria-label="My GitHub Profile">
+                        <Link href={"https://github.com/Orchi1904"} aria-label="My GitHub Profile"
+                              target="_blank">
                             <GitHubIcon className={styles.contactIcon}
                                 style={hoverStyle} />
                         </Link>
-                        <Link href={"https://www.frontendmentor.io/profile/Orchi1904"} aria-label="My Frontend Mentor Profile">
+                        <Link href={"https://www.frontendmentor.io/profile/Orchi1904"} aria-label="My Frontend Mentor Profile"
+                              target="_blank">
                             <div className={styles.contactIcon}>
                                 <FrontendMentorIcon style={hoverStyle} fill="white" />
                             </div>
