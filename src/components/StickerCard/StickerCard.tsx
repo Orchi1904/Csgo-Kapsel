@@ -8,6 +8,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { getCurrencyString } from "@/helper/currencyFunctions";
 import { useGlobalContext } from "@/Context/store";
 import { Sticker } from "@/types";
+import Image from "next/image";
 
 type Props = {
   sticker: Sticker
@@ -34,7 +35,8 @@ function StickerCard({ sticker }: Props) {
           <div className={styles.stickerCardContainer}>
             <div className={styles.stickerCard}>
               <div className={styles.stickerIconContainer}>
-                <img className={styles.stickerIcon} src={sticker.icon} alt={sticker.name + " image"} />
+                <Image className={styles.stickerIcon} src={sticker.icon} alt={sticker.name + " image"} 
+                        width={800} height={600}/>
               </div>
             </div>
             <div className={styles.stickerDetails}>
@@ -50,7 +52,8 @@ function StickerCard({ sticker }: Props) {
           <h3 className={styles.stickerTitleWide}>{sticker.name}</h3>
           <div className={styles.stickerIconAndInformationContainerWide}>
             <div className={styles.stickerIconContainerWide}>
-              <img className={styles.stickerIconWide} src={sticker.icon} alt={sticker.name + " image"} />
+              <Image className={styles.stickerIconWide} src={sticker.icon} alt={sticker.name + " image"} 
+                     width={800} height={600}/>
             </div>
             <div className={styles.stickerPriceWide}>
               <p>{getCurrencyString(sticker.average_price, currency, exchangeRates)}</p>

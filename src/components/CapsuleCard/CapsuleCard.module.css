@@ -29,7 +29,8 @@
 
 .icon {
     width: 95%;
-    max-width: 260px;
+    height: auto;
+    max-width: 256px;
     transition: transform 0.5s;
 }
 

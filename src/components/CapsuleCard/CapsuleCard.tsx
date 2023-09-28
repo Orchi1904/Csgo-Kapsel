@@ -6,6 +6,7 @@ import { CapsuleData } from "@/types";
 import { useGlobalContext } from "@/Context/store";
 import { getCurrencyString } from "@/helper/currencyFunctions";
 import SVPTooltip from "../SVPTooltip/SVPTooltip";
+import Image from "next/image";
 
 type Props = {
     capsule: CapsuleData,
@@ -20,7 +21,8 @@ function CapsuleCard({ capsule }: Props) {
             <h3 className={styles.title}>{capsule.name}</h3>
             <div className={styles.iconAndInformationContainer}>
                 <div className={styles.iconContainer}>
-                    <img className={styles.icon} src={capsule.icon} alt={capsule.name + " image"} />
+                    <Image className={styles.icon} src={capsule.icon} alt={capsule.name + " image"} 
+                            width={800} height={600}/>
                 </div>
                 <div className={styles.informationContainer}>
                     <div className={styles.information}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "./CapsuleBox.module.css"
+import Image from 'next/image';
 
 type Props = {
     icon: string,
@@ -9,7 +10,8 @@ type Props = {
 function CapsuleBox({icon, alt}: Props) {
     return (
         <div className={styles.capsuleBox}>
-            <img className={styles.icon} src={icon} alt={alt} />
+            <Image className={styles.icon} src={icon} alt={alt} width={800} height={600}
+                   priority={true}/>
         </div>
     )
 }

@@ -36,6 +36,7 @@
 .stickerIcon {
     box-sizing: border-box;
     width: 100%;
+    height: auto;
 }
 
 .stickerDetails {
@@ -117,6 +118,7 @@
 
     .stickerIconWide {
         width: 100%;
+        height: auto;
     }
 
     .stickerPriceWide {

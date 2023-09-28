@@ -10,12 +10,13 @@
 
 .icon{
     max-width: 100%;
+    height: auto;
     margin: 20px 0;
 }
 
 @media (min-width: 360px){
     .icon{
-        max-width: 260px;
+        max-width: 256px;
     }
 }
 
