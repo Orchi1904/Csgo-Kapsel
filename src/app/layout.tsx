@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'CSGO-Kapsel',
+  description: 'Get price information for all CS major sticker capsules'
 }
 
 export default function RootLayout({
