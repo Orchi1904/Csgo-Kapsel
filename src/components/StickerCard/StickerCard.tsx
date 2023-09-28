@@ -36,7 +36,7 @@ function StickerCard({ sticker }: Props) {
             <div className={styles.stickerCard}>
               <div className={styles.stickerIconContainer}>
                 <Image className={styles.stickerIcon} src={sticker.icon} alt={sticker.name + " image"} 
-                        width={800} height={600}/>
+                        width={800} height={600} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
               </div>
             </div>
             <div className={styles.stickerDetails}>
@@ -53,7 +53,7 @@ function StickerCard({ sticker }: Props) {
           <div className={styles.stickerIconAndInformationContainerWide}>
             <div className={styles.stickerIconContainerWide}>
               <Image className={styles.stickerIconWide} src={sticker.icon} alt={sticker.name + " image"} 
-                     width={800} height={600}/>
+                     width={800} height={600} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
             </div>
             <div className={styles.stickerPriceWide}>
               <p>{getCurrencyString(sticker.average_price, currency, exchangeRates)}</p>

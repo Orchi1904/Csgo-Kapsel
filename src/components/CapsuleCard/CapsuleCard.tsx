@@ -22,7 +22,7 @@ function CapsuleCard({ capsule }: Props) {
             <div className={styles.iconAndInformationContainer}>
                 <div className={styles.iconContainer}>
                     <Image className={styles.icon} src={capsule.icon} alt={capsule.name + " image"} 
-                            width={800} height={600}/>
+                            width={800} height={600} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
                 </div>
                 <div className={styles.informationContainer}>
                     <div className={styles.information}>
