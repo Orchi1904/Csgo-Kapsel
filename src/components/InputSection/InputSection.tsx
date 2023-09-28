@@ -13,10 +13,10 @@ type Props = {
 function InputSection({ id, dropdownValues, type, setSorting, setSearchTerm }: Props) {
   return (
     <div className={styles.inputSection}>
-      <Dropdown name={id} dropdownValues={dropdownValues} defaultValue="Sort" setSorting={setSorting}
+      <Dropdown name={id + "Dropdown"} dropdownValues={dropdownValues} defaultValue="Sort" setSorting={setSorting}
         type={type} />
       {setSearchTerm ?
-        <Search name={id} width="100%" setSearchTerm={setSearchTerm} />
+        <Search name={id + "Search"} width="100%" setSearchTerm={setSearchTerm} />
         : ""}
     </div>
   )
