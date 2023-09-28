@@ -1,7 +1,3 @@
-/*Todo: - Performanceoptimierung beginnen -> Siehe YT Videos 
-        CSGOBackpack-Typen Website Link schicken
-*/
-
 import getStickers from "./getStickers";
 import Capsules from "../helper/capsules.json";
 import { CapsuleData, Sticker } from "@/types";
