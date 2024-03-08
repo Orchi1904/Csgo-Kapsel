@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description: 'Get price information for all CS major sticker capsules'
 }
 
+// Gute Seite für Loading: https://blog.logrocket.com/create-loading-component-next-js-13-react-suspense/
+// Klappt, nur das Auswählen anderer Währungen klappt nun nicht mehr...
+// Außerdem klappt das Loading mit dem Spinner nicht, also er bewegt sich dann nicht mehr..
+// Nochmal machen und genau schauen, wie ich das jetzt hinkrigen kann
+// Idee für das 8h laden problem: Playwright oder iwas anderes nutzen und über github actions alle 8h ein Mal die produktive Seite aufrufen
+
 export default function RootLayout({
   children,
 }: {
