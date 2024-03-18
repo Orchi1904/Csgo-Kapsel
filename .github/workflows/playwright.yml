@@ -4,7 +4,7 @@ on:
     branches: [ main, master ]
   schedule:
     # Run Playwright every 8 hours
-    - cron: "0 0 0/8 1/1 * ? *"
+    - cron: "* */8 * * *"
 jobs:
   test:
     timeout-minutes: 60
