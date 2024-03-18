@@ -36,3 +36,7 @@ next-env.d.ts
 
 .env
 .dev.db*
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
