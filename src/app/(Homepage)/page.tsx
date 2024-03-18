@@ -1,5 +1,3 @@
-import PageWrapper from "@/components/PageWrapper/PageWrapper";
-import HeroSection from "@/components/HeroSection/HeroSection";
 import CapsuleWrapper from "@/components/CapsuleWrapper/CapsuleWrapper";
 import getCapsules from "../../libs/getCapsules";
 import updateData from "@/firebase/firestore/updateData";

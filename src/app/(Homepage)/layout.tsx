@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { GlobalContextProvider } from "../../Context/store";
 import PageWrapper from "@/components/PageWrapper/PageWrapper";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
