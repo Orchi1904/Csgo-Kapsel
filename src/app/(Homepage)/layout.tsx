@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import { GlobalContextProvider } from "../../Context/store";
 import PageWrapper from "@/components/PageWrapper/PageWrapper";
 import HeroSection from "@/components/HeroSection/HeroSection";
-import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,15 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} layout`}>
-        <GlobalContextProvider>
-          <PageWrapper
-            accentColor="var(--blue)"
-            endLineBgImg="/images/backgrounds/endLineBlueBG.svg"
-          >
-            <HeroSection />
-            {children}
-          </PageWrapper>
-        </GlobalContextProvider>
+        <PageWrapper
+          accentColor="var(--blue)"
+          endLineBgImg="/images/backgrounds/endLineBlueBG.svg"
+        >
+          <HeroSection />
+          {children}
+        </PageWrapper>
       </body>
     </html>
   );
