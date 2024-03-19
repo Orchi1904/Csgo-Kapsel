@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        serverActions: true,
-    },
+    reactStrictMode: false,
     images: {
         domains: ['steamcommunity.com', 'steamcdn-a.akamaihd.net'],
     },
