@@ -15,7 +15,8 @@ export default async function getExchangeRatesEUR() {
 
   const updatedExchangeRates = await updateExchangeRates();
 
-  if (timeStampHoursDiff > 48) {
+  //Every 7 days
+  if (timeStampHoursDiff > (24 * 7)) {
     updateData("exchangeRates", "1", updatedExchangeRates);
   }
 
@@ -25,7 +26,7 @@ export default async function getExchangeRatesEUR() {
 const updateExchangeRates = async () => {
   const response = await fetch(
     `http://data.fixer.io/api/latest?access_key=${process.env.NEXT_PUBLIC_FIXER_API_KEY}`,
-    { next: { revalidate: 60 * 60 * 48 } } //Revalidate at most every 48 hours
+    { next: { revalidate: 60 * 60 * 24 * 7 } } //Revalidate at most every 7 days
   );
   const exchangeRates = await response.json();
 
